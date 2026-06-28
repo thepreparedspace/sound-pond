@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#E8E4D4;--pond:#4A7C68;--pond-deep:#346050;
+  --cream:#E8E4D4;--pond:#4A7898;--pond-deep:#2E5878;
   --leaf:#5A8C3C;--leaf-deep:#3C6828;
   --sun:#D49030;--coral:#B85830;--coral-deep:#8C3E1C;
   --ink:#382E18;--card-bg:#F8F4E4;
@@ -199,11 +199,10 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
       <svg viewBox="0 0 140 112">
         <defs>
           <radialGradient id="fb" cx="42%" cy="32%" r="76%"><stop offset="0%" stop-color="#8A9C68"/><stop offset="52%" stop-color="#647848"/><stop offset="100%" stop-color="#485830"/></radialGradient>
-          <radialGradient id="fv" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#F0E8C0"/><stop offset="100%" stop-color="#D4C898"/></radialGradient>
+          <radialGradient id="fv" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#C8BC88"/><stop offset="100%" stop-color="#A89C68"/></radialGradient>
           <radialGradient id="fe" cx="36%" cy="28%" r="68%"><stop offset="0%" stop-color="#E8C038"/><stop offset="55%" stop-color="#C09818"/><stop offset="100%" stop-color="#886808"/></radialGradient>
         </defs>
-        <!-- shadow -->
-        <ellipse cx="70" cy="108" rx="44" ry="5" fill="rgba(22,35,10,.2)"/>
+
         <!-- left hind leg -->
         <path d="M26 76 C14 79 7 91 13 99 C20 106 34 101 37 90 C40 81 38 75 26 76Z" fill="#586840"/>
         <path d="M11 97 q-5 3 -9 8M17 100 q-5 4 -7 9M23 102 q-3 4 -3 8" stroke="#384828" stroke-width="1.8" fill="none" stroke-linecap="round"/>
@@ -415,10 +414,10 @@ const PAD_SVG=`<svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradie
 
 const FONTS={andika:"'Andika',sans-serif",dancing:"'Dancing Script',cursive"};
 const THEMES=[
-  {sky:"#E8E4D4",water:"#4A7C68",leaf:"#5A8C3C",leafD:"#3C6828"},
-  {sky:"#E4DEC8",water:"#5A8090",leaf:"#4A8050",leafD:"#306038"},
-  {sky:"#E4D8C0",water:"#A07848",leaf:"#90884C",leafD:"#686030"},
-  {sky:"#485860",water:"#304850",leaf:"#4A5C48",leafD:"#384430"}
+  {sky:"#E8E4D4",water:"#4A7898",leaf:"#5A8C3C",leafD:"#3C6828"},
+  {sky:"#E4DEC8",water:"#3A6888",leaf:"#4A8050",leafD:"#306038"},
+  {sky:"#E4D8C0",water:"#5A7890",leaf:"#90884C",leafD:"#686030"},
+  {sky:"#485860",water:"#284060",leaf:"#4A5C48",leafD:"#384430"}
 ];
 
 function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
@@ -567,7 +566,7 @@ function cacheEls(){
 function applyTheme(n){
   const t=THEMES[(n-1)%THEMES.length];
   document.body.style.backgroundColor=t.sky;
-  if(el.pondContainer)el.pondContainer.style.backgroundColor=t.water;
+
   document.documentElement.style.setProperty("--leaf",t.leaf);
   document.documentElement.style.setProperty("--leaf-deep",t.leafD);
   if(el.bugInner)el.bugInner.innerHTML=BUGS[(n-1)%BUGS.length];
