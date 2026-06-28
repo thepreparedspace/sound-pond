@@ -31,7 +31,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .ibtn{background:var(--card-bg);border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;
   box-shadow:0 2px 0 rgba(60,48,18,.15);display:flex;align-items:center;justify-content:center;color:var(--ink);}
 .ibtn svg{width:22px;height:22px;}
-.ibtn:focus-visible,.btn:focus-visible,select:focus-visible{outline:3px solid var(--coral);outline-offset:2px;}
+.ibtn:focus-visible,.btn:focus-visible{outline:3px solid var(--coral);outline-offset:2px;}
 main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 16px 20px;gap:22px;}
 .card{position:relative;background:var(--card-bg);width:min(640px,92vw);min-height:160px;
   border-radius:38% 62% 63% 37%/41% 44% 56% 59%;
@@ -44,10 +44,6 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .sentence{font-family:var(--read-font);font-weight:700;font-size:clamp(1.9rem,5.4vw,3.1rem);text-align:center;line-height:1.6;}
 .word{display:inline-block;padding:0 2px;border-radius:6px;cursor:pointer;transition:background .15s;}
 .word:hover{background:rgba(212,144,48,.18);}
-.ltr{display:inline-block;border-radius:3px;transition:background .1s,color .1s;}
-.ltr.ph-on{background:var(--sun);color:var(--ink);}
-.word.blend-on{background:var(--sun);color:var(--ink);}
-.word.blend-on .ltr{background:transparent;color:inherit;}
 .word.sentence-hl{background:rgba(212,144,48,.38);color:var(--ink);}
 .controls{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
 .btn{font-family:var(--ui-font);font-weight:700;font-size:1.4rem;border:none;cursor:pointer;
@@ -60,7 +56,6 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .btn-d{background:var(--leaf-deep)}.btn-d:hover{opacity:.9}
 .btn-n{background:var(--pond-deep);font-size:1rem;padding:14px 20px;}.btn-n:hover{opacity:.9}
 .btn-icon{padding:14px 18px;}
-.btn-icon svg{width:1.35em;height:1.35em;}
 .btn-icon .glyph{font-size:1.5em;line-height:1;font-weight:700;}
 .btn:disabled{opacity:.3;cursor:not-allowed;}
 .pond-path{padding:28px 0 38px;background:var(--pond);transition:background .8s;border-top:3px solid rgba(255,255,255,.1);overflow:visible;}
@@ -73,12 +68,10 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .pad.done{opacity:.72;transform:scale(.85);}
 .pad.active{transform:scale(1.13);}
 .pad.active svg{filter:drop-shadow(0 3px 3px rgba(10,22,8,.25)) drop-shadow(0 0 9px rgba(255,255,255,.88)) drop-shadow(0 0 4px rgba(255,255,255,.70));}
-.pad.next-active{transform:scale(1.08);}
 .pad.next-active svg{filter:drop-shadow(0 3px 3px rgba(10,22,8,.25)) drop-shadow(0 0 12px rgba(255,255,255,.95)) drop-shadow(0 0 5px rgba(255,255,255,.75));animation:padBeckon .5s ease-out;}
 @keyframes padBeckon{0%{filter:drop-shadow(0 3px 3px rgba(10,22,8,.25));}55%{filter:drop-shadow(0 3px 3px rgba(10,22,8,.25)) drop-shadow(0 0 18px rgba(255,255,255,1)) drop-shadow(0 0 9px rgba(255,255,255,.95));}100%{filter:drop-shadow(0 3px 3px rgba(10,22,8,.25)) drop-shadow(0 0 12px rgba(255,255,255,.95)) drop-shadow(0 0 5px rgba(255,255,255,.75));}}
 .pad.tappable{cursor:pointer;}
-.pad.tappable:hover,.pad.tappable:focus-visible{transform:scale(.93);opacity:.9;}
-.pad.tappable:hover svg,.pad.tappable:focus-visible svg{filter:drop-shadow(0 3px 3px rgba(10,22,8,.25)) drop-shadow(0 0 6px rgba(255,255,255,.55));}
+.pad.tappable:hover{transform:scale(.93);opacity:.9;}
 .frog{position:absolute;top:50%;left:0;width:72px;height:60px;transform:translate(-50%,-68%);
   transition:left .55s cubic-bezier(.34,1.56,.64,1);
   filter:drop-shadow(0 5px 3px rgba(0,0,0,.22));pointer-events:none;z-index:3;overflow:visible;}
@@ -101,30 +94,26 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 @keyframes bidle{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}
 @keyframes bflut{0%{transform:translateY(0)}40%{transform:translateY(-16px) rotate(-8deg)}70%{transform:translateY(-3px) rotate(5deg)}100%{transform:translateY(0)}}
 .bug.caught{transform:translate(-50%,-68%) scale(.1);opacity:0;transition:transform .4s,opacity .4s;}
-.sand-num{font-family:'Andika',sans-serif;font-weight:700;color:var(--sand-num-color);line-height:1;display:inline-block;position:relative;}
-.badge-sand{font-size:1.15rem;letter-spacing:.02em;}
-.sand-glyph{display:inline-block;height:1em;width:.85em;vertical-align:-0.1em;}
-.sand-glyph svg{width:100%;height:100%;display:block;}
+.sand-num{font-family:'Andika',sans-serif;font-weight:700;color:var(--sand-num-color);line-height:1;display:inline-block;}
+.badge-sand{font-size:1.15rem;}
 .overlay-sand{font-size:5.6rem;text-shadow:2px 2px 0 rgba(138,74,18,.18),0 4px 0 rgba(138,74,18,.10);}
 .pond-next-overlay{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;background:rgba(30,50,20,.42);padding:20px;}
 .pond-next-card{background:var(--card-bg);border-radius:32px;padding:40px 40px 34px;max-width:280px;width:100%;text-align:center;box-shadow:0 16px 48px rgba(0,0,0,.2),0 0 0 3px var(--leaf);display:flex;flex-direction:column;align-items:center;gap:16px;animation:cardPop .4s cubic-bezier(.34,1.56,.64,1) forwards;}
 @keyframes cardPop{0%{transform:scale(.72);opacity:0}100%{transform:scale(1);opacity:1}}
-.pond-next-label{font-family:var(--ui-font);font-size:1.15rem;color:var(--pond-deep);margin:0;opacity:.75;letter-spacing:.01em;}
-.pond-next-btn{background:var(--leaf-deep);font-family:var(--ui-font);font-weight:700;font-size:1.5rem;border:none;cursor:pointer;padding:14px 32px;border-radius:999px;color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.16);display:inline-flex;align-items:center;gap:8px;transition:transform .08s,opacity .2s;}
-.pond-next-btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.16);}
+.pond-next-label{font-family:var(--ui-font);font-size:1.15rem;color:var(--pond-deep);margin:0;opacity:.75;}
+.pond-next-btn{background:var(--leaf-deep);font-family:var(--ui-font);font-weight:700;font-size:1.5rem;border:none;cursor:pointer;padding:14px 32px;border-radius:999px;color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.16);display:inline-flex;align-items:center;gap:8px;}
 .pond-next-btn:hover{opacity:.92;}
 .ripple{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:3px solid rgba(255,255,255,.42);border-radius:50%;width:0;height:0;animation:rOut 1s cubic-bezier(.1,.8,.3,1) forwards;pointer-events:none;z-index:10;}
 @keyframes rOut{0%{width:0;height:0;opacity:.9}100%{width:600px;height:600px;opacity:0}}
 .badge{display:flex;align-items:center;gap:5px;background:var(--card-bg);border-radius:999px;padding:5px 12px;font-size:1rem;font-weight:700;box-shadow:0 2px 0 rgba(60,48,18,.12);color:var(--ink);font-family:var(--ui-font);}
 .badge svg{width:15px;height:15px;flex-shrink:0;}
-.badge-word{font-size:1rem;}
 .ov{position:fixed;inset:0;background:rgba(48,40,20,.44);display:flex;align-items:center;justify-content:center;z-index:60;padding:16px;}
 .ovc{background:var(--card-bg);border-radius:28px;max-width:400px;width:100%;max-height:86vh;display:flex;flex-direction:column;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.15);overflow:hidden;text-transform:lowercase;}
 .mhdr{position:relative;padding:22px 50px 6px 26px;flex:0 0 auto;}
 .mbdy{padding:0 26px 26px;overflow-y:auto;flex:1 1 auto;}
-.mcx{position:absolute;top:12px;right:14px;width:36px;height:36px;border-radius:50%;border:none;background:var(--cream);color:var(--ink);font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 0 rgba(60,48,18,.15);}
+.mcx{position:absolute;top:12px;right:14px;width:36px;height:36px;border-radius:50%;border:none;background:var(--cream);color:var(--ink);font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;}
 .mcx:hover{background:var(--coral);color:#fff;}
-.ovc h2{font-size:1.5rem;margin:6px 0 4px;font-family:var(--ui-font);font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;}
+.ovc h2{font-size:1.5rem;margin:6px 0 4px;font-family:var(--ui-font);font-weight:700;}
 .ovc h3{font-size:1.05rem;margin:16px 0 4px;font-family:var(--ui-font);font-weight:700;color:var(--pond-deep);}
 .ovc p{font-size:.9rem;margin:0 0 10px;font-family:var(--ui-font);}
 .orow{display:flex;gap:10px;justify-content:center;margin:10px 0 14px;flex-wrap:wrap;}
@@ -133,12 +122,11 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .orow button.sel{background:var(--leaf-deep);color:#fff;border-color:var(--leaf-deep);}
 select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:14px;border:2px solid var(--leaf);background:#fff;width:100%;max-width:300px;color:var(--ink);}
 .pbtn{background:none;border:none;font-family:var(--ui-font);font-weight:700;font-size:1rem;color:var(--ink);text-decoration:underline;cursor:pointer;margin-top:12px;}
-@media(prefers-reduced-motion:reduce){.frog{transition:none}.frog.hopping,.frog.catching{animation:none}.frog.catching .tongue-line,.frog.catching .tongue-tip,.frog.catching .tongue-tip-hl{animation:none}.card.win,.ripple{animation:none;opacity:0}.bug .bi{animation:none}}
 @media(max-width:420px){.card{padding:30px 6%}.brand{font-size:1.4rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 </style>
 </head>
 <body>
-  <style>.tps-nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;background:rgba(232,228,212,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(90,140,60,0.2);font-family:'Dancing Script',cursive;}.tps-nav-brand{font-size:1rem;font-weight:600;color:#27500A;text-decoration:none;display:flex;align-items:center;gap:7px;}.tps-nav-brand svg{width:18px;height:18px;}.tps-nav-back{font-size:0.85rem;color:#7A7A68;text-decoration:none;font-family:'Dancing Script',cursive;font-weight:600;}.tps-nav-back:hover{color:#27500A;}header{margin-top:48px;}</style><nav class="tps-nav"><a href="https://thepreparedspace.github.io" class="tps-nav-brand"><svg viewBox="0 0 36 26"><ellipse cx="18" cy="19" rx="13" ry="7" fill="#5A8C3C"/><circle cx="9" cy="9" r="6" fill="#5A8C3C"/><circle cx="21" cy="7" r="6.5" fill="#5A8C3C"/></svg>The Prepared Space</a><a href="https://thepreparedspace.github.io" class="tps-nav-back">← back to home</a></nav>
 <div class="sky" aria-hidden="true">
   <div class="sun-w"><svg viewBox="0 0 80 80"><defs><radialGradient id="sg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#F8D860"/><stop offset="45%" stop-color="#E0A030" stop-opacity=".7"/><stop offset="100%" stop-color="#C07810" stop-opacity="0"/></radialGradient></defs><circle cx="40" cy="40" r="39" fill="url(#sg)"/><circle cx="40" cy="40" r="20" fill="#E8B04C"/></svg></div>
   <div class="cl cl1"><svg viewBox="0 0 148 56"><defs><linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFEFB"/><stop offset="100%" stop-color="#E4E0D0"/></linearGradient></defs><ellipse cx="74" cy="44" rx="64" ry="13" fill="url(#cg1)" opacity=".86"/><ellipse cx="40" cy="28" rx="30" ry="23" fill="url(#cg1)" opacity=".86"/><ellipse cx="86" cy="22" rx="27" ry="20" fill="url(#cg1)" opacity=".86"/><ellipse cx="116" cy="32" rx="22" ry="17" fill="url(#cg1)" opacity=".86"/></svg></div>
@@ -162,7 +150,7 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
   <div class="hdr">
     <div class="badge" id="pondBadge">
       <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 17 C3 9 8 4 17 3 C16 10 10 15 3 17Z" fill="var(--leaf-deep)"/></svg>
-      <span class="badge-word">pond</span>
+      <span>pond</span>
       <span class="sand-num badge-sand" id="pondCountDisplay">1</span>
     </div>
     <button class="ibtn" id="settingsBtn" aria-label="settings">
@@ -179,8 +167,8 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
     <div class="sentence" id="sentenceText">&nbsp;</div>
   </div>
   <div class="controls">
-    <button class="btn btn-n btn-icon" id="prevBtn" aria-label="go back">
-      <span class="glyph" aria-hidden="true">←</span>
+    <button class="btn btn-n btn-icon" id="prevBtn" aria-label="go back" disabled>
+      <span class="glyph">←</span>
     </button>
     <button class="btn btn-s" id="readBtn">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5H8L13 5.5V18.5L8 14.5H4Z" fill="currentColor"/><path d="M16.5 8.5C18.5 10 18.5 14 16.5 15.5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/><path d="M19 6.5C22.5 9.5 22.5 14.5 19 17.5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" opacity=".65"/></svg>
@@ -189,7 +177,6 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
     <button class="btn btn-d btn-icon" id="doneBtn" aria-label="done">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5L9.5 17L19 6.5" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
-    <button class="btn btn-n" id="nextBtn" hidden></button>
   </div>
 </main>
 
@@ -215,23 +202,39 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
           <radialGradient id="fv" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#F0E8C0"/><stop offset="100%" stop-color="#D4C898"/></radialGradient>
           <radialGradient id="fe" cx="36%" cy="28%" r="68%"><stop offset="0%" stop-color="#E8C038"/><stop offset="55%" stop-color="#C09818"/><stop offset="100%" stop-color="#886808"/></radialGradient>
         </defs>
+        <!-- shadow -->
         <ellipse cx="70" cy="108" rx="44" ry="5" fill="rgba(22,35,10,.2)"/>
+        <!-- left hind leg -->
         <path d="M26 76 C14 79 7 91 13 99 C20 106 34 101 37 90 C40 81 38 75 26 76Z" fill="#586840"/>
         <path d="M11 97 q-5 3 -9 8M17 100 q-5 4 -7 9M23 102 q-3 4 -3 8" stroke="#384828" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <!-- body -->
         <ellipse cx="52" cy="68" rx="34" ry="28" fill="url(#fb)"/>
         <ellipse cx="84" cy="56" rx="30" ry="26" fill="url(#fb)"/>
         <path d="M96 45 C113 42 131 49 133 57 C134 64 127 69 114 69 C100 69 89 63 88 56Z" fill="url(#fb)"/>
+        <!-- belly -->
         <ellipse cx="56" cy="83" rx="28" ry="14" fill="url(#fv)"/>
-        <path d="M40 50 C46 46 56 48 57 53 C59 58 55 63 48 62 C42 62 37 58 40 50Z" fill="#28380E" opacity=".68"/>
-        <path d="M61 43 C67 40 74 42 75 47 C76 52 72 55 66 55 C60 54 57 50 61 43Z" fill="#28380E" opacity=".62"/>
-        <ellipse cx="35" cy="67" rx="5.5" ry="4" fill="#28380E" opacity=".58" transform="rotate(-12 35 67)"/>
-        <path d="M70 60 C75 57 82 58 83 63 C84 68 80 71 75 70 C70 69 68 65 70 60Z" fill="#28380E" opacity=".58"/>
-        <ellipse cx="53" cy="74" rx="4.5" ry="3.5" fill="#28380E" opacity=".50"/>
-        <ellipse cx="89" cy="55" rx="6.5" ry="4.2" fill="#28380E" opacity=".55" transform="rotate(-5 89 55)"/>
-        <ellipse cx="107" cy="52" rx="5.5" ry="3.8" fill="#28380E" opacity=".50" transform="rotate(5 107 52)"/>
-        <path d="M109 39 C96 42 80 48 64 54 C52 58 44 61 36 64" stroke="#384828" stroke-width="1.8" fill="none" opacity=".35" stroke-linecap="round"/>
+        <!-- spots on body -->
+        <circle cx="48" cy="58" r="4.5" fill="#C8D890" opacity=".82"/>
+        <circle cx="64" cy="52" r="3.5" fill="#C8D890" opacity=".78"/>
+        <circle cx="38" cy="70" r="3" fill="#C8D890" opacity=".75"/>
+        <circle cx="72" cy="65" r="4" fill="#C8D890" opacity=".80"/>
+        <circle cx="58" cy="72" r="2.8" fill="#C8D890" opacity=".72"/>
+        <circle cx="95" cy="54" r="3.5" fill="#C8D890" opacity=".75"/>
+        <circle cx="108" cy="58" r="3" fill="#C8D890" opacity=".72"/>
+        <circle cx="44" cy="68" r="2.5" fill="#C8D890" opacity=".70"/>
+        <circle cx="56" cy="60" r="2" fill="#C8D890" opacity=".68"/>
+        <circle cx="68" cy="58" r="2.5" fill="#C8D890" opacity=".70"/>
+        <circle cx="78" cy="68" r="2" fill="#C8D890" opacity=".68"/>
+        <circle cx="50" cy="76" r="2.5" fill="#C8D890" opacity=".68"/>
+        <circle cx="65" cy="74" r="2" fill="#C8D890" opacity=".66"/>
+        <circle cx="40" cy="60" r="2" fill="#C8D890" opacity=".65"/>
+        <circle cx="100" cy="62" r="2.5" fill="#C8D890" opacity=".68"/>
+        <circle cx="112" cy="50" r="2" fill="#C8D890" opacity=".65"/>
+        <circle cx="88" cy="62" r="2" fill="#C8D890" opacity=".65"/>
+        <!-- right hind leg -->
         <path d="M74 83 C71 93 75 102 83 104 C89 105 92 101 90 95 C88 90 83 87 78 83Z" fill="#586840"/>
         <path d="M82 103 q1 4 0 8M86 101 q3 4 3 8M89 98 q3 3 3 7" stroke="#384828" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+        <!-- eyes -->
         <circle cx="102" cy="34" r="14" fill="#3A5028"/>
         <circle cx="121" cy="29" r="14" fill="#3A5028"/>
         <circle cx="102" cy="34" r="9.5" fill="url(#fe)"/>
@@ -240,10 +243,11 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
         <ellipse cx="121" cy="29" rx="7.5" ry="3" fill="#120C04"/>
         <ellipse cx="97.5" cy="30" rx="3" ry="1.7" fill="#fff" opacity=".55" transform="rotate(-18 97.5 30)"/>
         <ellipse cx="116.5" cy="25" rx="3" ry="1.7" fill="#fff" opacity=".55" transform="rotate(-18 116.5 25)"/>
+        <!-- nostril bumps -->
         <circle cx="114" cy="47" r="5.5" fill="#4A5E2C" stroke="#384828" stroke-width="1" opacity=".68"/>
-        <path d="M107 64 C118 68 130 64 133 59" stroke="#384820" stroke-width="1.5" fill="none" opacity=".45" stroke-linecap="round"/>
         <circle cx="124" cy="43" r="1.4" fill="#283818" opacity=".8"/>
         <circle cx="128" cy="42" r="1.2" fill="#283818" opacity=".76"/>
+        <!-- tongue -->
         <path class="tongue-line" d="M122 62 Q124 38 128 14" pathLength="50" stroke="#D8536A" stroke-width="6" fill="none" stroke-linecap="round"/>
         <circle class="tongue-tip" cx="128" cy="14" r="4.6" fill="#E8788C"/>
         <circle class="tongue-tip-hl" cx="126.4" cy="12.4" r="1.4" fill="#fff" opacity=".55"/>
@@ -255,7 +259,7 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
 
 <div class="pond-next-overlay" id="pondNextOverlay" hidden>
   <div class="pond-next-card">
-    <p class="pond-next-label">let's hop to pond</p>
+    <p class="pond-next-label">hop in pond</p>
     <span class="sand-num overlay-sand" id="pondNextNum">2</span>
     <button class="pond-next-btn" id="btnLetsHop">
       <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true"><path d="M5 12 C5 5 11 3 19 5 C18 11 13 16 6 18Z" fill="currentColor"/></svg>
@@ -278,12 +282,6 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
         <button data-n="5">5 pads</button>
         <button data-n="8">8 pads</button>
       </div>
-      <h3>sentence style</h3>
-      <p>decodable: only phonics-pure words. natural: adds articles (a, an, the).</p>
-      <div class="orow" id="styleOptions">
-        <button data-style="decodable">🔡 decodable</button>
-        <button data-style="natural">🗣️ natural</button>
-      </div>
       <h3>reading font</h3>
       <div class="orow" id="fontOptions">
         <button data-font="andika">andika (print)</button>
@@ -298,7 +296,6 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
       <h3>reading voice</h3>
       <select id="voiceSelect"></select>
       <h3>reset progress</h3>
-      <p style="opacity:.6;font-size:.85rem">return to pond 1</p>
       <button class="pbtn" id="resetProgress" style="color:var(--coral)">reset all progress</button>
       <div><button class="pbtn" id="closeSettings">close</button></div>
     </div>
@@ -309,413 +306,277 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
 (function(){
 "use strict";
 
-const PAD_SVG=`<svg viewBox="0 0 100 100" aria-hidden="true">
-  <defs><radialGradient id="pg" cx="40%" cy="35%" r="78%"><stop offset="0%" stop-color="#B8D898"/><stop offset="55%" stop-color="#88B468"/><stop offset="100%" stop-color="#608448"/></radialGradient></defs>
-  <ellipse cx="52" cy="95" rx="36" ry="5.5" fill="rgba(18,38,10,.17)"/>
-  <path d="M50 56 L52.51 16.08 A40 40 0 1 1 47.49 16.08 Z" fill="url(#pg)" stroke="#486830" stroke-width="2"/>
-  <path d="M50 56L50 96M50 56L84 76M50 56L90 44M50 56L73 17M50 56L27 17M50 56L10 44M50 56L16 76" stroke="#486830" stroke-width=".9" opacity=".4" fill="none"/>
-  <ellipse cx="38" cy="36" rx="12" ry="6.5" fill="rgba(255,255,255,.14)" transform="rotate(-18 38 36)"/>
-</svg>`;
+// ── Word banks ──
+const NAMES=["kim","tim","ben","sam","pam","tom","bob","dan","ken","nat","ned","ron","jan","pat","don"];
+const ANIMALS=["pig","dog","fox","hen","cub","pup","rat","cat","ox"];
+const ADJS=["big","fat","red","wet","sad","mad","bad","fun"];
 
+const ANIMAL_COMPAT_PAST={
+  ran:["pig","dog","fox","cub","pup","rat","cat","ox"],
+  sat:["pig","dog","hen","cub","pup","rat","cat"],
+  dug:["pig","dog","cub","rat","ox"],
+  swam:["dog","cub","pup","rat"]
+};
+const ANIMAL_COMPAT_CAN={
+  run:["pig","dog","fox","cub","pup","rat","cat","ox"],
+  sit:["pig","dog","hen","cub","pup","rat","cat"],
+  dig:["pig","dog","cub","rat","ox"],
+  swim:["dog","cub","pup","rat"],
+  hop:["pig","dog","fox","cub","pup","rat","cat"],
+  jog:["pig","dog","fox","cub","pup","rat","cat","ox"],
+  zip:["dog","fox","pup","rat","cat"],
+  nap:["pig","dog","hen","cub","pup","rat","cat"]
+};
+
+const PAST_VERBS=["ran","sat","dug","swam"];
+const CAN_VERBS=["run","sit","dig","swim","hop","jog","zip","nap"];
+
+// Locations — no articles, no double-terminal consonants
+const LOCS_PAST={
+  ran:["in mud","in fog","on sand","on land","on hill","on rock","on deck","up hill","on wet sand"],
+  sat:["on mat","on log","on rock","on hill","on deck","on big log","on wet mat","up top","on land"],
+  dug:["in mud","in sand","in wet mud","on land"],
+  swam:["in pond","in mud"]
+};
+const LOCS_CAN={
+  run:["in mud","in fog","on sand","on land","on hill","on rock","on deck","up hill","on wet sand"],
+  sit:["on mat","on log","on rock","on hill","on deck","on big log","on wet mat","up top","on land"],
+  dig:["in mud","in sand","in wet mud","on land"],
+  swim:["in pond","in mud"],
+  hop:["on mat","on log","on rock","on hill","on deck","on big log"],
+  jog:["on sand","on land","on hill","on deck","on rock"],
+  zip:["on sand","on land","on hill","on deck"],
+  nap:["on mat","on log","on big log","on wet mat","on rock"]
+};
+
+// ── Bug SVGs (restored with detail) ──
 const BUGS=[
+  // Ladybug with spots
   `<svg viewBox="0 0 60 50"><defs><radialGradient id="lb" cx="34%" cy="24%" r="72%"><stop offset="0%" stop-color="#EC4422"/><stop offset="55%" stop-color="#C01E18"/><stop offset="100%" stop-color="#8C1810"/></radialGradient></defs>
   <ellipse cx="30" cy="44" rx="17" ry="4" fill="rgba(14,14,14,.14)"/>
   <path d="M17 24 Q10 23 6 26M17 31 Q10 30 6 33M19 37 Q13 38 10 42" stroke="#221810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
   <path d="M43 24 Q50 23 54 26M43 31 Q50 30 54 33M41 37 Q47 38 50 42" stroke="#221810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
   <path d="M30 12 C44 12 50 22 50 31 C50 41 42 47 30 47 C18 47 10 41 10 31 C10 22 16 12 30 12Z" fill="url(#lb)"/>
   <line x1="30" y1="13" x2="30" y2="46" stroke="#7A1808" stroke-width="1.3" opacity=".55"/>
+  <circle cx="21" cy="23" r="3.5" fill="#1A0808" opacity=".82"/>
+  <circle cx="39" cy="23" r="3.5" fill="#1A0808" opacity=".82"/>
+  <circle cx="20" cy="33" r="3" fill="#1A0808" opacity=".80"/>
+  <circle cx="40" cy="33" r="3" fill="#1A0808" opacity=".80"/>
+  <circle cx="23" cy="41" r="2.5" fill="#1A0808" opacity=".75"/>
+  <circle cx="37" cy="41" r="2.5" fill="#1A0808" opacity=".75"/>
   <ellipse cx="30" cy="9" rx="8.5" ry="6.5" fill="#1A1208"/>
-  <circle cx="25.5" cy="7" r="1.6" fill="#fff" opacity=".66"/><circle cx="34.5" cy="7" r="1.6" fill="#fff" opacity=".66"/>
-  <circle cx="21" cy="23" r="3" fill="#1A1208" opacity=".86"/><circle cx="39" cy="23" r="3" fill="#1A1208" opacity=".86"/>
-  <circle cx="20" cy="33" r="2.8" fill="#1A1208" opacity=".83"/><circle cx="40" cy="33" r="2.8" fill="#1A1208" opacity=".83"/>
-  <circle cx="30" cy="22" r="2.5" fill="#1A1208" opacity=".80"/></svg>`,
+  <circle cx="25.5" cy="7" r="1.6" fill="#fff" opacity=".66"/>
+  <circle cx="34.5" cy="7" r="1.6" fill="#fff" opacity=".66"/></svg>`,
+  // Butterfly
   `<svg viewBox="0 0 62 54">
   <path d="M30 25 C21 10 5 7 4 18 C3 27 14 31 30 28Z" fill="#E07818"/>
   <path d="M32 25 C41 10 57 7 58 18 C59 27 48 31 32 28Z" fill="#E07818"/>
   <path d="M30 28 C17 30 9 39 12 46 C15 51 25 47 30 37Z" fill="#D06014"/>
   <path d="M32 28 C45 30 53 39 50 46 C47 51 37 47 32 37Z" fill="#D06014"/>
-  <path d="M4 18 C3 27 14 31 30 28 C21 10 5 7 4 18Z" fill="none" stroke="#181008" stroke-width="5"/>
-  <path d="M58 18 C59 27 48 31 32 28 C41 10 57 7 58 18Z" fill="none" stroke="#181008" stroke-width="5"/>
-  <path d="M12 46 C15 51 25 47 30 37 C17 30 9 39 12 46Z" fill="none" stroke="#181008" stroke-width="4.5"/>
-  <path d="M50 46 C47 51 37 47 32 37 C45 30 53 39 50 46Z" fill="none" stroke="#181008" stroke-width="4.5"/>
-  <circle cx="7" cy="13" r="1.3" fill="#fff" opacity=".88"/><circle cx="13" cy="8" r="1.3" fill="#fff" opacity=".88"/>
-  <circle cx="55" cy="13" r="1.3" fill="#fff" opacity=".88"/><circle cx="49" cy="8" r="1.3" fill="#fff" opacity=".88"/>
+  <circle cx="13" cy="18" r="4" fill="#F8C840" opacity=".7"/>
+  <circle cx="47" cy="18" r="4" fill="#F8C840" opacity=".7"/>
+  <circle cx="15" cy="38" r="3" fill="#F8C840" opacity=".65"/>
+  <circle cx="45" cy="38" r="3" fill="#F8C840" opacity=".65"/>
+  <circle cx="7" cy="13" r="1.3" fill="#fff" opacity=".88"/>
+  <circle cx="55" cy="13" r="1.3" fill="#fff" opacity=".88"/>
   <rect x="29.5" y="10" width="3" height="34" rx="1.5" fill="#181008"/>
   <circle cx="31" cy="9" r="4" fill="#181008"/>
   <path d="M29 6 Q25 1 21 1M33 6 Q37 1 41 1" stroke="#181008" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>`,
+  // Dragonfly
   `<svg viewBox="0 0 62 54"><defs><linearGradient id="df" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5EC8B8"/><stop offset="100%" stop-color="#1E8878"/></linearGradient></defs>
   <ellipse cx="14" cy="17" rx="18" ry="5.5" fill="rgba(195,235,225,.44)" stroke="#34A898" stroke-width=".8" transform="rotate(-10 14 17)"/>
   <ellipse cx="48" cy="17" rx="18" ry="5.5" fill="rgba(195,235,225,.44)" stroke="#34A898" stroke-width=".8" transform="rotate(10 48 17)"/>
   <ellipse cx="14" cy="27" rx="16" ry="5" fill="rgba(195,235,225,.38)" stroke="#34A898" stroke-width=".7" transform="rotate(8 14 27)"/>
   <ellipse cx="48" cy="27" rx="16" ry="5" fill="rgba(195,235,225,.38)" stroke="#34A898" stroke-width=".7" transform="rotate(-8 48 27)"/>
   <rect x="27.5" y="14" width="7" height="36" rx="3.5" fill="url(#df)"/>
+  <circle cx="31" cy="28" r="2" fill="#0E5848" opacity=".5"/>
+  <circle cx="31" cy="35" r="2" fill="#0E5848" opacity=".5"/>
+  <circle cx="31" cy="42" r="2" fill="#0E5848" opacity=".5"/>
   <circle cx="31" cy="8" r="6" fill="#38A898"/>
-  <circle cx="27.5" cy="7" r="3.4" fill="#186870" opacity=".9"/><circle cx="34.5" cy="7" r="3.4" fill="#186870" opacity=".9"/></svg>`,
+  <circle cx="27.5" cy="7" r="3.4" fill="#186870" opacity=".9"/>
+  <circle cx="34.5" cy="7" r="3.4" fill="#186870" opacity=".9"/></svg>`,
+  // Firefly
   `<svg viewBox="0 0 60 52"><defs>
     <radialGradient id="ff" cx="35%" cy="28%" r="72%"><stop offset="0%" stop-color="#AA7C38"/><stop offset="58%" stop-color="#7A5820"/><stop offset="100%" stop-color="#583E10"/></radialGradient>
     <radialGradient id="glo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#C8E820" stop-opacity=".9"/><stop offset="100%" stop-color="#88A800" stop-opacity="0"/></radialGradient>
   </defs>
   <circle cx="30" cy="44" r="14" fill="url(#glo)"/>
   <path d="M30 12 C42 12 48 22 48 31 C48 40 40 46 30 46 C20 46 12 40 12 31 C12 22 18 12 30 12Z" fill="url(#ff)"/>
+  <circle cx="22" cy="26" r="2.5" fill="#583E10" opacity=".5"/>
+  <circle cx="38" cy="26" r="2.5" fill="#583E10" opacity=".5"/>
+  <circle cx="22" cy="35" r="2" fill="#583E10" opacity=".45"/>
+  <circle cx="38" cy="35" r="2" fill="#583E10" opacity=".45"/>
   <ellipse cx="30" cy="41" rx="8" ry="5" fill="#C8E820" opacity=".85"/>
   <circle cx="30" cy="9" r="4.5" fill="#6E5326"/>
   <path d="M27 5 q-2 -3 -5 -3M33 5 q2 -3 5 -3" stroke="#6E5326" stroke-width="1.1" fill="none" stroke-linecap="round"/></svg>`
 ];
-function setBug(n){if(el.bugInner)el.bugInner.innerHTML=BUGS[(n-1)%BUGS.length];}
 
-// ── Phoneme sound proxies ──
-// TTS proxy strings that produce actual mouth sounds, not letter names.
-// Consonants use a minimal schwa to force the stop/fricative without a long vowel.
-// Vowels use natural short-vowel carrier words stripped to just the nucleus sound.
-const P={
-  // consonants
-  b:"buh",  d:"duh",  f:"fff",  g:"guh",  h:"huh",
-  j:"juh",  k:"kuh",  l:"lll",  m:"mmm",  n:"nnn",
-  p:"puh",  r:"rrr",  s:"sss",  t:"tuh",  v:"vvv",
-  w:"wuh",  y:"yuh",  z:"zzz",
-  // short vowels
-  a:"aah",  e:"eh",   i:"ih",   o:"oh",   u:"uh",
-  // terminal blends (spoken as a smooth unit)
-  nd:"nd",  nt:"nt",  mp:"mp",  st:"st",  ft:"ft",  lt:"lt",  sk:"sk",
-  // initial blends
-  bl:"bluh", br:"bruh", cl:"kluh", cr:"kruh", dr:"druh", fl:"fluh",
-  fr:"fruh", gl:"gluh", gr:"gruh", pl:"pluh", pr:"pruh", sc:"skuh",
-  sk:"skuh", sl:"sluh", sm:"smuh", sn:"snuh", sp:"spuh", st:"stuh",
-  str:"struh", sw:"swuh", tr:"truh", tw:"twuh",
-  // x = /ks/
-  x:"ks",
-};
-
-// ── Phoneme map: word → [[ttsProxy, [letterIndices]], ...] ──
-const PHONEMES={
-  // function / grammar words — speak whole
-  "a":    [[P.a,[0]]],
-  "an":   [[P.a,[0]],[P.n,[1]]],
-  "the":  [["the",[0,1,2]]],
-  "and":  [[P.a,[0]],[P.n,[1]],[P.d,[2]]],
-  "can":  [[P.k,[0]],[P.a,[1]],[P.n,[2]]],
-  "had":  [[P.h,[0]],[P.a,[1]],[P.d,[2]]],
-  "got":  [[P.g,[0]],[P.o,[1]],[P.t,[2]]],
-  "has":  [[P.h,[0]],[P.a,[1]],[P.z,[2]]],
-  "in":   [[P.i,[0]],[P.n,[1]]],
-  "on":   [[P.o,[0]],[P.n,[1]]],
-  "up":   [[P.u,[0]],[P.p,[1]]],
-  "it":   [[P.i,[0]],[P.t,[1]]],
-  "him":  [[P.h,[0]],[P.i,[1]],[P.m,[2]]],
-  "us":   [[P.u,[0]],[P.z,[1]]],
-  "not":  [[P.n,[0]],[P.o,[1]],[P.t,[2]]],
-  "but":  [[P.b,[0]],[P.u,[1]],[P.t,[2]]],
-  "went": [[P.w,[0]],[P.e,[1]],[P.n,[2]],[P.t,[3]]],
-  "fast": [[P.f,[0]],[P.a,[1]],[P.st,[2,3]]],
-  // adjectives
-  "big":  [[P.b,[0]],[P.i,[1]],[P.g,[2]]],
-  "fat":  [[P.f,[0]],[P.a,[1]],[P.t,[2]]],
-  "fit":  [[P.f,[0]],[P.i,[1]],[P.t,[2]]],
-  "red":  [[P.r,[0]],[P.e,[1]],[P.d,[2]]],
-  "hot":  [[P.h,[0]],[P.o,[1]],[P.t,[2]]],
-  "wet":  [[P.w,[0]],[P.e,[1]],[P.t,[2]]],
-  "sad":  [[P.s,[0]],[P.a,[1]],[P.d,[2]]],
-  "mad":  [[P.m,[0]],[P.a,[1]],[P.d,[2]]],
-  "bad":  [[P.b,[0]],[P.a,[1]],[P.d,[2]]],
-  "dim":  [[P.d,[0]],[P.i,[1]],[P.m,[2]]],
-  "tan":  [[P.t,[0]],[P.a,[1]],[P.n,[2]]],
-  "fun":  [[P.f,[0]],[P.u,[1]],[P.n,[2]]],
-  // names
-  "kim":  [[P.k,[0]],[P.i,[1]],[P.m,[2]]],
-  "tim":  [[P.t,[0]],[P.i,[1]],[P.m,[2]]],
-  "ben":  [[P.b,[0]],[P.e,[1]],[P.n,[2]]],
-  "sam":  [[P.s,[0]],[P.a,[1]],[P.m,[2]]],
-  "pam":  [[P.p,[0]],[P.a,[1]],[P.m,[2]]],
-  "tom":  [[P.t,[0]],[P.o,[1]],[P.m,[2]]],
-  "bob":  [[P.b,[0]],[P.o,[1]],[P.b,[2]]],
-  "dan":  [[P.d,[0]],[P.a,[1]],[P.n,[2]]],
-  "ken":  [[P.k,[0]],[P.e,[1]],[P.n,[2]]],
-  "nat":  [[P.n,[0]],[P.a,[1]],[P.t,[2]]],
-  "ned":  [[P.n,[0]],[P.e,[1]],[P.d,[2]]],
-  "ron":  [[P.r,[0]],[P.o,[1]],[P.n,[2]]],
-  "jan":  [[P.j,[0]],[P.a,[1]],[P.n,[2]]],
-  "pat":  [[P.p,[0]],[P.a,[1]],[P.t,[2]]],
-  "don":  [[P.d,[0]],[P.o,[1]],[P.n,[2]]],
-  // animals
-  "pig":  [[P.p,[0]],[P.i,[1]],[P.g,[2]]],
-  "dog":  [[P.d,[0]],[P.o,[1]],[P.g,[2]]],
-  "fox":  [[P.f,[0]],[P.o,[1]],[P.x,[2]]],
-  "hen":  [[P.h,[0]],[P.e,[1]],[P.n,[2]]],
-  "cub":  [[P.k,[0]],[P.u,[1]],[P.b,[2]]],
-  "pup":  [[P.p,[0]],[P.u,[1]],[P.p,[2]]],
-  "rat":  [[P.r,[0]],[P.a,[1]],[P.t,[2]]],
-  "cat":  [[P.k,[0]],[P.a,[1]],[P.t,[2]]],
-  "bat":  [[P.b,[0]],[P.a,[1]],[P.t,[2]]],
-  "ox":   [[P.o,[0]],[P.x,[1]]],
-  "crab": [[P.cr,[0,1]],[P.a,[2]],[P.b,[3]]],
-  // verbs
-  "run":  [[P.r,[0]],[P.u,[1]],[P.n,[2]]],
-  "hop":  [[P.h,[0]],[P.o,[1]],[P.p,[2]]],
-  "jog":  [[P.j,[0]],[P.o,[1]],[P.g,[2]]],
-  "sit":  [[P.s,[0]],[P.i,[1]],[P.t,[2]]],
-  "dig":  [[P.d,[0]],[P.i,[1]],[P.g,[2]]],
-  "nap":  [[P.n,[0]],[P.a,[1]],[P.p,[2]]],
-  "jump": [[P.j,[0]],[P.u,[1]],[P.mp,[2,3]]],
-  "swim": [[P.sw,[0,1]],[P.i,[2]],[P.m,[3]]],
-  "flip": [[P.fl,[0,1]],[P.i,[2]],[P.p,[3]]],
-  "flop": [[P.fl,[0,1]],[P.o,[2]],[P.p,[3]]],
-  "trip": [[P.tr,[0,1]],[P.i,[2]],[P.p,[3]]],
-  "skip": [[P.sk,[0,1]],[P.i,[2]],[P.p,[3]]],
-  "stomp":[[P.st,[0,1]],[P.o,[2]],[P.mp,[3,4]]],
-  "drum": [[P.dr,[0,1]],[P.u,[2]],[P.m,[3]]],
-  "snap": [[P.sn,[0,1]],[P.a,[2]],[P.p,[3]]],
-  "stop": [[P.st,[0,1]],[P.o,[2]],[P.p,[3]]],
-  "win":  [[P.w,[0]],[P.i,[1]],[P.n,[2]]],
-  "zip":  [[P.z,[0]],[P.i,[1]],[P.p,[2]]],
-  "pop":  [[P.p,[0]],[P.o,[1]],[P.p,[2]]],
-  "wag":  [[P.w,[0]],[P.a,[1]],[P.g,[2]]],
-  "nod":  [[P.n,[0]],[P.o,[1]],[P.d,[2]]],
-  "sob":  [[P.s,[0]],[P.o,[1]],[P.b,[2]]],
-  "beg":  [[P.b,[0]],[P.e,[1]],[P.g,[2]]],
-  "hum":  [[P.h,[0]],[P.u,[1]],[P.m,[2]]],
-  "zap":  [[P.z,[0]],[P.a,[1]],[P.p,[2]]],
-  "lag":  [[P.l,[0]],[P.a,[1]],[P.g,[2]]],
-  "sag":  [[P.s,[0]],[P.a,[1]],[P.g,[2]]],
-  "get":  [[P.g,[0]],[P.e,[1]],[P.t,[2]]],
-  "grab": [[P.gr,[0,1]],[P.a,[2]],[P.b,[3]]],
-  "tap":  [[P.t,[0]],[P.a,[1]],[P.p,[2]]],
-  "rub":  [[P.r,[0]],[P.u,[1]],[P.b,[2]]],
-  "cut":  [[P.k,[0]],[P.u,[1]],[P.t,[2]]],
-  "grip": [[P.gr,[0,1]],[P.i,[2]],[P.p,[3]]],
-  "lift": [[P.l,[0]],[P.i,[1]],[P.ft,[2,3]]],
-  "test": [[P.t,[0]],[P.e,[1]],[P.st,[2,3]]],
-  "fix":  [[P.f,[0]],[P.i,[1]],[P.x,[2]]],
-  "mix":  [[P.m,[0]],[P.i,[1]],[P.x,[2]]],
-  "hit":  [[P.h,[0]],[P.i,[1]],[P.t,[2]]],
-  "pet":  [[P.p,[0]],[P.e,[1]],[P.t,[2]]],
-  "set":  [[P.s,[0]],[P.e,[1]],[P.t,[2]]],
-  "bet":  [[P.b,[0]],[P.e,[1]],[P.t,[2]]],
-  "hug":  [[P.h,[0]],[P.u,[1]],[P.g,[2]]],
-  "tag":  [[P.t,[0]],[P.a,[1]],[P.g,[2]]],
-  // things
-  "hat":  [[P.h,[0]],[P.a,[1]],[P.t,[2]]],
-  "bag":  [[P.b,[0]],[P.a,[1]],[P.g,[2]]],
-  "cap":  [[P.k,[0]],[P.a,[1]],[P.p,[2]]],
-  "mat":  [[P.m,[0]],[P.a,[1]],[P.t,[2]]],
-  "map":  [[P.m,[0]],[P.a,[1]],[P.p,[2]]],
-  "jam":  [[P.j,[0]],[P.a,[1]],[P.m,[2]]],
-  "ham":  [[P.h,[0]],[P.a,[1]],[P.m,[2]]],
-  "net":  [[P.n,[0]],[P.e,[1]],[P.t,[2]]],
-  "pen":  [[P.p,[0]],[P.e,[1]],[P.n,[2]]],
-  "wig":  [[P.w,[0]],[P.i,[1]],[P.g,[2]]],
-  "lid":  [[P.l,[0]],[P.i,[1]],[P.d,[2]]],
-  "fin":  [[P.f,[0]],[P.i,[1]],[P.n,[2]]],
-  "box":  [[P.b,[0]],[P.o,[1]],[P.x,[2]]],
-  "log":  [[P.l,[0]],[P.o,[1]],[P.g,[2]]],
-  "mop":  [[P.m,[0]],[P.o,[1]],[P.p,[2]]],
-  "pot":  [[P.p,[0]],[P.o,[1]],[P.t,[2]]],
-  "rod":  [[P.r,[0]],[P.o,[1]],[P.d,[2]]],
-  "cup":  [[P.k,[0]],[P.u,[1]],[P.p,[2]]],
-  "jug":  [[P.j,[0]],[P.u,[1]],[P.g,[2]]],
-  "mug":  [[P.m,[0]],[P.u,[1]],[P.g,[2]]],
-  "nut":  [[P.n,[0]],[P.u,[1]],[P.t,[2]]],
-  "rug":  [[P.r,[0]],[P.u,[1]],[P.g,[2]]],
-  "tub":  [[P.t,[0]],[P.u,[1]],[P.b,[2]]],
-  "yam":  [[P.y,[0]],[P.a,[1]],[P.m,[2]]],
-  "fig":  [[P.f,[0]],[P.i,[1]],[P.g,[2]]],
-  "pod":  [[P.p,[0]],[P.o,[1]],[P.d,[2]]],
-  "bun":  [[P.b,[0]],[P.u,[1]],[P.n,[2]]],
-  "bin":  [[P.b,[0]],[P.i,[1]],[P.n,[2]]],
-  "tin":  [[P.t,[0]],[P.i,[1]],[P.n,[2]]],
-  "pin":  [[P.p,[0]],[P.i,[1]],[P.n,[2]]],
-  "van":  [[P.v,[0]],[P.a,[1]],[P.n,[2]]],
-  "fan":  [[P.f,[0]],[P.a,[1]],[P.n,[2]]],
-  "cab":  [[P.k,[0]],[P.a,[1]],[P.b,[2]]],
-  "tab":  [[P.t,[0]],[P.a,[1]],[P.b,[2]]],
-  "lab":  [[P.l,[0]],[P.a,[1]],[P.b,[2]]],
-  "dab":  [[P.d,[0]],[P.a,[1]],[P.b,[2]]],
-  "pan":  [[P.p,[0]],[P.a,[1]],[P.n,[2]]],
-  "cot":  [[P.k,[0]],[P.o,[1]],[P.t,[2]]],
-  "lot":  [[P.l,[0]],[P.o,[1]],[P.t,[2]]],
-  "rot":  [[P.r,[0]],[P.o,[1]],[P.t,[2]]],
-  "sun":  [[P.s,[0]],[P.u,[1]],[P.n,[2]]],
-  "gun":  [[P.g,[0]],[P.u,[1]],[P.n,[2]]],
-  "bus":  [[P.b,[0]],[P.u,[1]],[P.z,[2]]],
-  "lip":  [[P.l,[0]],[P.i,[1]],[P.p,[2]]],
-  "hip":  [[P.h,[0]],[P.i,[1]],[P.p,[2]]],
-  "rip":  [[P.r,[0]],[P.i,[1]],[P.p,[2]]],
-  "dip":  [[P.d,[0]],[P.i,[1]],[P.p,[2]]],
-  "sip":  [[P.s,[0]],[P.i,[1]],[P.p,[2]]],
-  "kid":  [[P.k,[0]],[P.i,[1]],[P.d,[2]]],
-  "bid":  [[P.b,[0]],[P.i,[1]],[P.d,[2]]],
-  "rid":  [[P.r,[0]],[P.i,[1]],[P.d,[2]]],
-  "fog":  [[P.f,[0]],[P.o,[1]],[P.g,[2]]],
-  "bog":  [[P.b,[0]],[P.o,[1]],[P.g,[2]]],
-  "mud":  [[P.m,[0]],[P.u,[1]],[P.d,[2]]],
-  "bud":  [[P.b,[0]],[P.u,[1]],[P.d,[2]]],
-  "bed":  [[P.b,[0]],[P.e,[1]],[P.d,[2]]],
-  "led":  [[P.l,[0]],[P.e,[1]],[P.d,[2]]],
-  "fed":  [[P.f,[0]],[P.e,[1]],[P.d,[2]]],
-  "bit":  [[P.b,[0]],[P.i,[1]],[P.t,[2]]],
-  "kit":  [[P.k,[0]],[P.i,[1]],[P.t,[2]]],
-  "lit":  [[P.l,[0]],[P.i,[1]],[P.t,[2]]],
-  "pit":  [[P.p,[0]],[P.i,[1]],[P.t,[2]]],
-  "six":  [[P.s,[0]],[P.i,[1]],[P.x,[2]]],
-  "wax":  [[P.w,[0]],[P.a,[1]],[P.x,[2]]],
-  "top":  [[P.t,[0]],[P.o,[1]],[P.p,[2]]],
-  "hog":  [[P.h,[0]],[P.o,[1]],[P.g,[2]]],
-  "tax":  [[P.t,[0]],[P.a,[1]],[P.x,[2]]],
-  "tap":  [[P.t,[0]],[P.a,[1]],[P.p,[2]]],
-  // location syllables
-  "sand": [[P.s,[0]],[P.a,[1]],[P.nd,[2,3]]],
-  "pond": [[P.p,[0]],[P.o,[1]],[P.nd,[2,3]]],
-};
+const PAD_SVG=`<svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="pg" cx="40%" cy="35%" r="78%"><stop offset="0%" stop-color="#B8D898"/><stop offset="55%" stop-color="#88B468"/><stop offset="100%" stop-color="#608448"/></radialGradient></defs><ellipse cx="52" cy="95" rx="36" ry="5.5" fill="rgba(18,38,10,.17)"/><path d="M50 56 L52.51 16.08 A40 40 0 1 1 47.49 16.08 Z" fill="url(#pg)" stroke="#486830" stroke-width="2"/><path d="M50 56L50 96M50 56L84 76M50 56L90 44M50 56L73 17M50 56L27 17M50 56L10 44M50 56L16 76" stroke="#486830" stroke-width=".9" opacity=".4" fill="none"/><ellipse cx="38" cy="36" rx="12" ry="6.5" fill="rgba(255,255,255,.14)" transform="rotate(-18 38 36)"/></svg>`;
 
 const FONTS={andika:"'Andika',sans-serif",dancing:"'Dancing Script',cursive"};
-const DIGIT_GLYPHS={
-  "4":'<svg viewBox="-7 -7 114 134" aria-hidden="true">'
-     +'<path d="M10 6 L10 76 Q10 86 26 84 L92 84" stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
-     +'<path d="M60 36 L61 114" stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round"/>'
-     +'</svg>'
-};
-function renderSandNumber(target,n){
-  target.innerHTML="";
-  String(n).split("").forEach(ch=>{
-    if(DIGIT_GLYPHS[ch]){const g=document.createElement("span");g.className="sand-glyph";g.innerHTML=DIGIT_GLYPHS[ch];target.appendChild(g);}
-    else target.appendChild(document.createTextNode(ch));
-  });
-}
-
-// ── Word lists (100% decodable: short vowel, CVC/blends, no digraphs, no double-terminal) ──
-const NAMES=["kim","tim","ben","sam","pam","tom","bob","dan","ken","nat","ned","ron","jan","pat","don"];
-const ANIMAL_VERBS={
-  pig:["run","dig","nap","sit","jump"],
-  dog:["run","dig","sit","hop","jump"],
-  fox:["run","dig","sit","jump"],
-  hen:["run","sit","nap"],
-  cub:["run","nap","sit","jump"],
-  pup:["run","nap","sit","jump","dig"],
-  rat:["run","dig","nap","sit"],
-  cat:["run","nap","sit","jump"],
-  bat:["flip"],
-  ox:["run","dig"]
-};
-const ANIMALS=Object.keys(ANIMAL_VERBS);
-const ADJ_ANIMAL=["big","fat","red","wet"];
-const THINGS=["hat","bag","cap","mat","map","jam","net","pen","wig","lid","fin","box","log","mop","pot","rod","cup","jug","mug","nut","rug","tub","yam","fig","pod","bun","bin","tin","pin","van","fan","cab","pan","cot","rip","dip","sip","kid","mud","bed","kit","pit","top","tap","bat","dab"];
-const SMALL_THINGS=["hat","bag","cap","map","jam","net","pen","wig","lid","fin","mop","pot","rod","cup","jug","mug","nut","rug","yam","fig","pod","bun","bin","tin","pin","fan","cab","pan","cot","dip","sip","kid","mud","bed","kit","pit","top","tap","dab"];
-const ADJ_THING=["big","red","hot","wet","fat","sad","mad","bad","fun"];
-const VI=["run","hop","jog","sit","dig","nap","jump","swim","flip","flop","trip","skip","stomp","drum","snap","stop","zip","pop","nod","hum"];
-const VT=["get","grab","tap","rub","cut","grip","lift","hit","pet","set","hug"];
-const VTF=["hug","pat","grab","get","tag","hit","pet","set"];
-const PRON=["it","him","us"];
-const VTO={
-  get:THINGS,grab:THINGS,
-  lift:["bag","box","log","mug","jug","pot","rod","mat","rug","cup","lid","tub"],
-  tap:["pen","mug","cup","pot","box","lid","rod"],
-  rub:["mat","rug","lid","pot","mop"],
-  cut:["rug","mat","net","log","fig","bun","yam"],
-  grip:["rod","bag","cup","mug","jug","pen","box"],
-  hit:["pot","lid","box","drum","rod","log"],
-  pet:["dog","cat","pup","rat","hen","cub"],
-  set:["pot","cup","mug","jug","mat","lid","pan"],
-  hug:["pup","cub","cat","dog","pig","rat"]
-};
-const LOC={
-  run:[["on the sand","on sand"],["in the mud","in mud"]],
-  hop:[["on a mat","on mat"],["on a log","on log"],["on the sand","on sand"]],
-  jog:[["on the sand","on sand"],["on a mat","on mat"]],
-  sit:[["on a mat","on mat"],["on a rug","on rug"],["in a tub","in tub"],["in a box","in box"]],
-  dig:[["in the sand","in sand"],["in the mud","in mud"]],
-  nap:[["on a mat","on mat"],["in a box","in box"]],
-  jump:[["on a mat","on mat"],["in the mud","in mud"]],
-  swim:[["in a pond","in pond"],["in a tub","in tub"],["in the mud","in mud"]],
-  flip:[["on a mat","on mat"],["on a rug","on rug"]],
-  flop:[["on a mat","on mat"],["in the mud","in mud"]],
-  trip:[["on a rug","on rug"],["on a mat","on mat"]],
-  skip:[["on the sand","on sand"],["on a mat","on mat"]],
-  stomp:[["in the mud","in mud"],["on a mat","on mat"],["on a log","on log"]]
-};
-const LOC_V=Object.keys(LOC).filter(v=>VI.includes(v));
-const IN_P=[["a box","box"],["a van","van"],["a cab","cab"],["a tub","tub"],["a bag","bag"]];
-
-function pick(a){return a[Math.floor(Math.random()*a.length)];}
-function art(n){if(state.sentenceStyle==="decodable")return n;return/^[aeiou]/i.test(n)?"an "+n:"a "+n;}
-function locP(v){const p=pick(LOC[v]);return state.sentenceStyle==="decodable"?p[1]:p[0];}
-function alvb(a){const ok=ANIMAL_VERBS[a].filter(v=>LOC[v]);return ok.length?pick(ok):null;}
-function objF(v){return pick(VTO[v]||THINGS);}
-function sObj(v){const a=(VTO[v]||THINGS).filter(t=>SMALL_THINGS.includes(t));return a.length?pick(a):pick(SMALL_THINGS);}
-function nm(){return pick(NAMES);}
-
-// ── Child-friendly sentence templates ──
-const TMPL=[
-  // simple "X can Y"
-  ()=>`${nm()} can ${pick(VI)}.`,
-  ()=>`${nm()} can ${pick(VI)}.`,
-  ()=>`${nm()} can ${pick(VI)} fast.`,
-  // animal "X can Y"
-  ()=>{const a=pick(ANIMALS);return`${art(a)} can ${pick(ANIMAL_VERBS[a])}.`;},
-  ()=>{const a=pick(ANIMALS);return`${art(a)} can ${pick(ANIMAL_VERBS[a])}.`;},
-  ()=>{const a=pick(ANIMALS);return`${art(a)} can ${pick(ANIMAL_VERBS[a])} fast.`;},
-  // adj animal
-  ()=>{const a=pick(ANIMALS);return`${art(pick(ADJ_ANIMAL)+" "+a)} can ${pick(ANIMAL_VERBS[a])}.`;},
-  // X can verb object
-  ()=>{const v=pick(VT);return`${nm()} can ${v} ${art(objF(v))}.`;},
-  ()=>{const v=pick(VT);return`${nm()} can ${v} ${art(objF(v))}.`;},
-  // X had/got object
-  ()=>`${nm()} had ${art(pick(THINGS))}.`,
-  ()=>`${nm()} got ${art(pick(THINGS))}.`,
-  // adj thing
-  ()=>`${nm()} got ${art(pick(ADJ_THING)+" "+pick(THINGS))}.`,
-  // X can verb pronoun
-  ()=>`${nm()} can ${pick(VTF)} ${pick(PRON)}.`,
-  // X can verb animal
-  ()=>{const v=pick(["pet","hug","pat","get","tag"]);const a=pick(ANIMALS);return`${nm()} can ${v} ${art(a)}.`;},
-  // X can Y location
-  ()=>{const v=pick(LOC_V);return`${nm()} can ${v} ${locP(v)}.`;},
-  ()=>{const v=pick(LOC_V);return`${nm()} can ${v} ${locP(v)}.`;},
-  // animal can Y location
-  ()=>{const a=pick(ANIMALS);const v=alvb(a);return v?`${art(a)} can ${v} ${locP(v)}.`:`${art(a)} can ${pick(ANIMAL_VERBS[a])}.`;},
-  // X can verb thing in place
-  ()=>{const v=pick(["get","grab","lift","grip"]);const t=sObj(v);let p=pick(IN_P),g=0;while(p[1]===t&&g++<8)p=pick(IN_P);const pl=state.sentenceStyle==="decodable"?p[1]:p[0];return`${nm()} can ${v} ${art(t)} in ${pl}.`;},
-  // warm narrative sentences
-  ()=>{const n1=nm();const n2=pick(NAMES.filter(n=>n!==n1));return`${n1} and ${n2} can ${pick(VI)}.`;},
-  ()=>`${nm()} can ${pick(VT)} ${art(objF(pick(VT)))}.`,
-  ()=>{const a=pick(ANIMALS);return`${nm()} has ${art(a)}.`;},
-  ()=>{const a=pick(ANIMALS);return`${art(pick(ADJ_ANIMAL)+" "+a)} can hop.`;},
-  ()=>`${nm()} can run and hop.`,
-  ()=>`${nm()} can sit and nap.`,
-];
-function genSentence(){return pick(TMPL)().replace(/\s+/g," ").trim();}
-function genRound(n){const s=new Set();let g=0;while(s.size<n&&g<n*60){s.add(genSentence());g++;}return Array.from(s);}
-
 const THEMES=[
   {sky:"#E8E4D4",water:"#4A7C68",leaf:"#5A8C3C",leafD:"#3C6828"},
   {sky:"#E4DEC8",water:"#5A8090",leaf:"#4A8050",leafD:"#306038"},
   {sky:"#E4D8C0",water:"#A07848",leaf:"#90884C",leafD:"#686030"},
   {sky:"#485860",water:"#304850",leaf:"#4A5C48",leafD:"#384430"}
 ];
+
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function pickExcept(a,ex){const f=a.filter(x=>x!==ex);return f.length?pick(f):pick(a);}
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+
+// ── Sentence builders ──
+// Each returns {text, type:'past'|'can', name, animal, verb, location}
+
+function b1_nameVerb(last){
+  const name=pickExcept(NAMES,last.name);
+  const verb=pickExcept(PAST_VERBS,last.verb);
+  return{text:`${cap(name)} ${verb}.`,type:'past',name,animal:null,verb,location:null};
+}
+function b2_nameVerbLoc(last){
+  const name=pickExcept(NAMES,last.name);
+  const verb=pickExcept(PAST_VERBS,last.verb);
+  const pool=LOCS_PAST[verb].filter(l=>l!==last.location);
+  const location=pick(pool.length?pool:LOCS_PAST[verb]);
+  return{text:`${cap(name)} ${verb} ${location}.`,type:'past',name,animal:null,verb,location};
+}
+function b3_nameCanVerb(last){
+  const name=pickExcept(NAMES,last.name);
+  const verb=pickExcept(CAN_VERBS,last.verb);
+  return{text:`${cap(name)} can ${verb}.`,type:'can',name,animal:null,verb,location:null};
+}
+function b4_nameCanVerbLoc(last){
+  const name=pickExcept(NAMES,last.name);
+  const verb=pickExcept(CAN_VERBS,last.verb);
+  const pool=(LOCS_CAN[verb]||LOCS_CAN.run).filter(l=>l!==last.location);
+  const location=pick(pool.length?pool:LOCS_CAN[verb]||LOCS_CAN.run);
+  return{text:`${cap(name)} can ${verb} ${location}.`,type:'can',name,animal:null,verb,location};
+}
+function b5_animalVerbLoc(last){
+  const verb=pickExcept(PAST_VERBS,last.verb);
+  const aPool=(ANIMAL_COMPAT_PAST[verb]||ANIMALS).filter(a=>a!==last.animal);
+  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_PAST[verb]||ANIMALS);
+  const lPool=LOCS_PAST[verb].filter(l=>l!==last.location);
+  const location=pick(lPool.length?lPool:LOCS_PAST[verb]);
+  return{text:`${cap(animal)} ${verb} ${location}.`,type:'past',name:null,animal,verb,location};
+}
+function b6_animalCanVerbLoc(last){
+  const verb=pickExcept(CAN_VERBS,last.verb);
+  const aPool=(ANIMAL_COMPAT_CAN[verb]||ANIMALS).filter(a=>a!==last.animal);
+  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_CAN[verb]||ANIMALS);
+  const lPool=(LOCS_CAN[verb]||LOCS_CAN.run).filter(l=>l!==last.location);
+  const location=pick(lPool.length?lPool:LOCS_CAN[verb]||LOCS_CAN.run);
+  return{text:`${cap(animal)} can ${verb} ${location}.`,type:'can',name:null,animal,verb,location};
+}
+function b7_adjAnimalVerbLoc(last){
+  const verb=pickExcept(PAST_VERBS,last.verb);
+  const aPool=(ANIMAL_COMPAT_PAST[verb]||ANIMALS).filter(a=>a!==last.animal);
+  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_PAST[verb]||ANIMALS);
+  const adj=pick(ADJS);
+  const lPool=LOCS_PAST[verb].filter(l=>l!==last.location);
+  const location=pick(lPool.length?lPool:LOCS_PAST[verb]);
+  return{text:`${cap(adj)} ${animal} ${verb} ${location}.`,type:'past',name:null,animal,verb,location};
+}
+function b8_adjAnimalCanVerbLoc(last){
+  const verb=pickExcept(CAN_VERBS,last.verb);
+  const aPool=(ANIMAL_COMPAT_CAN[verb]||ANIMALS).filter(a=>a!==last.animal);
+  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_CAN[verb]||ANIMALS);
+  const adj=pick(ADJS);
+  const lPool=(LOCS_CAN[verb]||LOCS_CAN.run).filter(l=>l!==last.location);
+  const location=pick(lPool.length?lPool:LOCS_CAN[verb]||LOCS_CAN.run);
+  return{text:`${cap(adj)} ${animal} can ${verb} ${location}.`,type:'can',name:null,animal,verb,location};
+}
+
+// Past builders (categories 1,2,5,7) and can builders (3,4,6,8)
+const PAST_BUILDERS=[b1_nameVerb,b2_nameVerbLoc,b5_animalVerbLoc,b7_adjAnimalVerbLoc];
+const CAN_BUILDERS=[b3_nameCanVerb,b4_nameCanVerbLoc,b6_animalCanVerbLoc,b8_adjAnimalCanVerbLoc];
+
+// ── Verb base map — treats ran/run, sat/sit etc. as same verb ──
+const VERB_BASE={ran:"run",sat:"sit",dug:"dig",swam:"swim",
+  run:"run",sit:"sit",dig:"dig",swim:"swim",
+  hop:"hop",jog:"jog",zip:"zip",nap:"nap"};
+function verbBase(v){return VERB_BASE[v]||v;}
+
+// ── Session-level used sentences set ──
+let usedSentences=new Set();
+
+function genRound(n){
+  const sentences=[];
+  let last={type:null,name:null,animal:null,verb:null,location:null};
+  // Track verb bases used in this pond — no verb base repeats within a pond
+  const usedVerbBases=new Set();
+  // Shuffle builder pools each pond for variety
+  const pastPool=shuffle([...PAST_BUILDERS]);
+  const canPool=shuffle([...CAN_BUILDERS]);
+  let pi=0,ci=0;
+  // Strict alternation: start with past or can randomly
+  let nextType=Math.random()<.5?'past':'can';
+
+  let attempts=0;
+  while(sentences.length<n&&attempts<n*60){
+    attempts++;
+    const builders=nextType==='past'?pastPool:canPool;
+    const idx=nextType==='past'?pi%pastPool.length:ci%canPool.length;
+    const builder=builders[idx];
+    const s=builder(last);
+    const vb=verbBase(s.verb);
+    // Check not used in session
+    if(usedSentences.has(s.text)){
+      if(nextType==='past')pi++;else ci++;
+      continue;
+    }
+    // Check verb base not already used in this pond
+    if(usedVerbBases.has(vb)){
+      if(nextType==='past')pi++;else ci++;
+      continue;
+    }
+    // Check no consecutive same name/animal/location
+    if((s.name&&s.name===last.name)||(s.animal&&s.animal===last.animal)||(s.location&&s.location===last.location)){
+      if(nextType==='past')pi++;else ci++;
+      continue;
+    }
+    usedSentences.add(s.text);
+    usedVerbBases.add(vb);
+    sentences.push(s.text);
+    last=s;
+    if(nextType==='past')pi++;else ci++;
+    nextType=nextType==='past'?'can':'past';
+  }
+  // If pool exhausted, reset and try again
+  if(sentences.length<n){
+    usedSentences.clear();
+    return genRound(n);
+  }
+  return sentences;
+}
+
+// ── State ──
+let state={roundLength:5,speechRate:.78,voiceName:null,readFont:"dancing",sentences:[],index:0,pondsCompleted:0};
+const el={};
+
+function cacheEls(){
+  ["settingsBtn","settingsModal","closeSettings","closeSettingsTop",
+   "roundOptions","fontOptions","speedOptions","voiceSelect",
+   "sentenceText","readBtn","doneBtn","prevBtn","padsRow","frog","trackBug","bugInner","lilyCard",
+   "pondContainer","pondCountDisplay","resetProgress","landBank",
+   "pondNextOverlay","pondNextNum","btnLetsHop"
+  ].forEach(id=>{el[id]=document.getElementById(id);});
+}
+
 function applyTheme(n){
   const t=THEMES[(n-1)%THEMES.length];
   document.body.style.backgroundColor=t.sky;
   if(el.pondContainer)el.pondContainer.style.backgroundColor=t.water;
   document.documentElement.style.setProperty("--leaf",t.leaf);
   document.documentElement.style.setProperty("--leaf-deep",t.leafD);
-  document.documentElement.style.setProperty("--pond",t.water);
-  setBug(n);
+  if(el.bugInner)el.bugInner.innerHTML=BUGS[(n-1)%BUGS.length];
 }
 function applyFont(){
-  const fam=FONTS[state.readFont]||FONTS.dancing;
-  document.documentElement.style.setProperty("--read-font",fam);
-  document.documentElement.style.setProperty("--ui-font",state.readFont==="andika"?fam:"'Dancing Script',cursive");
+  document.documentElement.style.setProperty("--read-font",FONTS[state.readFont]||FONTS.dancing);
 }
 
-let state={roundLength:5,speechRate:.78,voiceName:null,sentenceStyle:"decodable",readFont:"dancing",sentences:[],index:0,pondsCompleted:0};
-const el={};
-function cacheEls(){
-  ["settingsBtn","settingsModal","closeSettings","closeSettingsTop",
-   "roundOptions","styleOptions","fontOptions","speedOptions","voiceSelect",
-   "sentenceText","readBtn","doneBtn","prevBtn","nextBtn","padsRow","frog","trackBug","bugInner","lilyCard",
-   "pondContainer","pondCountDisplay","resetProgress","landBank",
-   "pondNextOverlay","pondNextNum","btnLetsHop"
-  ].forEach(id=>{el[id]=document.getElementById(id);});
-}
-
+// ── Positioning ──
 function padCenter(i){
   const pads=el.padsRow.querySelectorAll('.pad');if(!pads[i])return null;
   const tr=el.pondContainer.getBoundingClientRect(),pd=pads[i].getBoundingClientRect();
@@ -727,89 +588,68 @@ function landCenter(){
   return((lb.left+lb.width/2-tr.left)/tr.width)*100;
 }
 function bugTargetPct(){
-  const last=state.roundLength-1;if(state.index>=last)return landCenter();
+  if(state.index>=state.roundLength-1)return landCenter();
   const c1=padCenter(state.index),c2=padCenter(state.index+1);
   return(c1!==null&&c2!==null)?(c1+c2)/2:50;
 }
-function setFrogPos(pct,animate){
-  if(!animate)el.frog.style.transition="none";
+function setFrogPos(pct,anim){
+  if(!anim)el.frog.style.transition="none";
   el.frog.style.left=pct+"%";
-  if(!animate)requestAnimationFrame(()=>{el.frog.style.transition="";});
+  if(!anim)requestAnimationFrame(()=>{el.frog.style.transition="";});
 }
-function setBugPos(pct,animate){
-  if(!animate)el.trackBug.style.transition="none";
+function setBugPos(pct,anim){
+  if(!anim)el.trackBug.style.transition="none";
   el.trackBug.style.left=pct+"%";
-  if(!animate)requestAnimationFrame(()=>{el.trackBug.style.transition="";});
+  if(!anim)requestAnimationFrame(()=>{el.trackBug.style.transition="";});
 }
-function posAll(anim){
+function posAll(){
   const fc=padCenter(Math.min(state.index,state.roundLength-1));
-  if(fc!==null)setFrogPos(fc,anim);
-  setBugPos(bugTargetPct(),anim);
+  if(fc!==null)setFrogPos(fc,false);
+  setBugPos(bugTargetPct(),false);
 }
 
-// ── Render sentence with per-letter spans ──
-let wordEls=[];   // [{wordEl, ltrEls:[]}]
+// ── Render ──
+let wordEls=[];
 function renderSentence(txt){
   el.sentenceText.innerHTML="";wordEls=[];
   const tokens=txt.split(" ");
   tokens.forEach((w,wi)=>{
     const clean=w.replace(/[^a-z]/gi,"").toLowerCase();
-    const punct=w.slice(clean.length); // trailing punctuation like "."
-    const wSpan=document.createElement("span");
-    wSpan.className="word";
-    // build letter spans
-    const ltrEls=[];
-    clean.split("").forEach(ch=>{
-      const ls=document.createElement("span");ls.className="ltr";ls.textContent=ch;
-      wSpan.appendChild(ls);ltrEls.push(ls);
-    });
-    if(punct){wSpan.appendChild(document.createTextNode(punct));}
-    wSpan.addEventListener("click",()=>speakWord(wi));
-    wSpan.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();speakWord(wi);}});
-    wSpan.setAttribute("role","button");wSpan.setAttribute("tabindex","0");
-    el.sentenceText.appendChild(wSpan);
+    const punct=w.slice(clean.length);
+    const sp=document.createElement("span");sp.className="word";
+    clean.split("").forEach(ch=>{const l=document.createElement("span");l.className="ltr";l.textContent=ch;sp.appendChild(l);});
+    if(punct)sp.appendChild(document.createTextNode(punct));
+    sp.addEventListener("click",()=>speakWord(wi));
+    sp.setAttribute("role","button");sp.setAttribute("tabindex","0");
+    el.sentenceText.appendChild(sp);
     if(wi<tokens.length-1)el.sentenceText.appendChild(document.createTextNode(" "));
-    wordEls.push({wordEl:wSpan,ltrEls,clean});
+    wordEls.push({wordEl:sp,clean});
   });
 }
-
-function clrAllHL(){
-  wordEls.forEach(({wordEl,ltrEls})=>{
-    wordEl.classList.remove("blend-on","sentence-hl");
-    ltrEls.forEach(l=>l.classList.remove("ph-on"));
-  });
-}
+function clrHL(){wordEls.forEach(({wordEl})=>wordEl.classList.remove("sentence-hl"));}
 
 function renderPads(){
   el.padsRow.innerHTML="";
   for(let i=0;i<state.roundLength;i++){
     const p=document.createElement("div");
-    const done=i<state.index,active=i===state.index;
-    p.className="pad"+(done?" done":active?" active":"");
+    p.className="pad"+(i<state.index?" done":i===state.index?" active":"");
     p.innerHTML=PAD_SVG;
-    if(done){
+    if(i<state.index){
       p.classList.add("tappable");p.setAttribute("role","button");p.setAttribute("tabindex","0");
       p.addEventListener("click",()=>goTo(i));
-      p.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();goTo(i);}});
     }
     el.padsRow.appendChild(p);
   }
-  requestAnimationFrame(()=>posAll(false));
+  requestAnimationFrame(posAll);
 }
-function updateBadge(){if(el.pondCountDisplay)renderSandNumber(el.pondCountDisplay,state.pondsCompleted+1);}
-function showSentence(){renderSentence(state.sentences[state.index]);renderPads();updateNavBtns();}
-function updateNavBtns(){el.prevBtn.disabled=state.index<=0;el.nextBtn.disabled=state.index>=state.sentences.length-1;}
-
-function highlightPad(idx){
-  const pads=el.padsRow.querySelectorAll('.pad');
-  const p=pads[idx];if(p)p.classList.add('next-active');return p;
-}
+function updateBadge(){if(el.pondCountDisplay)el.pondCountDisplay.textContent=state.pondsCompleted+1;}
+function showSentence(){renderSentence(state.sentences[state.index]);renderPads();el.prevBtn.disabled=state.index<=0;}
 
 // ── Speech ──
-let sOk=false,sess=0,phSess=0;
+let sOk=false,sess=0;
 function getVoice(){
   if(!sOk)return null;
-  const vs=window.speechSynthesis.getVoices();if(!vs.length)return null;
+  const vs=window.speechSynthesis.getVoices();
   if(state.voiceName){const m=vs.find(v=>v.name===state.voiceName);if(m)return m;}
   return null;
 }
@@ -818,69 +658,45 @@ function spk(text,rate,pitch,cb){
   const u=new SpeechSynthesisUtterance(text);
   u.rate=rate;u.pitch=pitch;
   const v=getVoice();if(v)u.voice=v;
-  u.onend=()=>{if(cb)cb();};
-  u.onerror=()=>{if(cb)cb();};
+  u.onend=()=>{if(cb)cb();};u.onerror=()=>{if(cb)cb();};
   window.speechSynthesis.speak(u);
 }
-
-// Speak full sentence word by word with sentence-level highlight
-function toSpk(w){return w==="a"?"uh":w;}
 function speakSentence(){
   if(!sOk)return;
-  const my=++sess;phSess++;
-  window.speechSynthesis.cancel();
-  clrAllHL();
+  const my=++sess;window.speechSynthesis.cancel();clrHL();
   let i=0;
   function nxt(){
-    if(my!==sess)return;
-    clrAllHL();
+    if(my!==sess)return;clrHL();
     if(i>=wordEls.length)return;
     const{wordEl,clean}=wordEls[i];
     wordEl.classList.add("sentence-hl");
     const last=i===wordEls.length-1;
-    const txt=toSpk(clean)||".";
-    spk(txt,state.speechRate,last?.9:1.02,()=>{
-      i++;setTimeout(nxt,last?0:120);
-    });
+    spk(clean||".",state.speechRate,last?.9:1.02,()=>{i++;setTimeout(nxt,last?0:120);});
   }
   nxt();
 }
-
-// Speak a single word — highlight whole word and read it
 function speakWord(wi){
   if(!sOk)return;
-  const my=++phSess;sess++;
-  window.speechSynthesis.cancel();
-  clrAllHL();
-  const{wordEl,clean}=wordEls[wi];
-  if(!clean)return;
-  wordEl.classList.add("blend-on");
-  spk(toSpk(clean),state.speechRate,1.05,()=>{
-    setTimeout(()=>{if(phSess===my)wordEl.classList.remove("blend-on");},350);
-  });
+  sess++;window.speechSynthesis.cancel();clrHL();
+  const{wordEl,clean}=wordEls[wi];if(!clean)return;
+  wordEl.classList.add("sentence-hl");
+  spk(clean,state.speechRate,1.05,()=>{setTimeout(()=>wordEl.classList.remove("sentence-hl"),350);});
 }
-
-function stopSpeech(){
-  sess++;phSess++;
-  if(sOk)window.speechSynthesis.cancel();
-  clrAllHL();
-}
-
-// ── Hop sound ──
-
+function stopSpeech(){sess++;if(sOk)window.speechSynthesis.cancel();clrHL();}
 
 // ── Navigation ──
 let transitioning=false;
 function goTo(ni){
   if(transitioning||ni<0||ni>=state.sentences.length||ni===state.index)return;
   transitioning=true;stopSpeech();
-  const hl=highlightPad(ni);
+  const pads=el.padsRow.querySelectorAll('.pad');
+  if(pads[ni])pads[ni].classList.add('next-active');
   setTimeout(()=>{
-    if(hl)hl.classList.remove('next-active');
+    if(pads[ni])pads[ni].classList.remove('next-active');
     state.index=ni;
     const fc=padCenter(ni);if(fc!==null)setFrogPos(fc,true);
     el.frog.classList.add("hopping");el.trackBug.classList.add("fluttering");
-    setTimeout(()=>{setBugPos(bugTargetPct(),true);},100);
+    setTimeout(()=>setBugPos(bugTargetPct(),true),100);
     setTimeout(()=>{el.frog.classList.remove("hopping");el.trackBug.classList.remove("fluttering");showSentence();transitioning=false;},600);
   },480);
 }
@@ -901,7 +717,7 @@ function runPondComplete(){
         setTimeout(()=>rip.remove(),1000);
         setTimeout(()=>{
           el.lilyCard.classList.remove("win");
-          renderSandNumber(el.pondNextNum,state.pondsCompleted+1);
+          el.pondNextNum.textContent=state.pondsCompleted+1;
           el.pondNextOverlay.hidden=false;
         },800);
       },520);
@@ -913,12 +729,12 @@ function nextStep(){
   if(transitioning)return;transitioning=true;stopSpeech();
   const ni=state.index+1;
   if(ni<state.roundLength){
-    const hl=highlightPad(ni);
+    const pads=el.padsRow.querySelectorAll('.pad');
+    if(pads[ni])pads[ni].classList.add('next-active');
     setTimeout(()=>{
-      if(hl)hl.classList.remove('next-active');
-      const futureBugPct=(ni>=state.roundLength-1)
-        ?landCenter()
-        :(()=>{const c1=padCenter(ni),c2=padCenter(ni+1);return(c1!==null&&c2!==null)?(c1+c2)/2:50;})();
+      if(pads[ni])pads[ni].classList.remove('next-active');
+      const futureBugPct=ni>=state.roundLength-1?landCenter()
+        :(()=>{const c1=padCenter(ni),c2=padCenter(ni+1);return c1!==null&&c2!==null?(c1+c2)/2:50;})();
       el.trackBug.classList.add("fluttering");setBugPos(futureBugPct,true);
       setTimeout(()=>{
         el.trackBug.classList.remove("fluttering");
@@ -927,17 +743,18 @@ function nextStep(){
         setTimeout(()=>{el.frog.classList.remove("hopping");state.index=ni;showSentence();transitioning=false;},580);
       },260);
     },480);
-  } else {
-    state.pondsCompleted++;updateBadge();renderPads();
-    runPondComplete();
+  }else{
+    state.pondsCompleted++;updateBadge();renderPads();runPondComplete();
   }
 }
 
 function resetBug(){el.trackBug.hidden=false;el.trackBug.classList.remove("caught","fluttering");}
 function newPond(){
   stopSpeech();resetBug();
-  state.sentences=genRound(state.roundLength);state.index=0;
-  applyTheme(state.pondsCompleted+1);updateBadge();showSentence();
+  state.sentences=genRound(state.roundLength);
+  state.index=0;
+  applyTheme(state.pondsCompleted+1);
+  updateBadge();showSentence();
 }
 
 function populateVoices(){
@@ -950,24 +767,29 @@ function populateVoices(){
   el.voiceSelect.innerHTML="";
   list.forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=(v.name+(v.lang?" ("+v.lang+")":"")).toLowerCase();el.voiceSelect.appendChild(o);});
   if(state.voiceName&&list.some(v=>v.name===state.voiceName)){el.voiceSelect.value=state.voiceName;}
-  else{const p=list.find(v=>/heera/i.test(v.name))||list.find(v=>/natural|enhanced|premium|google|samantha|aria|jenny/i.test(v.name))||list[0];if(p){state.voiceName=p.name;el.voiceSelect.value=p.name;}}
+  else{const p=list.find(v=>/natural|enhanced|premium|google|samantha|aria|jenny/i.test(v.name))||list[0];if(p){state.voiceName=p.name;el.voiceSelect.value=p.name;}}
 }
 
 function markSel(c,a,v){c.querySelectorAll("button").forEach(b=>b.classList.toggle("sel",b.getAttribute(a)===String(v)));}
 function openSetting(){
   markSel(el.speedOptions,"data-speed",state.speechRate);
-  markSel(el.styleOptions,"data-style",state.sentenceStyle);
   markSel(el.roundOptions,"data-n",state.roundLength);
   markSel(el.fontOptions,"data-font",state.readFont);
   el.settingsModal.hidden=false;
 }
-function closeSetting(){disarmReset();el.settingsModal.hidden=true;}
+function closeSetting(){el.settingsModal.hidden=true;}
+
 let resetArmed=false,resetTimer=null;
-function armReset(){resetArmed=true;el.resetProgress.textContent="tap again to confirm";el.resetProgress.style.color="var(--coral-deep)";clearTimeout(resetTimer);resetTimer=setTimeout(disarmReset,4000);}
-function disarmReset(){resetArmed=false;clearTimeout(resetTimer);el.resetProgress.textContent="reset all progress";el.resetProgress.style.color="var(--coral)";}
+function armReset(){
+  resetArmed=true;
+  el.resetProgress.textContent="tap again to confirm";
+  clearTimeout(resetTimer);
+  resetTimer=setTimeout(()=>{resetArmed=false;el.resetProgress.textContent="reset all progress";},4000);
+}
 function doReset(){
-  disarmReset();
-  state.pondsCompleted=0;state.roundLength=5;state.speechRate=.78;state.sentenceStyle="decodable";state.readFont="dancing";
+  resetArmed=false;clearTimeout(resetTimer);
+  state.pondsCompleted=0;state.roundLength=5;state.speechRate=.78;state.readFont="dancing";
+  usedSentences.clear();
   el.pondNextOverlay.hidden=true;transitioning=false;
   applyFont();applyTheme(1);updateBadge();closeSetting();newPond();
 }
@@ -976,16 +798,14 @@ function wireEvents(){
   el.readBtn.addEventListener("click",speakSentence);
   el.doneBtn.addEventListener("click",()=>{if(!transitioning)nextStep();});
   el.prevBtn.addEventListener("click",()=>goTo(state.index-1));
-  el.nextBtn.addEventListener("click",()=>goTo(state.index+1));
   el.settingsBtn.addEventListener("click",openSetting);
   el.closeSettings.addEventListener("click",closeSetting);
   el.closeSettingsTop.addEventListener("click",closeSetting);
   el.btnLetsHop.addEventListener("click",()=>{el.pondNextOverlay.hidden=true;transitioning=false;newPond();});
   el.resetProgress.addEventListener("click",()=>{if(!resetArmed){armReset();return;}doReset();});
   el.roundOptions.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{state.roundLength=parseInt(b.getAttribute("data-n"),10);closeSetting();newPond();}));
-  el.styleOptions.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{state.sentenceStyle=b.getAttribute("data-style");markSel(el.styleOptions,"data-style",state.sentenceStyle);newPond();closeSetting();}));
-  el.fontOptions.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{state.readFont=b.getAttribute("data-font");markSel(el.fontOptions,"data-font",state.readFont);applyFont();closeSetting();}));
-  el.speedOptions.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{state.speechRate=parseFloat(b.getAttribute("data-speed"));markSel(el.speedOptions,"data-speed",state.speechRate);}));
+  el.fontOptions.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{state.readFont=b.getAttribute("data-font");applyFont();closeSetting();}));
+  el.speedOptions.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{state.speechRate=parseFloat(b.getAttribute("data-speed"));}));
   el.voiceSelect.addEventListener("change",()=>{state.voiceName=el.voiceSelect.value;});
 }
 
@@ -994,8 +814,7 @@ function init(){
   sOk="speechSynthesis" in window;
   if(!sOk)el.readBtn.disabled=true;
   else{window.speechSynthesis.onvoiceschanged=populateVoices;populateVoices();}
-  applyFont();applyTheme(state.pondsCompleted+1);updateBadge();
-  wireEvents();newPond();
+  applyFont();applyTheme(1);updateBadge();wireEvents();newPond();
 }
 document.addEventListener("DOMContentLoaded",init);
 })();
