@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#E8E4D4;--pond:#4A7898;--pond-deep:#2E5878;
+  --cream:#F2EAD0;--pond:#5A7E8C;--pond-deep:#3A5E6C;
   --leaf:#5A8C3C;--leaf-deep:#3C6828;
   --sun:#D49030;--coral:#B85830;--coral-deep:#8C3E1C;
   --ink:#382E18;--card-bg:#F8F4E4;
@@ -412,12 +412,19 @@ const BUGS=[
 
 const PAD_SVG=`<svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="pg" cx="40%" cy="35%" r="78%"><stop offset="0%" stop-color="#B8D898"/><stop offset="55%" stop-color="#88B468"/><stop offset="100%" stop-color="#608448"/></radialGradient></defs><ellipse cx="52" cy="95" rx="36" ry="5.5" fill="rgba(18,38,10,.17)"/><path d="M50 56 L52.51 16.08 A40 40 0 1 1 47.49 16.08 Z" fill="url(#pg)" stroke="#486830" stroke-width="2"/><path d="M50 56L50 96M50 56L84 76M50 56L90 44M50 56L73 17M50 56L27 17M50 56L10 44M50 56L16 76" stroke="#486830" stroke-width=".9" opacity=".4" fill="none"/><ellipse cx="38" cy="36" rx="12" ry="6.5" fill="rgba(255,255,255,.14)" transform="rotate(-18 38 36)"/></svg>`;
 
+const DIGIT_GLYPHS={
+  "4":'<svg viewBox="0 0 80 120" aria-hidden="true">'
+     +'<line x1="16" y1="8" x2="16" y2="76" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>'
+     +'<line x1="16" y1="76" x2="48" y2="76" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>'
+     +'<line x1="48" y1="16" x2="48" y2="112" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>'
+     +'</svg>'
+};
 const FONTS={andika:"'Andika',sans-serif",dancing:"'Dancing Script',cursive"};
 const THEMES=[
-  {sky:"#E8E4D4",water:"#4A7898",leaf:"#5A8C3C",leafD:"#3C6828"},
-  {sky:"#E4DEC8",water:"#3A6888",leaf:"#4A8050",leafD:"#306038"},
-  {sky:"#E4D8C0",water:"#5A7890",leaf:"#90884C",leafD:"#686030"},
-  {sky:"#485860",water:"#284060",leaf:"#4A5C48",leafD:"#384430"}
+  {sky:"#F2EAD0",water:"#5A7E8C",leaf:"#5A8C3C",leafD:"#3C6828"},
+  {sky:"#E8D4A0",water:"#4A6E7C",leaf:"#4A8050",leafD:"#306038"},
+  {sky:"#C8D8D0",water:"#4A6878",leaf:"#90884C",leafD:"#686030"},
+  {sky:"#8C9AA8",water:"#2A3848",leaf:"#4A5C48",leafD:"#384430"}
 ];
 
 function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
@@ -641,7 +648,23 @@ function renderPads(){
   }
   requestAnimationFrame(posAll);
 }
-function updateBadge(){if(el.pondCountDisplay)el.pondCountDisplay.textContent=state.pondsCompleted+1;}
+function renderSandNumber(target,n){
+  target.innerHTML="";
+  String(n).split("").forEach(ch=>{
+    if(DIGIT_GLYPHS[ch]){
+      const g=document.createElement("span");
+      g.className="sand-glyph";
+      g.style.cssText="display:inline-block;height:1em;width:.85em;vertical-align:-0.1em;";
+      g.innerHTML=DIGIT_GLYPHS[ch];
+      target.appendChild(g);
+    } else {
+      target.appendChild(document.createTextNode(ch));
+    }
+  });
+}
+function updateBadge(){
+  if(el.pondCountDisplay)renderSandNumber(el.pondCountDisplay,state.pondsCompleted+1);
+}
 function showSentence(){renderSentence(state.sentences[state.index]);renderPads();el.prevBtn.disabled=state.index<=0;}
 
 // ── Speech ──
@@ -716,7 +739,7 @@ function runPondComplete(){
         setTimeout(()=>rip.remove(),1000);
         setTimeout(()=>{
           el.lilyCard.classList.remove("win");
-          el.pondNextNum.textContent=state.pondsCompleted+1;
+          renderSandNumber(el.pondNextNum,state.pondsCompleted+1);
           el.pondNextOverlay.hidden=false;
         },800);
       },520);
