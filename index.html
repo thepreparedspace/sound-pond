@@ -129,7 +129,14 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
 </style>
 </head>
 <body>
-<div class="sky" aria-hidden="true">
+  <style>.tps-nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;background:rgba(232,228,212,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(90,140,60,0.2);font-family:'Dancing Script',cursive;}.tps-nav-brand{font-size:1rem;font-weight:600;color:#27500A;text-decoration:none;display:flex;align-items:center;gap:7px;}.tps-nav-brand svg{width:18px;height:18px;}.tps-nav-back{font-size:0.85rem;color:#7A7A68;text-decoration:none;font-family:'Dancing Script',cursive;font-weight:600;}.tps-nav-back:hover{color:#27500A;}header{margin-top:48px;}</style>
+  <nav class="tps-nav">
+    <a href="https://thepreparedspace.github.io" class="tps-nav-brand">
+      <svg viewBox="0 0 36 26"><ellipse cx="18" cy="19" rx="13" ry="7" fill="#5A8C3C"/><circle cx="9" cy="9" r="6" fill="#5A8C3C"/><circle cx="21" cy="7" r="6.5" fill="#5A8C3C"/></svg>
+      The Prepared Space
+    </a>
+    <a href="https://thepreparedspace.github.io" class="tps-nav-back">← back to home</a>
+  </nav>
   <div class="sun-w"><svg viewBox="0 0 80 80"><defs><radialGradient id="sg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#F8D860"/><stop offset="45%" stop-color="#E0A030" stop-opacity=".7"/><stop offset="100%" stop-color="#C07810" stop-opacity="0"/></radialGradient></defs><circle cx="40" cy="40" r="39" fill="url(#sg)"/><circle cx="40" cy="40" r="20" fill="#E8B04C"/></svg></div>
   <div class="cl cl1"><svg viewBox="0 0 148 56"><defs><linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFEFB"/><stop offset="100%" stop-color="#E4E0D0"/></linearGradient></defs><ellipse cx="74" cy="44" rx="64" ry="13" fill="url(#cg1)" opacity=".86"/><ellipse cx="40" cy="28" rx="30" ry="23" fill="url(#cg1)" opacity=".86"/><ellipse cx="86" cy="22" rx="27" ry="20" fill="url(#cg1)" opacity=".86"/><ellipse cx="116" cy="32" rx="22" ry="17" fill="url(#cg1)" opacity=".86"/></svg></div>
   <div class="cl cl2"><svg viewBox="0 0 106 46"><defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFEFB"/><stop offset="100%" stop-color="#E4E0D0"/></linearGradient></defs><ellipse cx="53" cy="36" rx="48" ry="11" fill="url(#cg2)" opacity=".8"/><ellipse cx="30" cy="23" rx="22" ry="17" fill="url(#cg2)" opacity=".8"/><ellipse cx="68" cy="19" rx="20" ry="15" fill="url(#cg2)" opacity=".8"/><ellipse cx="90" cy="28" rx="16" ry="13" fill="url(#cg2)" opacity=".8"/></svg></div>
@@ -185,48 +192,48 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
 <div class="pond-path">
   <div class="track" id="pondContainer">
     <div class="pads" id="padsRow"></div>
-    <div class="land-bank" id="landBank" aria-hidden="true">
-      <svg viewBox="0 0 58 52">
+    <div class="land-bank" id="landBank" aria-hidden="true" style="width:72px;height:64px;">
+      <svg viewBox="0 0 72 64">
         <!-- ground mound -->
-        <path d="M4 45 C6 31 18 22 29 22 C40 22 52 31 54 45Z" fill="#62943E"/>
+        <path d="M4 54 C6 38 20 26 36 26 C52 26 66 38 68 54Z" fill="#62943E"/>
         <!-- mud strip at waterline — on top of green -->
-        <path d="M6 44 C10 41 20 39 29 39 C38 39 48 41 52 44" stroke="#6B4A2A" stroke-width="3.5" fill="none" opacity=".75"/>
+        <path d="M6 53 C12 49 24 47 36 47 C48 47 60 49 66 53" stroke="#6B4A2A" stroke-width="3.5" fill="none" opacity=".75"/>
         <!-- second thinner mud line for depth -->
-        <path d="M8 45 C12 43 20 41 29 41 C38 41 46 43 50 45" stroke="#8B6040" stroke-width="2" fill="none" opacity=".55"/>
+        <path d="M8 55 C14 52 24 50 36 50 C48 50 58 52 64 55" stroke="#8B6040" stroke-width="2" fill="none" opacity=".55"/>
         <!-- roots at waterline -->
-        <path d="M10 44 Q8 47 6 50M16 45 Q15 48 14 51M22 45 Q22 48 22 51" stroke="#5A3818" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".7"/>
-        <!-- grass blades — varying heights -->
-        <path d="M14 38 C13 30 12 24 14 18" stroke="#3A6828" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-        <path d="M18 36 C17 26 18 20 20 14" stroke="#4A7830" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-        <path d="M23 35 C22 27 23 21 24 16" stroke="#3A6828" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-        <path d="M28 34 C27 24 28 18 29 12" stroke="#4A7830" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-        <path d="M33 35 C33 26 34 20 35 15" stroke="#3A6828" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-        <path d="M38 36 C38 27 39 22 40 17" stroke="#4A7830" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-        <path d="M43 38 C43 30 44 25 45 20" stroke="#3A6828" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-        <!-- shorter grass blades between -->
-        <path d="M11 40 C10 34 11 30 12 26" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-        <path d="M20 37 C20 32 21 28 22 24" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-        <path d="M31 36 C31 30 32 26 33 22" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-        <path d="M41 37 C41 32 42 28 43 25" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-        <!-- small daisy flower -->
-        <circle cx="26" cy="13" r="2.2" fill="#F8E840"/>
-        <circle cx="26" cy="10" r="1.2" fill="#fff" opacity=".9"/>
-        <circle cx="28.2" cy="11" r="1.2" fill="#fff" opacity=".9"/>
-        <circle cx="28.2" cy="13.8" r="1.2" fill="#fff" opacity=".9"/>
-        <circle cx="26" cy="15.2" r="1.2" fill="#fff" opacity=".9"/>
-        <circle cx="23.8" cy="13.8" r="1.2" fill="#fff" opacity=".9"/>
-        <circle cx="23.8" cy="11" r="1.2" fill="#fff" opacity=".9"/>
-        <!-- small pebbles at waterline -->
-        <ellipse cx="8" cy="46" rx="3" ry="1.8" fill="#9A8868" opacity=".8"/>
-        <ellipse cx="48" cy="46" rx="2.5" ry="1.6" fill="#8A7858" opacity=".8"/>
-        <ellipse cx="36" cy="45" rx="2" ry="1.4" fill="#9A8868" opacity=".7"/>
-        <!-- dew drops on grass tips -->
-        <circle cx="14" cy="18" r="1.2" fill="#B8DCF0" opacity=".85"/>
-        <circle cx="20" cy="14" r="1.2" fill="#B8DCF0" opacity=".85"/>
-        <circle cx="29" cy="12" r="1.2" fill="#B8DCF0" opacity=".85"/>
-        <circle cx="40" cy="17" r="1.2" fill="#B8DCF0" opacity=".80"/>
-        <!-- small fallen leaf -->
-        <path d="M44 40 C46 37 49 37 50 39 C49 41 46 42 44 40Z" fill="#C8A030" opacity=".75"/>
+        <path d="M12 53 Q10 57 8 61M18 54 Q17 58 16 62M24 54 Q24 58 24 62" stroke="#5A3818" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".7"/>
+        <!-- tall grass blades -->
+        <path d="M16 46 C15 36 14 28 16 20" stroke="#3A6828" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M21 44 C20 32 21 24 23 16" stroke="#4A7830" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M27 42 C26 32 27 24 28 18" stroke="#3A6828" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M33 41 C32 29 33 21 34 14" stroke="#4A7830" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M39 42 C39 30 40 22 41 16" stroke="#3A6828" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M45 43 C45 32 46 25 47 19" stroke="#4A7830" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M51 45 C51 35 52 28 53 22" stroke="#3A6828" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <!-- shorter grass blades -->
+        <path d="M13 48 C12 40 13 34 14 28" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M24 44 C24 37 25 32 26 27" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M36 43 C36 36 37 31 38 26" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M48 44 C48 37 49 32 50 28" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <!-- small daisy -->
+        <circle cx="32" cy="15" r="2.4" fill="#F8E840"/>
+        <circle cx="32" cy="12" r="1.3" fill="#fff" opacity=".9"/>
+        <circle cx="34.4" cy="13" r="1.3" fill="#fff" opacity=".9"/>
+        <circle cx="34.4" cy="16" r="1.3" fill="#fff" opacity=".9"/>
+        <circle cx="32" cy="17.5" r="1.3" fill="#fff" opacity=".9"/>
+        <circle cx="29.6" cy="16" r="1.3" fill="#fff" opacity=".9"/>
+        <circle cx="29.6" cy="13" r="1.3" fill="#fff" opacity=".9"/>
+        <!-- pebbles at waterline -->
+        <ellipse cx="10" cy="55" rx="3.2" ry="1.9" fill="#9A8868" opacity=".8"/>
+        <ellipse cx="58" cy="55" rx="2.8" ry="1.7" fill="#8A7858" opacity=".8"/>
+        <ellipse cx="44" cy="54" rx="2.2" ry="1.5" fill="#9A8868" opacity=".7"/>
+        <!-- dew drops -->
+        <circle cx="16" cy="20" r="1.3" fill="#B8DCF0" opacity=".85"/>
+        <circle cx="23" cy="16" r="1.3" fill="#B8DCF0" opacity=".85"/>
+        <circle cx="34" cy="14" r="1.3" fill="#B8DCF0" opacity=".85"/>
+        <circle cx="47" cy="19" r="1.3" fill="#B8DCF0" opacity=".80"/>
+        <!-- fallen leaf -->
+        <path d="M54 48 C57 44 61 44 62 47 C61 50 57 51 54 48Z" fill="#C8A030" opacity=".75"/>
       </svg>
     </div>
     <div class="bug" id="trackBug" aria-hidden="true"><div class="bi" id="bugInner"></div></div>
@@ -359,11 +366,13 @@ const ANIMAL_COMPAT_CAN={
   hop:["pig","dog","fox","cub","pup","rat","cat"],
   jog:["pig","dog","fox","cub","pup","rat","cat","ox"],
   zip:["dog","fox","pup","rat","cat"],
+  jump:["pig","dog","fox","cub","pup","rat","cat"],
+  rest:["pig","dog","hen","cub","pup","rat","cat","ox"],
   nap:["pig","dog","hen","cub","pup","rat","cat"]
 };
 
 const PAST_VERBS=["ran","sat","dug","swam"];
-const CAN_VERBS=["run","sit","dig","swim","hop","jog","zip","nap"];
+const CAN_VERBS=["run","sit","dig","swim","hop","jog","zip","nap","jump","rest"];
 
 // Locations — no articles, no double-terminal consonants
 const LOCS_PAST={
@@ -380,7 +389,8 @@ const LOCS_CAN={
   hop:["on mat","on log","on rock","on hill","on deck","on big log"],
   jog:["on sand","on land","on hill","on deck","on rock"],
   zip:["on sand","on land","on hill","on deck"],
-  nap:["on mat","on log","on big log","on wet mat","on rock"]
+  jump:["on mat","on log","on rock","on hill","on big log","in mud","on sand"],
+  rest:["on mat","on log","on rock","on big log","on wet mat","on land","on hill"],
 };
 
 // ── Bug SVGs (restored with detail) ──
@@ -529,14 +539,60 @@ function b8_adjAnimalCanVerbLoc(last){
   return{text:`${cap(adj)} ${animal} can ${verb} ${location}.`,type:'can',name:null,animal,verb,location};
 }
 
-// Past builders (categories 1,2,5,7) and can builders (3,4,6,8)
+function b9_nameVerbS(last){
+  const name=pickExcept(NAMES,last.name);
+  const verb=pickExcept(S_VERBS,last.verb);
+  return{text:`${cap(name)} ${verb}.`,type:'s',name,animal:null,verb,location:null};
+}
+function b10_nameVerbSLoc(last){
+  const name=pickExcept(NAMES,last.name);
+  const verb=pickExcept(S_VERBS,last.verb);
+  const pool=(LOCS_S[verb]||LOCS_S.hops).filter(l=>l!==last.location);
+  const location=pick(pool.length?pool:LOCS_S[verb]||LOCS_S.hops);
+  return{text:`${cap(name)} ${verb} ${location}.`,type:'s',name,animal:null,verb,location};
+}
+function b11_animalVerbSLoc(last){
+  const verb=pickExcept(S_VERBS,last.verb);
+  const aPool=(ANIMAL_COMPAT_S[verb]||ANIMALS).filter(a=>a!==last.animal);
+  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_S[verb]||ANIMALS);
+  const lPool=(LOCS_S[verb]||LOCS_S.hops).filter(l=>l!==last.location);
+  const location=pick(lPool.length?lPool:LOCS_S[verb]||LOCS_S.hops);
+  return{text:`${cap(animal)} ${verb} ${location}.`,type:'s',name:null,animal,verb,location};
+}
+function b12_adjAnimalVerbSLoc(last){
+  const verb=pickExcept(S_VERBS,last.verb);
+  const aPool=(ANIMAL_COMPAT_S[verb]||ANIMALS).filter(a=>a!==last.animal);
+  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_S[verb]||ANIMALS);
+  const adj=pick(ADJS);
+  const lPool=(LOCS_S[verb]||LOCS_S.hops).filter(l=>l!==last.location);
+  const location=pick(lPool.length?lPool:LOCS_S[verb]||LOCS_S.hops);
+  return{text:`${cap(adj)} ${animal} ${verb} ${location}.`,type:'s',name:null,animal,verb,location};
+}
+
+// Past builders (categories 1,2,5,7) and can builders (3,4,6,8) and s builders (9,10,11,12)
 const PAST_BUILDERS=[b1_nameVerb,b2_nameVerbLoc,b5_animalVerbLoc,b7_adjAnimalVerbLoc];
 const CAN_BUILDERS=[b3_nameCanVerb,b4_nameCanVerbLoc,b6_animalCanVerbLoc,b8_adjAnimalCanVerbLoc];
+const S_BUILDERS=[b9_nameVerbS,b10_nameVerbSLoc,b11_animalVerbSLoc,b12_adjAnimalVerbSLoc];
 
-// ── Verb base map — treats ran/run, sat/sit etc. as same verb ──
+// Third person -s verbs and their locations
+const S_VERBS=["hops","sits","naps","jumps","rests"];
+const ANIMAL_COMPAT_S={
+  hops:["pig","dog","fox","cub","pup","rat","cat"],
+  sits:["pig","dog","hen","cub","pup","rat","cat"],
+  naps:["pig","dog","hen","cub","pup","rat","cat"],
+  jumps:["pig","dog","fox","cub","pup","rat","cat"],
+  rests:["pig","dog","hen","cub","pup","rat","cat","ox"]
+};
+const LOCS_S={
+  hops:["on mat","on log","on rock","on hill","on deck","on big log"],
+  sits:["on mat","on log","on rock","on hill","on deck","on big log","on wet mat","up top","on land"],
+  naps:["on mat","on log","on big log","on wet mat","on rock"],
+  jumps:["on mat","on log","on rock","on hill","on big log","in mud","on sand"],
+  rests:["on mat","on log","on rock","on big log","on wet mat","on land","on hill"]
+};
 const VERB_BASE={ran:"run",sat:"sit",dug:"dig",swam:"swim",
   run:"run",sit:"sit",dig:"dig",swim:"swim",
-  hop:"hop",jog:"jog",zip:"zip",nap:"nap"};
+  hop:"hop",jog:"jog",zip:"zip",nap:"nap",jump:"jump",rest:"rest"};
 function verbBase(v){return VERB_BASE[v]||v;}
 
 // ── Session-level used sentences set ──
@@ -545,46 +601,43 @@ let usedSentences=new Set();
 function genRound(n){
   const sentences=[];
   let last={type:null,name:null,animal:null,verb:null,location:null};
-  // Track verb bases used in this pond — no verb base repeats within a pond
   const usedVerbBases=new Set();
-  // Shuffle builder pools each pond for variety
   const pastPool=shuffle([...PAST_BUILDERS]);
   const canPool=shuffle([...CAN_BUILDERS]);
-  let pi=0,ci=0;
-  // Strict alternation: start with past or can randomly
-  let nextType=Math.random()<.5?'past':'can';
+  const sPool=shuffle([...S_BUILDERS]);
+  let pi=0,ci=0,si=0;
+  // Rotate through past → can → s → past → can → s...
+  const types=['past','can','s'];
+  let typeIdx=Math.floor(Math.random()*3);
 
   let attempts=0;
   while(sentences.length<n&&attempts<n*60){
     attempts++;
-    const builders=nextType==='past'?pastPool:canPool;
-    const idx=nextType==='past'?pi%pastPool.length:ci%canPool.length;
+    const nextType=types[typeIdx%3];
+    const builders=nextType==='past'?pastPool:nextType==='can'?canPool:sPool;
+    const idx=nextType==='past'?pi%pastPool.length:nextType==='can'?ci%canPool.length:si%sPool.length;
     const builder=builders[idx];
     const s=builder(last);
     const vb=verbBase(s.verb);
-    // Check not used in session
     if(usedSentences.has(s.text)){
-      if(nextType==='past')pi++;else ci++;
-      continue;
+      if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
+      typeIdx++;continue;
     }
-    // Check verb base not already used in this pond
     if(usedVerbBases.has(vb)){
-      if(nextType==='past')pi++;else ci++;
-      continue;
+      if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
+      typeIdx++;continue;
     }
-    // Check no consecutive same name/animal/location
     if((s.name&&s.name===last.name)||(s.animal&&s.animal===last.animal)||(s.location&&s.location===last.location)){
-      if(nextType==='past')pi++;else ci++;
-      continue;
+      if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
+      typeIdx++;continue;
     }
     usedSentences.add(s.text);
     usedVerbBases.add(vb);
     sentences.push(s.text);
     last=s;
-    if(nextType==='past')pi++;else ci++;
-    nextType=nextType==='past'?'can':'past';
+    if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
+    typeIdx++;
   }
-  // If pool exhausted, reset and try again
   if(sentences.length<n){
     usedSentences.clear();
     return genRound(n);
