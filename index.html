@@ -6,8 +6,6 @@
 <title>sound pond</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Dancing+Script:wght@600;700&display=swap');
-</style>
-<style>
 :root{
   --cream:#F2EAD0;--pond:#5A7E8C;--pond-deep:#3A5E6C;
   --leaf:#5A8C3C;--leaf-deep:#3C6828;
@@ -25,7 +23,12 @@ body{font-family:var(--ui-font);color:var(--ink);min-height:100vh;overflow-x:hid
 .cl{position:absolute;}
 .cl1{width:148px;height:56px;top:20px;left:4%;}
 .cl2{width:106px;height:46px;top:72px;left:57%;}
-.app{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;min-height:100vh;}
+.tps-nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;background:rgba(232,228,212,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(90,140,60,0.2);font-family:'Dancing Script',cursive;}
+.tps-nav-brand{font-size:1rem;font-weight:600;color:#27500A;text-decoration:none;display:flex;align-items:center;gap:7px;}
+.tps-nav-brand svg{width:18px;height:18px;}
+.tps-nav-back{font-size:0.85rem;color:#7A7A68;text-decoration:none;font-family:'Dancing Script',cursive;font-weight:600;}
+.tps-nav-back:hover{color:#27500A;}
+.app{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;min-height:100vh;margin-top:48px;}
 header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;gap:10px;flex-wrap:wrap;}
 .brand{font-family:var(--ui-font);font-weight:800;font-size:1.7rem;display:flex;align-items:center;gap:8px;}
 .brand svg{width:1.4em;height:1.1em;flex-shrink:0;}
@@ -62,8 +65,8 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .btn:disabled{opacity:.3;cursor:not-allowed;}
 .pond-path{padding:28px 0 38px;background:var(--pond);transition:background .8s;border-top:3px solid rgba(255,255,255,.1);overflow:visible;}
 .track{position:relative;width:min(600px,90vw);margin:0 auto;padding:0 24px;height:80px;overflow:visible;}
-.pads{position:relative;display:flex;justify-content:space-between;align-items:center;height:100%;margin-right:52px;}
-.land-bank{position:absolute;right:-8px;top:50%;transform:translateY(-62%);width:58px;height:52px;pointer-events:none;z-index:2;}
+.pads{position:relative;display:flex;justify-content:space-between;align-items:center;height:100%;margin-right:60px;}
+.land-bank{position:absolute;right:-12px;top:50%;transform:translateY(-58%);width:72px;height:64px;pointer-events:none;z-index:2;}
 .land-bank svg{width:100%;height:100%;display:block;filter:drop-shadow(0 3px 3px rgba(10,20,5,.24));}
 .pad{width:46px;height:46px;position:relative;transition:transform .3s,opacity .3s;}
 .pad svg{width:100%;height:100%;display:block;filter:drop-shadow(0 3px 3px rgba(10,22,8,.25));transition:filter .3s;}
@@ -98,6 +101,8 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .bug.caught{transform:translate(-50%,-68%) scale(.1);opacity:0;transition:transform .4s,opacity .4s;}
 .sand-num{font-family:'Andika',sans-serif;font-weight:700;color:var(--sand-num-color);line-height:1;display:inline-block;}
 .badge-sand{font-size:1.15rem;}
+.sand-glyph{display:inline-block;height:1em;width:.85em;vertical-align:-0.1em;}
+.sand-glyph svg{width:100%;height:100%;display:block;}
 .overlay-sand{font-size:5.6rem;text-shadow:2px 2px 0 rgba(138,74,18,.18),0 4px 0 rgba(138,74,18,.10);}
 .pond-next-overlay{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;background:rgba(30,50,20,.42);padding:20px;}
 .pond-next-card{background:var(--card-bg);border-radius:32px;padding:40px 40px 34px;max-width:280px;width:100%;text-align:center;box-shadow:0 16px 48px rgba(0,0,0,.2),0 0 0 3px var(--leaf);display:flex;flex-direction:column;align-items:center;gap:16px;animation:cardPop .4s cubic-bezier(.34,1.56,.64,1) forwards;}
@@ -129,14 +134,15 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
 </style>
 </head>
 <body>
-  <style>.tps-nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;background:rgba(232,228,212,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(90,140,60,0.2);font-family:'Dancing Script',cursive;}.tps-nav-brand{font-size:1rem;font-weight:600;color:#27500A;text-decoration:none;display:flex;align-items:center;gap:7px;}.tps-nav-brand svg{width:18px;height:18px;}.tps-nav-back{font-size:0.85rem;color:#7A7A68;text-decoration:none;font-family:'Dancing Script',cursive;font-weight:600;}.tps-nav-back:hover{color:#27500A;}header{margin-top:48px;}</style>
-  <nav class="tps-nav">
-    <a href="https://thepreparedspace.github.io" class="tps-nav-brand">
-      <svg viewBox="0 0 36 26"><ellipse cx="18" cy="19" rx="13" ry="7" fill="#5A8C3C"/><circle cx="9" cy="9" r="6" fill="#5A8C3C"/><circle cx="21" cy="7" r="6.5" fill="#5A8C3C"/></svg>
-      The Prepared Space
-    </a>
-    <a href="https://thepreparedspace.github.io" class="tps-nav-back">← back to home</a>
-  </nav>
+<nav class="tps-nav">
+  <a href="https://thepreparedspace.github.io" class="tps-nav-brand">
+    <svg viewBox="0 0 36 26"><ellipse cx="18" cy="19" rx="13" ry="7" fill="#5A8C3C"/><circle cx="9" cy="9" r="6" fill="#5A8C3C"/><circle cx="21" cy="7" r="6.5" fill="#5A8C3C"/></svg>
+    The Prepared Space
+  </a>
+  <a href="https://thepreparedspace.github.io" class="tps-nav-back">← back to home</a>
+</nav>
+
+<div class="sky" aria-hidden="true">
   <div class="sun-w"><svg viewBox="0 0 80 80"><defs><radialGradient id="sg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#F8D860"/><stop offset="45%" stop-color="#E0A030" stop-opacity=".7"/><stop offset="100%" stop-color="#C07810" stop-opacity="0"/></radialGradient></defs><circle cx="40" cy="40" r="39" fill="url(#sg)"/><circle cx="40" cy="40" r="20" fill="#E8B04C"/></svg></div>
   <div class="cl cl1"><svg viewBox="0 0 148 56"><defs><linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFEFB"/><stop offset="100%" stop-color="#E4E0D0"/></linearGradient></defs><ellipse cx="74" cy="44" rx="64" ry="13" fill="url(#cg1)" opacity=".86"/><ellipse cx="40" cy="28" rx="30" ry="23" fill="url(#cg1)" opacity=".86"/><ellipse cx="86" cy="22" rx="27" ry="20" fill="url(#cg1)" opacity=".86"/><ellipse cx="116" cy="32" rx="22" ry="17" fill="url(#cg1)" opacity=".86"/></svg></div>
   <div class="cl cl2"><svg viewBox="0 0 106 46"><defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFEFB"/><stop offset="100%" stop-color="#E4E0D0"/></linearGradient></defs><ellipse cx="53" cy="36" rx="48" ry="11" fill="url(#cg2)" opacity=".8"/><ellipse cx="30" cy="23" rx="22" ry="17" fill="url(#cg2)" opacity=".8"/><ellipse cx="68" cy="19" rx="20" ry="15" fill="url(#cg2)" opacity=".8"/><ellipse cx="90" cy="28" rx="16" ry="13" fill="url(#cg2)" opacity=".8"/></svg></div>
@@ -192,17 +198,12 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
 <div class="pond-path">
   <div class="track" id="pondContainer">
     <div class="pads" id="padsRow"></div>
-    <div class="land-bank" id="landBank" aria-hidden="true" style="width:72px;height:64px;">
+    <div class="land-bank" id="landBank" aria-hidden="true">
       <svg viewBox="0 0 72 64">
-        <!-- ground mound -->
         <path d="M4 54 C6 38 20 26 36 26 C52 26 66 38 68 54Z" fill="#62943E"/>
-        <!-- mud strip at waterline — on top of green -->
         <path d="M6 53 C12 49 24 47 36 47 C48 47 60 49 66 53" stroke="#6B4A2A" stroke-width="3.5" fill="none" opacity=".75"/>
-        <!-- second thinner mud line for depth -->
         <path d="M8 55 C14 52 24 50 36 50 C48 50 58 52 64 55" stroke="#8B6040" stroke-width="2" fill="none" opacity=".55"/>
-        <!-- roots at waterline -->
         <path d="M12 53 Q10 57 8 61M18 54 Q17 58 16 62M24 54 Q24 58 24 62" stroke="#5A3818" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".7"/>
-        <!-- tall grass blades -->
         <path d="M16 46 C15 36 14 28 16 20" stroke="#3A6828" stroke-width="1.6" fill="none" stroke-linecap="round"/>
         <path d="M21 44 C20 32 21 24 23 16" stroke="#4A7830" stroke-width="1.6" fill="none" stroke-linecap="round"/>
         <path d="M27 42 C26 32 27 24 28 18" stroke="#3A6828" stroke-width="1.4" fill="none" stroke-linecap="round"/>
@@ -210,12 +211,10 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
         <path d="M39 42 C39 30 40 22 41 16" stroke="#3A6828" stroke-width="1.4" fill="none" stroke-linecap="round"/>
         <path d="M45 43 C45 32 46 25 47 19" stroke="#4A7830" stroke-width="1.6" fill="none" stroke-linecap="round"/>
         <path d="M51 45 C51 35 52 28 53 22" stroke="#3A6828" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-        <!-- shorter grass blades -->
         <path d="M13 48 C12 40 13 34 14 28" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
         <path d="M24 44 C24 37 25 32 26 27" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
         <path d="M36 43 C36 36 37 31 38 26" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
         <path d="M48 44 C48 37 49 32 50 28" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-        <!-- small daisy -->
         <circle cx="32" cy="15" r="2.4" fill="#F8E840"/>
         <circle cx="32" cy="12" r="1.3" fill="#fff" opacity=".9"/>
         <circle cx="34.4" cy="13" r="1.3" fill="#fff" opacity=".9"/>
@@ -223,16 +222,13 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
         <circle cx="32" cy="17.5" r="1.3" fill="#fff" opacity=".9"/>
         <circle cx="29.6" cy="16" r="1.3" fill="#fff" opacity=".9"/>
         <circle cx="29.6" cy="13" r="1.3" fill="#fff" opacity=".9"/>
-        <!-- pebbles at waterline -->
         <ellipse cx="10" cy="55" rx="3.2" ry="1.9" fill="#9A8868" opacity=".8"/>
         <ellipse cx="58" cy="55" rx="2.8" ry="1.7" fill="#8A7858" opacity=".8"/>
         <ellipse cx="44" cy="54" rx="2.2" ry="1.5" fill="#9A8868" opacity=".7"/>
-        <!-- dew drops -->
         <circle cx="16" cy="20" r="1.3" fill="#B8DCF0" opacity=".85"/>
         <circle cx="23" cy="16" r="1.3" fill="#B8DCF0" opacity=".85"/>
         <circle cx="34" cy="14" r="1.3" fill="#B8DCF0" opacity=".85"/>
         <circle cx="47" cy="19" r="1.3" fill="#B8DCF0" opacity=".80"/>
-        <!-- fallen leaf -->
         <path d="M54 48 C57 44 61 44 62 47 C61 50 57 51 54 48Z" fill="#C8A030" opacity=".75"/>
       </svg>
     </div>
@@ -244,17 +240,12 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
           <radialGradient id="fv" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#C8BC88"/><stop offset="100%" stop-color="#A89C68"/></radialGradient>
           <radialGradient id="fe" cx="36%" cy="28%" r="68%"><stop offset="0%" stop-color="#E8C038"/><stop offset="55%" stop-color="#C09818"/><stop offset="100%" stop-color="#886808"/></radialGradient>
         </defs>
-
-        <!-- left hind leg -->
         <path d="M26 76 C14 79 7 91 13 99 C20 106 34 101 37 90 C40 81 38 75 26 76Z" fill="#586840"/>
         <path d="M11 97 q-5 3 -9 8M17 100 q-5 4 -7 9M23 102 q-3 4 -3 8" stroke="#384828" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-        <!-- body -->
         <ellipse cx="52" cy="68" rx="34" ry="28" fill="url(#fb)"/>
         <ellipse cx="84" cy="56" rx="30" ry="26" fill="url(#fb)"/>
         <path d="M96 45 C113 42 131 49 133 57 C134 64 127 69 114 69 C100 69 89 63 88 56Z" fill="url(#fb)"/>
-        <!-- belly -->
         <ellipse cx="56" cy="83" rx="28" ry="14" fill="url(#fv)"/>
-        <!-- spots on body -->
         <circle cx="48" cy="58" r="4.5" fill="#C8D890" opacity=".82"/>
         <circle cx="64" cy="52" r="3.5" fill="#C8D890" opacity=".78"/>
         <circle cx="38" cy="70" r="3" fill="#C8D890" opacity=".75"/>
@@ -272,10 +263,8 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
         <circle cx="100" cy="62" r="2.5" fill="#C8D890" opacity=".68"/>
         <circle cx="112" cy="50" r="2" fill="#C8D890" opacity=".65"/>
         <circle cx="88" cy="62" r="2" fill="#C8D890" opacity=".65"/>
-        <!-- right hind leg -->
         <path d="M74 83 C71 93 75 102 83 104 C89 105 92 101 90 95 C88 90 83 87 78 83Z" fill="#586840"/>
         <path d="M82 103 q1 4 0 8M86 101 q3 4 3 8M89 98 q3 3 3 7" stroke="#384828" stroke-width="1.7" fill="none" stroke-linecap="round"/>
-        <!-- eyes -->
         <circle cx="102" cy="34" r="14" fill="#3A5028"/>
         <circle cx="121" cy="29" r="14" fill="#3A5028"/>
         <circle cx="102" cy="34" r="9.5" fill="url(#fe)"/>
@@ -284,11 +273,9 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
         <ellipse cx="121" cy="29" rx="7.5" ry="3" fill="#120C04"/>
         <ellipse cx="97.5" cy="30" rx="3" ry="1.7" fill="#fff" opacity=".55" transform="rotate(-18 97.5 30)"/>
         <ellipse cx="116.5" cy="25" rx="3" ry="1.7" fill="#fff" opacity=".55" transform="rotate(-18 116.5 25)"/>
-        <!-- nostril bumps -->
         <circle cx="114" cy="47" r="5.5" fill="#4A5E2C" stroke="#384828" stroke-width="1" opacity=".68"/>
         <circle cx="124" cy="43" r="1.4" fill="#283818" opacity=".8"/>
         <circle cx="128" cy="42" r="1.2" fill="#283818" opacity=".76"/>
-        <!-- tongue -->
         <path class="tongue-line" d="M122 62 Q124 38 128 14" pathLength="50" stroke="#D8536A" stroke-width="6" fill="none" stroke-linecap="round"/>
         <circle class="tongue-tip" cx="128" cy="14" r="4.6" fill="#E8788C"/>
         <circle class="tongue-tip-hl" cx="126.4" cy="12.4" r="1.4" fill="#fff" opacity=".55"/>
@@ -347,55 +334,137 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
 (function(){
 "use strict";
 
-// ── Word banks ──
+// ══════════════════════════════════════════
+// WORD BANKS — final confirmed vocabulary
+// ══════════════════════════════════════════
+
 const NAMES=["kim","tim","ben","sam","pam","tom","bob","dan","ken","nat","ned","ron","jan","pat","don"];
-const ANIMALS=["pig","dog","fox","hen","cub","pup","rat","cat","ox"];
-const ADJS=["big","fat","red","wet","sad","mad","bad","fun"];
+const ANIMALS=["pig","dog","fox","hen","cub","pup","rat","cat","ox","ant","ram","crab","slug","swan","yak","wasp","frog","bug","hog","pug"];
+const ADJS=["big","red","wet","fun","tan","fast","damp","soft","snug","plum","swift","jet","glad","crisp"];
+
+const PAST_VERBS=["ran","sat","dug","swam","hid","sped","slid","spun","trod","skid"];
+const CAN_VERBS=["run","sit","dig","swim","hop","jog","zip","nap","jump","rest","skip","trot","flop","stomp","stamp","drift","strut","pant","bask","spin"];
+const S_VERBS=["hops","sits","naps","jumps","rests","skips","trots","flops","stomps","stamps","drifts","struts","pants","basks"];
 
 const ANIMAL_COMPAT_PAST={
-  ran:["pig","dog","fox","cub","pup","rat","cat","ox"],
-  sat:["pig","dog","hen","cub","pup","rat","cat"],
-  dug:["pig","dog","cub","rat","ox"],
-  swam:["dog","cub","pup","rat"]
+  ran:["pig","dog","fox","cub","pup","rat","cat","ox","ant","ram","yak","frog","pug"],
+  sat:["pig","dog","hen","cub","pup","rat","cat","crab","slug","swan","yak","frog","hog","pug"],
+  dug:["pig","dog","cub","rat","ox","ant","crab","hog"],
+  swam:["dog","cub","pup","rat","crab","swan","frog"],
+  hid:["pig","dog","fox","hen","cub","pup","rat","cat","ant","slug","wasp","frog","bug","hog","pug"],
+  sped:["pig","dog","fox","cub","pup","rat","cat","ant","ram","crab","swan","wasp","bug"],
+  slid:["pig","dog","cub","pup","rat","cat","ant","crab","frog"],
+  spun:["pig","dog","cub","pup","rat","cat","bug"],
+  trod:["pig","dog","ox","ram","cub","cat","yak","hog"],
+  skid:["pig","dog","fox","cub","pup","rat","cat","ant","crab"]
 };
 const ANIMAL_COMPAT_CAN={
-  run:["pig","dog","fox","cub","pup","rat","cat","ox"],
-  sit:["pig","dog","hen","cub","pup","rat","cat"],
-  dig:["pig","dog","cub","rat","ox"],
-  swim:["dog","cub","pup","rat"],
-  hop:["pig","dog","fox","cub","pup","rat","cat"],
-  jog:["pig","dog","fox","cub","pup","rat","cat","ox"],
-  zip:["dog","fox","pup","rat","cat"],
-  jump:["pig","dog","fox","cub","pup","rat","cat"],
-  rest:["pig","dog","hen","cub","pup","rat","cat","ox"],
-  nap:["pig","dog","hen","cub","pup","rat","cat"]
+  run:["pig","dog","fox","cub","pup","rat","cat","ox","ant","ram","yak","frog","pug"],
+  sit:["pig","dog","hen","cub","pup","rat","cat","crab","slug","swan","yak","frog","hog","pug"],
+  dig:["pig","dog","cub","rat","ox","ant","crab","hog"],
+  swim:["dog","cub","pup","rat","crab","swan","frog"],
+  hop:["pig","dog","fox","cub","pup","rat","cat","frog"],
+  jog:["pig","dog","fox","cub","pup","rat","cat","ox","ant"],
+  zip:["dog","fox","pup","rat","cat","ant","wasp","bug"],
+  nap:["pig","dog","hen","cub","pup","rat","cat","slug","hog","pug"],
+  jump:["pig","dog","fox","cub","pup","rat","cat","frog"],
+  rest:["pig","dog","hen","cub","pup","rat","cat","ox","slug","swan","yak","hog","pug"],
+  skip:[],
+  trot:["dog","ox","ram","cat","yak","hog"],
+  flop:["pig","dog","cub","pup","rat","cat","slug","pug"],
+  stomp:["dog","ox","ram","cat","yak","hog"],
+  stamp:["dog","ram","cat","ant"],
+  drift:["swan","cub","pup","dog","frog"],
+  strut:["hen","cat","fox"],
+  pant:["dog","fox","cub","pup","cat","yak","pug"],
+  bask:["cat","dog","crab","swan","slug","frog"],
+  spin:["pup","cat","wasp","bug"]
+};
+const ANIMAL_COMPAT_S={
+  hops:["pig","dog","fox","cub","pup","rat","cat"],
+  sits:["pig","dog","hen","cub","pup","rat","cat","crab","slug","swan"],
+  naps:["pig","dog","hen","cub","pup","rat","cat","slug"],
+  jumps:["pig","dog","fox","cub","pup","rat","cat"],
+  rests:["pig","dog","hen","cub","pup","rat","cat","ox","slug","swan"],
+  skips:[],
+  trots:["dog","ox","ram","cat"],
+  flops:["pig","dog","cub","pup","rat","cat","slug"],
+  stomps:["dog","ox","ram","cat"],
+  stamps:["dog","ram","cat","ant"],
+  drifts:["swan","cub","pup","dog"],
+  struts:["hen","cat","fox"],
+  pants:["dog","fox","cub","pup","cat"],
+  basks:["cat","dog","crab","swan","slug"]
 };
 
-const PAST_VERBS=["ran","sat","dug","swam"];
-const CAN_VERBS=["run","sit","dig","swim","hop","jog","zip","nap","jump","rest"];
-
-// Locations — no articles, no double-terminal consonants
+// Locations — no articles, no double-terminal consonants, no "hill"
 const LOCS_PAST={
-  ran:["in mud","in fog","on sand","on land","on hill","on rock","on deck","up hill","on wet sand"],
-  sat:["on mat","on log","on rock","on hill","on deck","on big log","on wet mat","up top","on land"],
+  ran:["in mud","in fog","on sand","on land","on wet sand"],
+  sat:["on mat","on log","on big log","on wet mat","up top","on land","on bed","on rug","on desk","on step","on cot","in den","in bin","in tub","in bag","in nest","in pen","in hut","in tent","in pit"],
   dug:["in mud","in sand","in wet mud","on land"],
-  swam:["in pond","in mud"]
+  swam:["in pond","in mud"],
+  hid:["in mud","in sand","in dust","on log","in fog","in den","in bin","in tub","in bag","in nest","in pen","in hut","in tent","in pit"],
+  sped:["on sand","on land","on hot sand"],
+  slid:["in mud","on wet log","in wet sand"],
+  spun:["on mat","on land","on rug"],
+  trod:["in mud","on land","on damp land"],
+  skid:["in mud","in wet sand"]
 };
 const LOCS_CAN={
-  run:["in mud","in fog","on sand","on land","on hill","on rock","on deck","up hill","on wet sand"],
-  sit:["on mat","on log","on rock","on hill","on deck","on big log","on wet mat","up top","on land"],
+  run:["in mud","in fog","on sand","on land","on wet sand"],
+  sit:["on mat","on log","on big log","on wet mat","up top","on land","on bed","on rug","on desk","on step","on cot","in den","in bin","in tub","in bag","in nest","in pen","in hut","in tent","in pit"],
   dig:["in mud","in sand","in wet mud","on land"],
   swim:["in pond","in mud"],
-  hop:["on mat","on log","on rock","on hill","on deck","on big log"],
-  jog:["on sand","on land","on hill","on deck","on rock"],
-  zip:["on sand","on land","on hill","on deck"],
-  jump:["on mat","on log","on rock","on hill","on big log","in mud","on sand"],
-  rest:["on mat","on log","on rock","on big log","on wet mat","on land","on hill"],
+  hop:["on mat","on log","on big log"],
+  jog:["on sand","on land"],
+  zip:["on sand","on land"],
+  nap:["on mat","on log","on big log","on wet mat","on bed","on rug","on cot","in nest","in pen","in hut"],
+  jump:["on mat","on log","on big log","in mud","on sand"],
+  rest:["on mat","on log","on big log","on wet mat","on land","on bed","on rug","on cot","in nest","in pen","in hut"],
+  skip:["on sand","on land","on flat land"],
+  trot:["on sand","on land","on damp land","on hot sand"],
+  flop:["on mat","on log","on big log","on wet mat"],
+  stomp:["in mud","on land","in damp mud"],
+  stamp:["on mat","on land"],
+  drift:["in pond","in mud","in mist"],
+  strut:["on land","on flat land"],
+  pant:["on mat","on log","on land"],
+  bask:["in sun"],
+  spin:["on mat","on land"]
+};
+const LOCS_S={
+  hops:["on mat","on log","on rock","on deck","on big log"],
+  sits:["on mat","on log","on rock","on deck","on big log","on wet mat","up top","on land","on bank","on bed","on rug","on desk","on step","on cot","in box","in bin","in tub"],
+  naps:["on mat","on log","on big log","on wet mat","on rock","on bed","on rug","on cot"],
+  jumps:["on mat","on log","on rock","on big log","in mud","on sand"],
+  rests:["on mat","on log","on rock","on big log","on wet mat","on land","on bank","on bed","on rug","on cot"],
+  skips:["on sand","on land","on deck","on bank","on flat land"],
+  trots:["on sand","on land","on bank","on damp land","on hot sand"],
+  flops:["on mat","on log","on big log","on wet mat"],
+  stomps:["in mud","on land","on deck","in damp mud"],
+  stamps:["on mat","on land","on rock","on big rock"],
+  drifts:["in pond","in mud","in mist"],
+  struts:["on land","on deck","on bank","on flat land"],
+  pants:["on mat","on log","on land","on deck"],
+  basks:["on rock","on big rock","on damp rock","on red rock","in sun"]
 };
 
-// ── Bug SVGs (restored with detail) ──
+const VERB_BASE={
+  ran:"run",sat:"sit",dug:"dig",swam:"swim",hid:"hide",sped:"speed",slid:"slide",spun:"spin",trod:"trot",skid:"skid",
+  run:"run",sit:"sit",dig:"dig",swim:"swim",
+  hop:"hop",jog:"jog",zip:"zip",nap:"nap",jump:"jump",rest:"rest",
+  skip:"skip",trot:"trot",flop:"flop",stomp:"stomp",stamp:"stamp",drift:"drift",strut:"strut",pant:"pant",bask:"bask",spin:"spin",
+  hops:"hop",sits:"sit",naps:"nap",jumps:"jump",rests:"rest",
+  skips:"skip",trots:"trot",flops:"flop",stomps:"stomp",stamps:"stamp",drifts:"drift",struts:"strut",pants:"pant",basks:"bask"
+};
+function verbBase(v){return VERB_BASE[v]||v;}
+
+// ══════════════════════════════════════════
+// VISUAL ASSETS
+// ══════════════════════════════════════════
+
 const BUGS=[
-  // Ladybug with spots
+  // Ladybug
   `<svg viewBox="0 0 60 50"><defs><radialGradient id="lb" cx="34%" cy="24%" r="72%"><stop offset="0%" stop-color="#EC4422"/><stop offset="55%" stop-color="#C01E18"/><stop offset="100%" stop-color="#8C1810"/></radialGradient></defs>
   <ellipse cx="30" cy="44" rx="17" ry="4" fill="rgba(14,14,14,.14)"/>
   <path d="M17 24 Q10 23 6 26M17 31 Q10 30 6 33M19 37 Q13 38 10 42" stroke="#221810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
@@ -464,6 +533,7 @@ const DIGIT_GLYPHS={
      +'<line x1="40" y1="24" x2="40" y2="108" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>'
      +'</svg>'
 };
+
 const FONTS={andika:"'Andika',sans-serif",dancing:"'Dancing Script',cursive"};
 const THEMES=[
   {sky:"#F2EAD0",water:"#5A7E8C",leaf:"#5A8C3C",leafD:"#3C6828"},
@@ -472,13 +542,14 @@ const THEMES=[
   {sky:"#8C9AA8",water:"#2A3848",leaf:"#4A5C48",leafD:"#384430"}
 ];
 
+// ══════════════════════════════════════════
+// SENTENCE ENGINE
+// ══════════════════════════════════════════
+
 function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function pickExcept(a,ex){const f=a.filter(x=>x!==ex);return f.length?pick(f):pick(a);}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
-
-// ── Sentence builders ──
-// Each returns {text, type:'past'|'can', name, animal, verb, location}
 
 function b1_nameVerb(last){
   const name=pickExcept(NAMES,last.name);
@@ -488,8 +559,8 @@ function b1_nameVerb(last){
 function b2_nameVerbLoc(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(PAST_VERBS,last.verb);
-  const pool=LOCS_PAST[verb].filter(l=>l!==last.location);
-  const location=pick(pool.length?pool:LOCS_PAST[verb]);
+  const pool=(LOCS_PAST[verb]||["on land"]).filter(l=>l!==last.location);
+  const location=pick(pool.length?pool:(LOCS_PAST[verb]||["on land"]));
   return{text:`${cap(name)} ${verb} ${location}.`,type:'past',name,animal:null,verb,location};
 }
 function b3_nameCanVerb(last){
@@ -501,44 +572,45 @@ function b4_nameCanVerbLoc(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(CAN_VERBS,last.verb);
   const pool=(LOCS_CAN[verb]||LOCS_CAN.run).filter(l=>l!==last.location);
-  const location=pick(pool.length?pool:LOCS_CAN[verb]||LOCS_CAN.run);
+  const location=pick(pool.length?pool:(LOCS_CAN[verb]||LOCS_CAN.run));
   return{text:`${cap(name)} can ${verb} ${location}.`,type:'can',name,animal:null,verb,location};
 }
 function b5_animalVerbLoc(last){
   const verb=pickExcept(PAST_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_PAST[verb]||ANIMALS).filter(a=>a!==last.animal);
-  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_PAST[verb]||ANIMALS);
-  const lPool=LOCS_PAST[verb].filter(l=>l!==last.location);
-  const location=pick(lPool.length?lPool:LOCS_PAST[verb]);
+  const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_PAST[verb]&&ANIMAL_COMPAT_PAST[verb].length?ANIMAL_COMPAT_PAST[verb]:ANIMALS));
+  const lPool=(LOCS_PAST[verb]||["on land"]).filter(l=>l!==last.location);
+  const location=pick(lPool.length?lPool:(LOCS_PAST[verb]||["on land"]));
   return{text:`${cap(animal)} ${verb} ${location}.`,type:'past',name:null,animal,verb,location};
 }
 function b6_animalCanVerbLoc(last){
-  const verb=pickExcept(CAN_VERBS,last.verb);
+  const candidates=CAN_VERBS.filter(v=>ANIMAL_COMPAT_CAN[v]&&ANIMAL_COMPAT_CAN[v].length);
+  const verb=pickExcept(candidates.length?candidates:CAN_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_CAN[verb]||ANIMALS).filter(a=>a!==last.animal);
-  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_CAN[verb]||ANIMALS);
+  const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_CAN[verb]&&ANIMAL_COMPAT_CAN[verb].length?ANIMAL_COMPAT_CAN[verb]:ANIMALS));
   const lPool=(LOCS_CAN[verb]||LOCS_CAN.run).filter(l=>l!==last.location);
-  const location=pick(lPool.length?lPool:LOCS_CAN[verb]||LOCS_CAN.run);
+  const location=pick(lPool.length?lPool:(LOCS_CAN[verb]||LOCS_CAN.run));
   return{text:`${cap(animal)} can ${verb} ${location}.`,type:'can',name:null,animal,verb,location};
 }
 function b7_adjAnimalVerbLoc(last){
   const verb=pickExcept(PAST_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_PAST[verb]||ANIMALS).filter(a=>a!==last.animal);
-  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_PAST[verb]||ANIMALS);
+  const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_PAST[verb]&&ANIMAL_COMPAT_PAST[verb].length?ANIMAL_COMPAT_PAST[verb]:ANIMALS));
   const adj=pick(ADJS);
-  const lPool=LOCS_PAST[verb].filter(l=>l!==last.location);
-  const location=pick(lPool.length?lPool:LOCS_PAST[verb]);
+  const lPool=(LOCS_PAST[verb]||["on land"]).filter(l=>l!==last.location);
+  const location=pick(lPool.length?lPool:(LOCS_PAST[verb]||["on land"]));
   return{text:`${cap(adj)} ${animal} ${verb} ${location}.`,type:'past',name:null,animal,verb,location};
 }
 function b8_adjAnimalCanVerbLoc(last){
-  const verb=pickExcept(CAN_VERBS,last.verb);
+  const candidates=CAN_VERBS.filter(v=>ANIMAL_COMPAT_CAN[v]&&ANIMAL_COMPAT_CAN[v].length);
+  const verb=pickExcept(candidates.length?candidates:CAN_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_CAN[verb]||ANIMALS).filter(a=>a!==last.animal);
-  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_CAN[verb]||ANIMALS);
+  const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_CAN[verb]&&ANIMAL_COMPAT_CAN[verb].length?ANIMAL_COMPAT_CAN[verb]:ANIMALS));
   const adj=pick(ADJS);
   const lPool=(LOCS_CAN[verb]||LOCS_CAN.run).filter(l=>l!==last.location);
-  const location=pick(lPool.length?lPool:LOCS_CAN[verb]||LOCS_CAN.run);
+  const location=pick(lPool.length?lPool:(LOCS_CAN[verb]||LOCS_CAN.run));
   return{text:`${cap(adj)} ${animal} can ${verb} ${location}.`,type:'can',name:null,animal,verb,location};
 }
-
 function b9_nameVerbS(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(S_VERBS,last.verb);
@@ -548,70 +620,51 @@ function b10_nameVerbSLoc(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(S_VERBS,last.verb);
   const pool=(LOCS_S[verb]||LOCS_S.hops).filter(l=>l!==last.location);
-  const location=pick(pool.length?pool:LOCS_S[verb]||LOCS_S.hops);
+  const location=pick(pool.length?pool:(LOCS_S[verb]||LOCS_S.hops));
   return{text:`${cap(name)} ${verb} ${location}.`,type:'s',name,animal:null,verb,location};
 }
 function b11_animalVerbSLoc(last){
-  const verb=pickExcept(S_VERBS,last.verb);
+  const candidates=S_VERBS.filter(v=>ANIMAL_COMPAT_S[v]&&ANIMAL_COMPAT_S[v].length);
+  const verb=pickExcept(candidates.length?candidates:S_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_S[verb]||ANIMALS).filter(a=>a!==last.animal);
-  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_S[verb]||ANIMALS);
+  const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_S[verb]&&ANIMAL_COMPAT_S[verb].length?ANIMAL_COMPAT_S[verb]:ANIMALS));
   const lPool=(LOCS_S[verb]||LOCS_S.hops).filter(l=>l!==last.location);
-  const location=pick(lPool.length?lPool:LOCS_S[verb]||LOCS_S.hops);
+  const location=pick(lPool.length?lPool:(LOCS_S[verb]||LOCS_S.hops));
   return{text:`${cap(animal)} ${verb} ${location}.`,type:'s',name:null,animal,verb,location};
 }
 function b12_adjAnimalVerbSLoc(last){
-  const verb=pickExcept(S_VERBS,last.verb);
+  const candidates=S_VERBS.filter(v=>ANIMAL_COMPAT_S[v]&&ANIMAL_COMPAT_S[v].length);
+  const verb=pickExcept(candidates.length?candidates:S_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_S[verb]||ANIMALS).filter(a=>a!==last.animal);
-  const animal=pick(aPool.length?aPool:ANIMAL_COMPAT_S[verb]||ANIMALS);
+  const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_S[verb]&&ANIMAL_COMPAT_S[verb].length?ANIMAL_COMPAT_S[verb]:ANIMALS));
   const adj=pick(ADJS);
   const lPool=(LOCS_S[verb]||LOCS_S.hops).filter(l=>l!==last.location);
-  const location=pick(lPool.length?lPool:LOCS_S[verb]||LOCS_S.hops);
+  const location=pick(lPool.length?lPool:(LOCS_S[verb]||LOCS_S.hops));
   return{text:`${cap(adj)} ${animal} ${verb} ${location}.`,type:'s',name:null,animal,verb,location};
 }
 
-// Past builders (categories 1,2,5,7) and can builders (3,4,6,8) and s builders (9,10,11,12)
 const PAST_BUILDERS=[b1_nameVerb,b2_nameVerbLoc,b5_animalVerbLoc,b7_adjAnimalVerbLoc];
 const CAN_BUILDERS=[b3_nameCanVerb,b4_nameCanVerbLoc,b6_animalCanVerbLoc,b8_adjAnimalCanVerbLoc];
 const S_BUILDERS=[b9_nameVerbS,b10_nameVerbSLoc,b11_animalVerbSLoc,b12_adjAnimalVerbSLoc];
 
-// Third person -s verbs and their locations
-const S_VERBS=["hops","sits","naps","jumps","rests"];
-const ANIMAL_COMPAT_S={
-  hops:["pig","dog","fox","cub","pup","rat","cat"],
-  sits:["pig","dog","hen","cub","pup","rat","cat"],
-  naps:["pig","dog","hen","cub","pup","rat","cat"],
-  jumps:["pig","dog","fox","cub","pup","rat","cat"],
-  rests:["pig","dog","hen","cub","pup","rat","cat","ox"]
-};
-const LOCS_S={
-  hops:["on mat","on log","on rock","on hill","on deck","on big log"],
-  sits:["on mat","on log","on rock","on hill","on deck","on big log","on wet mat","up top","on land"],
-  naps:["on mat","on log","on big log","on wet mat","on rock"],
-  jumps:["on mat","on log","on rock","on hill","on big log","in mud","on sand"],
-  rests:["on mat","on log","on rock","on big log","on wet mat","on land","on hill"]
-};
-const VERB_BASE={ran:"run",sat:"sit",dug:"dig",swam:"swim",
-  run:"run",sit:"sit",dig:"dig",swim:"swim",
-  hop:"hop",jog:"jog",zip:"zip",nap:"nap",jump:"jump",rest:"rest"};
-function verbBase(v){return VERB_BASE[v]||v;}
-
-// ── Session-level used sentences set ──
 let usedSentences=new Set();
 
 function genRound(n){
   const sentences=[];
   let last={type:null,name:null,animal:null,verb:null,location:null};
   const usedVerbBases=new Set();
+  const usedNames=new Set();
+  const usedAnimals=new Set();
+  const usedLocations=new Set();
   const pastPool=shuffle([...PAST_BUILDERS]);
   const canPool=shuffle([...CAN_BUILDERS]);
   const sPool=shuffle([...S_BUILDERS]);
   let pi=0,ci=0,si=0;
-  // Rotate through past → can → s → past → can → s...
   const types=['past','can','s'];
   let typeIdx=Math.floor(Math.random()*3);
 
   let attempts=0;
-  while(sentences.length<n&&attempts<n*60){
+  while(sentences.length<n&&attempts<n*120){
     attempts++;
     const nextType=types[typeIdx%3];
     const builders=nextType==='past'?pastPool:nextType==='can'?canPool:sPool;
@@ -627,12 +680,23 @@ function genRound(n){
       if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
       typeIdx++;continue;
     }
-    if((s.name&&s.name===last.name)||(s.animal&&s.animal===last.animal)||(s.location&&s.location===last.location)){
+    if(s.name&&usedNames.has(s.name)){
+      if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
+      typeIdx++;continue;
+    }
+    if(s.animal&&usedAnimals.has(s.animal)){
+      if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
+      typeIdx++;continue;
+    }
+    if(s.location&&usedLocations.has(s.location)){
       if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
       typeIdx++;continue;
     }
     usedSentences.add(s.text);
     usedVerbBases.add(vb);
+    if(s.name)usedNames.add(s.name);
+    if(s.animal)usedAnimals.add(s.animal);
+    if(s.location)usedLocations.add(s.location);
     sentences.push(s.text);
     last=s;
     if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
@@ -645,7 +709,10 @@ function genRound(n){
   return sentences;
 }
 
-// ── State ──
+// ══════════════════════════════════════════
+// APP STATE & UI
+// ══════════════════════════════════════════
+
 let state={roundLength:5,speechRate:.78,voiceName:null,readFont:"dancing",sentences:[],index:0,pondsCompleted:0};
 const el={};
 
@@ -661,7 +728,8 @@ function cacheEls(){
 function applyTheme(n){
   const t=THEMES[(n-1)%THEMES.length];
   document.body.style.backgroundColor=t.sky;
-
+  const pondPath=document.querySelector('.pond-path');
+  if(pondPath)pondPath.style.backgroundColor=t.water;
   document.documentElement.style.setProperty("--leaf",t.leaf);
   document.documentElement.style.setProperty("--leaf-deep",t.leafD);
   if(el.bugInner)el.bugInner.innerHTML=BUGS[(n-1)%BUGS.length];
@@ -670,7 +738,6 @@ function applyFont(){
   document.documentElement.style.setProperty("--read-font",FONTS[state.readFont]||FONTS.dancing);
 }
 
-// ── Positioning ──
 function padCenter(i){
   const pads=el.padsRow.querySelectorAll('.pad');if(!pads[i])return null;
   const tr=el.pondContainer.getBoundingClientRect(),pd=pads[i].getBoundingClientRect();
@@ -702,7 +769,6 @@ function posAll(){
   setBugPos(bugTargetPct(),false);
 }
 
-// ── Render ──
 let wordEls=[];
 function renderSentence(txt){
   el.sentenceText.innerHTML="";wordEls=[];
@@ -722,6 +788,20 @@ function renderSentence(txt){
 }
 function clrHL(){wordEls.forEach(({wordEl})=>wordEl.classList.remove("sentence-hl"));}
 
+function renderSandNumber(target,n){
+  target.innerHTML="";
+  String(n).split("").forEach(ch=>{
+    if(DIGIT_GLYPHS[ch]){
+      const g=document.createElement("span");
+      g.className="sand-glyph";
+      g.innerHTML=DIGIT_GLYPHS[ch];
+      target.appendChild(g);
+    } else {
+      target.appendChild(document.createTextNode(ch));
+    }
+  });
+}
+
 function renderPads(){
   el.padsRow.innerHTML="";
   for(let i=0;i<state.roundLength;i++){
@@ -736,26 +816,9 @@ function renderPads(){
   }
   requestAnimationFrame(posAll);
 }
-function renderSandNumber(target,n){
-  target.innerHTML="";
-  String(n).split("").forEach(ch=>{
-    if(DIGIT_GLYPHS[ch]){
-      const g=document.createElement("span");
-      g.className="sand-glyph";
-      g.style.cssText="display:inline-block;height:1em;width:.85em;vertical-align:-0.1em;";
-      g.innerHTML=DIGIT_GLYPHS[ch];
-      target.appendChild(g);
-    } else {
-      target.appendChild(document.createTextNode(ch));
-    }
-  });
-}
-function updateBadge(){
-  if(el.pondCountDisplay)renderSandNumber(el.pondCountDisplay,state.pondsCompleted+1);
-}
+function updateBadge(){if(el.pondCountDisplay)renderSandNumber(el.pondCountDisplay,state.pondsCompleted+1);}
 function showSentence(){renderSentence(state.sentences[state.index]);renderPads();el.prevBtn.disabled=state.index<=0;}
 
-// ── Speech ──
 let sOk=false,sess=0;
 function getVoice(){
   if(!sOk)return null;
@@ -794,7 +857,6 @@ function speakWord(wi){
 }
 function stopSpeech(){sess++;if(sOk)window.speechSynthesis.cancel();clrHL();}
 
-// ── Navigation ──
 let transitioning=false;
 function goTo(ni){
   if(transitioning||ni<0||ni>=state.sentences.length||ni===state.index)return;
@@ -921,6 +983,7 @@ function wireEvents(){
 
 function init(){
   cacheEls();
+  usedSentences=new Set();
   sOk="speechSynthesis" in window;
   if(!sOk)el.readBtn.disabled=true;
   else{window.speechSynthesis.onvoiceschanged=populateVoices;populateVoices();}
