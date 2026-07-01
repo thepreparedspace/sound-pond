@@ -16,8 +16,7 @@
 }
 *{box-sizing:border-box;}[hidden]{display:none!important;}
 html,body{margin:0;height:100%;}
-body{font-family:var(--ui-font);color:var(--ink);min-height:100vh;overflow-x:hidden;
-  background:var(--cream);display:flex;flex-direction:column;transition:background .8s;}
+body{font-family:var(--ui-font);color:var(--ink);min-height:100vh;overflow-x:hidden;background:var(--cream);display:flex;flex-direction:column;transition:background .8s;}
 .sky{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
 .sun-w{position:absolute;top:8px;right:12px;width:76px;height:76px;}
 .cl{position:absolute;}
@@ -33,16 +32,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .brand{font-family:var(--ui-font);font-weight:800;font-size:1.7rem;display:flex;align-items:center;gap:8px;}
 .brand svg{width:1.4em;height:1.1em;flex-shrink:0;}
 .hdr{display:flex;align-items:center;gap:10px;margin-left:auto;}
-.ibtn{background:var(--card-bg);border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;
-  box-shadow:0 2px 0 rgba(60,48,18,.15);display:flex;align-items:center;justify-content:center;color:var(--ink);}
+.ibtn{background:var(--card-bg);border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;box-shadow:0 2px 0 rgba(60,48,18,.15);display:flex;align-items:center;justify-content:center;color:var(--ink);}
 .ibtn svg{width:22px;height:22px;}
 .ibtn:focus-visible,.btn:focus-visible{outline:3px solid var(--coral);outline-offset:2px;}
 main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 16px 20px;gap:22px;}
-.card{position:relative;background:var(--card-bg);width:min(640px,92vw);min-height:160px;
-  border-radius:38% 62% 63% 37%/41% 44% 56% 59%;
-  box-shadow:0 10px 0 rgba(56,46,24,.08),0 14px 30px rgba(60,96,50,.13);
-  display:flex;align-items:center;justify-content:center;padding:38px 8%;
-  border:4px solid var(--leaf);transition:transform .25s,border-color .8s;}
+.card{position:relative;background:var(--card-bg);width:min(640px,92vw);min-height:160px;border-radius:38% 62% 63% 37%/41% 44% 56% 59%;box-shadow:0 10px 0 rgba(56,46,24,.08),0 14px 30px rgba(60,96,50,.13);display:flex;align-items:center;justify-content:center;padding:38px 8%;border:4px solid var(--leaf);transition:transform .25s,border-color .8s;}
 .card.win{animation:winPulse 0.8s ease;}
 @keyframes winPulse{0%{transform:scale(1)}30%{transform:scale(1.04) rotate(-.5deg)}60%{transform:scale(1.02) rotate(.5deg)}100%{transform:scale(1)}}
 .lfic{position:absolute;top:-13px;left:-13px;width:30px;height:30px;transform:rotate(-14deg);}
@@ -51,10 +45,7 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .word:hover{background:rgba(212,144,48,.18);}
 .word.sentence-hl{background:rgba(212,144,48,.38);color:var(--ink);}
 .controls{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
-.btn{font-family:var(--ui-font);font-weight:700;font-size:1.4rem;border:none;cursor:pointer;
-  padding:14px 26px;border-radius:999px;color:#fff;
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  box-shadow:0 5px 0 rgba(0,0,0,.14);transition:transform .08s,background-color .8s;}
+.btn{font-family:var(--ui-font);font-weight:700;font-size:1.4rem;border:none;cursor:pointer;padding:14px 26px;border-radius:999px;color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 5px 0 rgba(0,0,0,.14);transition:transform .08s,background-color .8s;}
 .btn svg{width:1.1em;height:1.1em;flex-shrink:0;}
 .btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.14);}
 .btn-s{background:var(--coral)}.btn-s:hover{background:var(--coral-deep)}
@@ -77,9 +68,7 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 @keyframes padBeckon{0%{filter:drop-shadow(0 3px 3px rgba(10,22,8,.25));}55%{filter:drop-shadow(0 3px 3px rgba(10,22,8,.25)) drop-shadow(0 0 18px rgba(255,255,255,1)) drop-shadow(0 0 9px rgba(255,255,255,.95));}100%{filter:drop-shadow(0 3px 3px rgba(10,22,8,.25)) drop-shadow(0 0 12px rgba(255,255,255,.95)) drop-shadow(0 0 5px rgba(255,255,255,.75));}}
 .pad.tappable{cursor:pointer;}
 .pad.tappable:hover{transform:scale(.93);opacity:.9;}
-.frog{position:absolute;top:50%;left:0;width:72px;height:60px;transform:translate(-50%,-68%);
-  transition:left .55s cubic-bezier(.34,1.56,.64,1);
-  pointer-events:none;z-index:3;overflow:visible;}
+.frog{position:absolute;top:50%;left:0;width:72px;height:60px;transform:translate(-50%,-68%);transition:left .55s cubic-bezier(.34,1.56,.64,1);pointer-events:none;z-index:3;overflow:visible;}
 .frog svg{width:100%;height:100%;display:block;}
 .frog.hopping{animation:hop .55s ease;}
 @keyframes hop{0%{transform:translate(-50%,-68%) scale(1,1)}35%{transform:translate(-50%,-158%) scale(.9,1.14)}70%{transform:translate(-50%,-68%) scale(1.06,.9)}100%{transform:translate(-50%,-68%) scale(1,1)}}
@@ -91,8 +80,7 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .frog.catching .tongue-tip,.frog.catching .tongue-tip-hl{animation:tongueTip .5s ease;}
 @keyframes tongueFlick{0%{stroke-dashoffset:50;}30%{stroke-dashoffset:0;}62%{stroke-dashoffset:0;}100%{stroke-dashoffset:50;}}
 @keyframes tongueTip{0%{opacity:0;}28%{opacity:0;}38%{opacity:1;}60%{opacity:1;}78%{opacity:0;}100%{opacity:0;}}
-.bug{position:absolute;top:50%;left:0;width:32px;height:26px;transform:translate(-50%,-210%);
-  transition:left .5s cubic-bezier(.34,1.56,.64,1),transform .4s,opacity .4s;pointer-events:none;z-index:4;}
+.bug{position:absolute;top:50%;left:0;width:32px;height:26px;transform:translate(-50%,-210%);transition:left .5s cubic-bezier(.34,1.56,.64,1),transform .4s,opacity .4s;pointer-events:none;z-index:4;}
 .bug .bi{width:100%;height:100%;animation:bidle 2.3s ease-in-out infinite;}
 .bug svg{width:100%;height:100%;display:block;filter:drop-shadow(0 2px 1px rgba(0,0,0,.2));}
 .bug.fluttering .bi{animation:bflut .5s ease;}
@@ -141,13 +129,11 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
   </a>
   <a href="https://thepreparedspace.github.io" class="tps-nav-back">← back to home</a>
 </nav>
-
 <div class="sky" aria-hidden="true">
   <div class="sun-w"><svg viewBox="0 0 80 80"><defs><radialGradient id="sg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#F8D860"/><stop offset="45%" stop-color="#E0A030" stop-opacity=".7"/><stop offset="100%" stop-color="#C07810" stop-opacity="0"/></radialGradient></defs><circle cx="40" cy="40" r="39" fill="url(#sg)"/><circle cx="40" cy="40" r="20" fill="#E8B04C"/></svg></div>
   <div class="cl cl1"><svg viewBox="0 0 148 56"><defs><linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFEFB"/><stop offset="100%" stop-color="#E4E0D0"/></linearGradient></defs><ellipse cx="74" cy="44" rx="64" ry="13" fill="url(#cg1)" opacity=".86"/><ellipse cx="40" cy="28" rx="30" ry="23" fill="url(#cg1)" opacity=".86"/><ellipse cx="86" cy="22" rx="27" ry="20" fill="url(#cg1)" opacity=".86"/><ellipse cx="116" cy="32" rx="22" ry="17" fill="url(#cg1)" opacity=".86"/></svg></div>
   <div class="cl cl2"><svg viewBox="0 0 106 46"><defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFEFB"/><stop offset="100%" stop-color="#E4E0D0"/></linearGradient></defs><ellipse cx="53" cy="36" rx="48" ry="11" fill="url(#cg2)" opacity=".8"/><ellipse cx="30" cy="23" rx="22" ry="17" fill="url(#cg2)" opacity=".8"/><ellipse cx="68" cy="19" rx="20" ry="15" fill="url(#cg2)" opacity=".8"/><ellipse cx="90" cy="28" rx="16" ry="13" fill="url(#cg2)" opacity=".8"/></svg></div>
 </div>
-
 <div class="app">
 <header>
   <div class="brand">
@@ -173,18 +159,13 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
     </button>
   </div>
 </header>
-
 <main>
   <div class="card" id="lilyCard">
-    <span class="lfic" aria-hidden="true">
-      <svg viewBox="0 0 28 28"><path d="M5 22 C5 13 10 5 22 4 C21 12 14 18 5 22Z" fill="var(--leaf-deep)" opacity=".9"/></svg>
-    </span>
+    <span class="lfic" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M5 22 C5 13 10 5 22 4 C21 12 14 18 5 22Z" fill="var(--leaf-deep)" opacity=".9"/></svg></span>
     <div class="sentence" id="sentenceText">&nbsp;</div>
   </div>
   <div class="controls">
-    <button class="btn btn-n btn-icon" id="prevBtn" aria-label="go back" disabled>
-      <span class="glyph">←</span>
-    </button>
+    <button class="btn btn-n btn-icon" id="prevBtn" aria-label="go back" disabled><span class="glyph">←</span></button>
     <button class="btn btn-s" id="readBtn">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5H8L13 5.5V18.5L8 14.5H4Z" fill="currentColor"/><path d="M16.5 8.5C18.5 10 18.5 14 16.5 15.5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/><path d="M19 6.5C22.5 9.5 22.5 14.5 19 17.5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" opacity=".65"/></svg>
       hop
@@ -194,7 +175,6 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
     </button>
   </div>
 </main>
-
 <div class="pond-path">
   <div class="track" id="pondContainer">
     <div class="pads" id="padsRow"></div>
@@ -216,12 +196,9 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
         <path d="M36 43 C36 36 37 31 38 26" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
         <path d="M48 44 C48 37 49 32 50 28" stroke="#5A8838" stroke-width="1.2" fill="none" stroke-linecap="round"/>
         <circle cx="32" cy="15" r="2.4" fill="#F8E840"/>
-        <circle cx="32" cy="12" r="1.3" fill="#fff" opacity=".9"/>
-        <circle cx="34.4" cy="13" r="1.3" fill="#fff" opacity=".9"/>
-        <circle cx="34.4" cy="16" r="1.3" fill="#fff" opacity=".9"/>
-        <circle cx="32" cy="17.5" r="1.3" fill="#fff" opacity=".9"/>
-        <circle cx="29.6" cy="16" r="1.3" fill="#fff" opacity=".9"/>
-        <circle cx="29.6" cy="13" r="1.3" fill="#fff" opacity=".9"/>
+        <circle cx="32" cy="12" r="1.3" fill="#fff" opacity=".9"/><circle cx="34.4" cy="13" r="1.3" fill="#fff" opacity=".9"/>
+        <circle cx="34.4" cy="16" r="1.3" fill="#fff" opacity=".9"/><circle cx="32" cy="17.5" r="1.3" fill="#fff" opacity=".9"/>
+        <circle cx="29.6" cy="16" r="1.3" fill="#fff" opacity=".9"/><circle cx="29.6" cy="13" r="1.3" fill="#fff" opacity=".9"/>
         <ellipse cx="10" cy="55" rx="3.2" ry="1.9" fill="#9A8868" opacity=".8"/>
         <ellipse cx="58" cy="55" rx="2.8" ry="1.7" fill="#8A7858" opacity=".8"/>
         <ellipse cx="44" cy="54" rx="2.2" ry="1.5" fill="#9A8868" opacity=".7"/>
@@ -298,13 +275,9 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
 
 <div class="ov" id="settingsModal" hidden>
   <div class="ovc">
-    <div class="mhdr">
-      <h2>pond settings</h2>
-      <button class="mcx" id="closeSettingsTop">✕</button>
-    </div>
+    <div class="mhdr"><h2>pond settings</h2><button class="mcx" id="closeSettingsTop">✕</button></div>
     <div class="mbdy">
-      <h3>pond size</h3>
-      <p>how many lily pads?</p>
+      <h3>pond size</h3><p>how many lily pads?</p>
       <div class="orow" id="roundOptions">
         <button data-n="3">3 pads</button>
         <button data-n="5">5 pads</button>
@@ -335,9 +308,8 @@ select{font-family:var(--ui-font);font-size:1rem;padding:9px 11px;border-radius:
 "use strict";
 
 // ══════════════════════════════════════════
-// WORD BANKS — final confirmed vocabulary
+// WORD BANKS
 // ══════════════════════════════════════════
-
 const NAMES=["kim","tim","ben","sam","pam","tom","bob","dan","ken","nat","ned","ron","jan","pat","don"];
 const ANIMALS=["pig","dog","fox","hen","cub","pup","rat","cat","ox","ant","ram","crab","slug","swan","yak","wasp","frog","bug","hog","pug"];
 const ADJS=["big","red","wet","fun","tan","fast","damp","soft","snug","plum","swift","jet","glad","crisp"];
@@ -381,78 +353,77 @@ const ANIMAL_COMPAT_CAN={
   spin:["pup","cat","wasp","bug"]
 };
 const ANIMAL_COMPAT_S={
-  hops:["pig","dog","fox","cub","pup","rat","cat"],
-  sits:["pig","dog","hen","cub","pup","rat","cat","crab","slug","swan"],
-  naps:["pig","dog","hen","cub","pup","rat","cat","slug"],
-  jumps:["pig","dog","fox","cub","pup","rat","cat"],
-  rests:["pig","dog","hen","cub","pup","rat","cat","ox","slug","swan"],
+  hops:["pig","dog","fox","cub","pup","rat","cat","frog"],
+  sits:["pig","dog","hen","cub","pup","rat","cat","crab","slug","swan","yak","frog","hog","pug"],
+  naps:["pig","dog","hen","cub","pup","rat","cat","slug","hog","pug"],
+  jumps:["pig","dog","fox","cub","pup","rat","cat","frog"],
+  rests:["pig","dog","hen","cub","pup","rat","cat","ox","slug","swan","yak","hog","pug"],
   skips:[],
-  trots:["dog","ox","ram","cat"],
-  flops:["pig","dog","cub","pup","rat","cat","slug"],
-  stomps:["dog","ox","ram","cat"],
+  trots:["dog","ox","ram","cat","yak","hog"],
+  flops:["pig","dog","cub","pup","rat","cat","slug","pug"],
+  stomps:["dog","ox","ram","cat","yak","hog"],
   stamps:["dog","ram","cat","ant"],
-  drifts:["swan","cub","pup","dog"],
+  drifts:["swan","cub","pup","dog","frog"],
   struts:["hen","cat","fox"],
-  pants:["dog","fox","cub","pup","cat"],
-  basks:["cat","dog","crab","swan","slug"]
+  pants:["dog","fox","cub","pup","cat","yak","pug"],
+  basks:["cat","dog","crab","swan","slug","frog"]
 };
 
-// Locations — no articles, no double-terminal consonants, no "hill"
+// Locations — no rock, no deck, no bank, no ck/nk words
 const LOCS_PAST={
   ran:["in mud","in fog","on sand","on land","on wet sand"],
-  sat:["on mat","on log","on big log","on wet mat","up top","on land","on bed","on rug","on desk","on step","on cot","in den","in bin","in tub","in bag","in nest","in pen","in hut","in tent","in pit"],
-  dug:["in mud","in sand","in wet mud","on land"],
-  swam:["in pond","in mud"],
+  sat:["on mat","on log","on big log","on wet mat","on soft mat","on snug mat","on tan mat","on big mat","on red rug","on soft rug","up top","on land","on bed","on rug","on desk","on step","on cot","in den","in bin","in tub","in bag","in nest","in pen","in hut","in tent","in pit"],
+  dug:["in mud","in sand","in wet mud","in damp mud","on land"],
+  swam:["in pond","in mud","in wet mud"],
   hid:["in mud","in sand","in dust","on log","in fog","in den","in bin","in tub","in bag","in nest","in pen","in hut","in tent","in pit"],
-  sped:["on sand","on land","on hot sand"],
-  slid:["in mud","on wet log","in wet sand"],
-  spun:["on mat","on land","on rug"],
-  trod:["in mud","on land","on damp land"],
-  skid:["in mud","in wet sand"]
+  sped:["on sand","on land","on hot sand","on wet sand"],
+  slid:["in mud","on wet log","in wet sand","in damp mud"],
+  spun:["on mat","on land","on rug","on soft mat"],
+  trod:["in mud","on land","on damp land","on flat land"],
+  skid:["in mud","in wet sand","in wet mud"]
 };
 const LOCS_CAN={
   run:["in mud","in fog","on sand","on land","on wet sand"],
-  sit:["on mat","on log","on big log","on wet mat","up top","on land","on bed","on rug","on desk","on step","on cot","in den","in bin","in tub","in bag","in nest","in pen","in hut","in tent","in pit"],
-  dig:["in mud","in sand","in wet mud","on land"],
-  swim:["in pond","in mud"],
-  hop:["on mat","on log","on big log"],
-  jog:["on sand","on land"],
-  zip:["on sand","on land"],
-  nap:["on mat","on log","on big log","on wet mat","on bed","on rug","on cot","in nest","in pen","in hut"],
+  sit:["on mat","on log","on big log","on wet mat","on soft mat","on snug mat","on tan mat","on big mat","on red rug","on soft rug","up top","on land","on bed","on rug","on desk","on step","on cot","in den","in bin","in tub","in bag","in nest","in pen","in hut","in tent","in pit"],
+  dig:["in mud","in sand","in wet mud","in damp mud","on land"],
+  swim:["in pond","in mud","in wet mud"],
+  hop:["on mat","on log","on big log","on soft mat"],
+  jog:["on sand","on land","on flat land","on hot sand"],
+  zip:["on sand","on land","on flat land"],
+  nap:["on mat","on log","on big log","on wet mat","on soft mat","on snug mat","on bed","on rug","on cot","in nest","in pen","in hut"],
   jump:["on mat","on log","on big log","in mud","on sand"],
-  rest:["on mat","on log","on big log","on wet mat","on land","on bed","on rug","on cot","in nest","in pen","in hut"],
-  skip:["on sand","on land","on flat land"],
-  trot:["on sand","on land","on damp land","on hot sand"],
-  flop:["on mat","on log","on big log","on wet mat"],
-  stomp:["in mud","on land","in damp mud"],
-  stamp:["on mat","on land"],
+  rest:["on mat","on log","on big log","on wet mat","on soft mat","on snug mat","on land","on bed","on rug","on cot","in nest","in pen","in hut"],
+  skip:["on sand","on land","on flat land","on wet sand"],
+  trot:["on sand","on land","on damp land","on hot sand","on flat land"],
+  flop:["on mat","on log","on big log","on wet mat","on soft mat"],
+  stomp:["in mud","on land","in damp mud","on flat land"],
+  stamp:["on mat","on land","on flat land"],
   drift:["in pond","in mud","in mist"],
   strut:["on land","on flat land"],
   pant:["on mat","on log","on land"],
   bask:["in sun"],
-  spin:["on mat","on land"]
+  spin:["on mat","on land","on soft mat"]
 };
 const LOCS_S={
-  hops:["on mat","on log","on rock","on deck","on big log"],
-  sits:["on mat","on log","on rock","on deck","on big log","on wet mat","up top","on land","on bank","on bed","on rug","on desk","on step","on cot","in box","in bin","in tub"],
-  naps:["on mat","on log","on big log","on wet mat","on rock","on bed","on rug","on cot"],
-  jumps:["on mat","on log","on rock","on big log","in mud","on sand"],
-  rests:["on mat","on log","on rock","on big log","on wet mat","on land","on bank","on bed","on rug","on cot"],
-  skips:["on sand","on land","on deck","on bank","on flat land"],
-  trots:["on sand","on land","on bank","on damp land","on hot sand"],
-  flops:["on mat","on log","on big log","on wet mat"],
-  stomps:["in mud","on land","on deck","in damp mud"],
-  stamps:["on mat","on land","on rock","on big rock"],
+  hops:["on mat","on log","on big log","on soft mat"],
+  sits:["on mat","on log","on big log","on wet mat","on soft mat","on snug mat","on tan mat","on big mat","on red rug","on soft rug","up top","on land","on bed","on rug","on desk","on step","on cot","in den","in bin","in tub","in bag","in nest","in pen","in hut","in tent","in pit"],
+  naps:["on mat","on log","on big log","on wet mat","on soft mat","on snug mat","on bed","on rug","on cot","in nest","in pen","in hut"],
+  jumps:["on mat","on log","on big log","in mud","on sand"],
+  rests:["on mat","on log","on big log","on wet mat","on soft mat","on snug mat","on land","on bed","on rug","on cot","in nest","in pen","in hut"],
+  skips:["on sand","on land","on flat land","on wet sand"],
+  trots:["on sand","on land","on damp land","on hot sand","on flat land"],
+  flops:["on mat","on log","on big log","on wet mat","on soft mat"],
+  stomps:["in mud","on land","in damp mud","on flat land"],
+  stamps:["on mat","on land","on flat land"],
   drifts:["in pond","in mud","in mist"],
-  struts:["on land","on deck","on bank","on flat land"],
-  pants:["on mat","on log","on land","on deck"],
-  basks:["on rock","on big rock","on damp rock","on red rock","in sun"]
+  struts:["on land","on flat land"],
+  pants:["on mat","on log","on land"],
+  basks:["in sun"]
 };
 
 const VERB_BASE={
   ran:"run",sat:"sit",dug:"dig",swam:"swim",hid:"hide",sped:"speed",slid:"slide",spun:"spin",trod:"trot",skid:"skid",
-  run:"run",sit:"sit",dig:"dig",swim:"swim",
-  hop:"hop",jog:"jog",zip:"zip",nap:"nap",jump:"jump",rest:"rest",
+  run:"run",sit:"sit",dig:"dig",swim:"swim",hop:"hop",jog:"jog",zip:"zip",nap:"nap",jump:"jump",rest:"rest",
   skip:"skip",trot:"trot",flop:"flop",stomp:"stomp",stamp:"stamp",drift:"drift",strut:"strut",pant:"pant",bask:"bask",spin:"spin",
   hops:"hop",sits:"sit",naps:"nap",jumps:"jump",rests:"rest",
   skips:"skip",trots:"trot",flops:"flop",stomps:"stomp",stamps:"stamp",drifts:"drift",struts:"strut",pants:"pant",basks:"bask"
@@ -462,76 +433,17 @@ function verbBase(v){return VERB_BASE[v]||v;}
 // ══════════════════════════════════════════
 // VISUAL ASSETS
 // ══════════════════════════════════════════
-
 const BUGS=[
-  // Ladybug
-  `<svg viewBox="0 0 60 50"><defs><radialGradient id="lb" cx="34%" cy="24%" r="72%"><stop offset="0%" stop-color="#EC4422"/><stop offset="55%" stop-color="#C01E18"/><stop offset="100%" stop-color="#8C1810"/></radialGradient></defs>
-  <ellipse cx="30" cy="44" rx="17" ry="4" fill="rgba(14,14,14,.14)"/>
-  <path d="M17 24 Q10 23 6 26M17 31 Q10 30 6 33M19 37 Q13 38 10 42" stroke="#221810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-  <path d="M43 24 Q50 23 54 26M43 31 Q50 30 54 33M41 37 Q47 38 50 42" stroke="#221810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-  <path d="M30 12 C44 12 50 22 50 31 C50 41 42 47 30 47 C18 47 10 41 10 31 C10 22 16 12 30 12Z" fill="url(#lb)"/>
-  <line x1="30" y1="13" x2="30" y2="46" stroke="#7A1808" stroke-width="1.3" opacity=".55"/>
-  <circle cx="21" cy="23" r="3.5" fill="#1A0808" opacity=".82"/>
-  <circle cx="39" cy="23" r="3.5" fill="#1A0808" opacity=".82"/>
-  <circle cx="20" cy="33" r="3" fill="#1A0808" opacity=".80"/>
-  <circle cx="40" cy="33" r="3" fill="#1A0808" opacity=".80"/>
-  <circle cx="23" cy="41" r="2.5" fill="#1A0808" opacity=".75"/>
-  <circle cx="37" cy="41" r="2.5" fill="#1A0808" opacity=".75"/>
-  <ellipse cx="30" cy="9" rx="8.5" ry="6.5" fill="#1A1208"/>
-  <circle cx="25.5" cy="7" r="1.6" fill="#fff" opacity=".66"/>
-  <circle cx="34.5" cy="7" r="1.6" fill="#fff" opacity=".66"/></svg>`,
-  // Butterfly
-  `<svg viewBox="0 0 62 54">
-  <path d="M30 25 C21 10 5 7 4 18 C3 27 14 31 30 28Z" fill="#E07818"/>
-  <path d="M32 25 C41 10 57 7 58 18 C59 27 48 31 32 28Z" fill="#E07818"/>
-  <path d="M30 28 C17 30 9 39 12 46 C15 51 25 47 30 37Z" fill="#D06014"/>
-  <path d="M32 28 C45 30 53 39 50 46 C47 51 37 47 32 37Z" fill="#D06014"/>
-  <circle cx="13" cy="18" r="4" fill="#F8C840" opacity=".7"/>
-  <circle cx="47" cy="18" r="4" fill="#F8C840" opacity=".7"/>
-  <circle cx="15" cy="38" r="3" fill="#F8C840" opacity=".65"/>
-  <circle cx="45" cy="38" r="3" fill="#F8C840" opacity=".65"/>
-  <circle cx="7" cy="13" r="1.3" fill="#fff" opacity=".88"/>
-  <circle cx="55" cy="13" r="1.3" fill="#fff" opacity=".88"/>
-  <rect x="29.5" y="10" width="3" height="34" rx="1.5" fill="#181008"/>
-  <circle cx="31" cy="9" r="4" fill="#181008"/>
-  <path d="M29 6 Q25 1 21 1M33 6 Q37 1 41 1" stroke="#181008" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>`,
-  // Dragonfly — golden yellow
-  `<svg viewBox="0 0 62 54"><defs><linearGradient id="df" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8C020"/><stop offset="100%" stop-color="#B89010"/></linearGradient></defs>
-  <ellipse cx="14" cy="17" rx="18" ry="5.5" fill="rgba(255,240,180,.58)" stroke="#D4A818" stroke-width=".8" transform="rotate(-10 14 17)"/>
-  <ellipse cx="48" cy="17" rx="18" ry="5.5" fill="rgba(255,240,180,.58)" stroke="#D4A818" stroke-width=".8" transform="rotate(10 48 17)"/>
-  <ellipse cx="14" cy="27" rx="16" ry="5" fill="rgba(255,240,180,.48)" stroke="#D4A818" stroke-width=".7" transform="rotate(8 14 27)"/>
-  <ellipse cx="48" cy="27" rx="16" ry="5" fill="rgba(255,240,180,.48)" stroke="#D4A818" stroke-width=".7" transform="rotate(-8 48 27)"/>
-  <rect x="27.5" y="14" width="7" height="36" rx="3.5" fill="url(#df)"/>
-  <circle cx="31" cy="28" r="2" fill="#7A5808" opacity=".6"/>
-  <circle cx="31" cy="35" r="2" fill="#7A5808" opacity=".6"/>
-  <circle cx="31" cy="42" r="2" fill="#7A5808" opacity=".6"/>
-  <circle cx="31" cy="8" r="6" fill="#E8A810"/>
-  <circle cx="27.5" cy="7" r="3.4" fill="#7A5808" opacity=".9"/>
-  <circle cx="34.5" cy="7" r="3.4" fill="#7A5808" opacity=".9"/></svg>`,
-  // Firefly
-  `<svg viewBox="0 0 60 52"><defs>
-    <radialGradient id="ff" cx="35%" cy="28%" r="72%"><stop offset="0%" stop-color="#AA7C38"/><stop offset="58%" stop-color="#7A5820"/><stop offset="100%" stop-color="#583E10"/></radialGradient>
-    <radialGradient id="glo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#C8E820" stop-opacity=".9"/><stop offset="100%" stop-color="#88A800" stop-opacity="0"/></radialGradient>
-  </defs>
-  <circle cx="30" cy="44" r="14" fill="url(#glo)"/>
-  <path d="M30 12 C42 12 48 22 48 31 C48 40 40 46 30 46 C20 46 12 40 12 31 C12 22 18 12 30 12Z" fill="url(#ff)"/>
-  <circle cx="22" cy="26" r="2.5" fill="#583E10" opacity=".5"/>
-  <circle cx="38" cy="26" r="2.5" fill="#583E10" opacity=".5"/>
-  <circle cx="22" cy="35" r="2" fill="#583E10" opacity=".45"/>
-  <circle cx="38" cy="35" r="2" fill="#583E10" opacity=".45"/>
-  <ellipse cx="30" cy="41" rx="8" ry="5" fill="#C8E820" opacity=".85"/>
-  <circle cx="30" cy="9" r="4.5" fill="#6E5326"/>
-  <path d="M27 5 q-2 -3 -5 -3M33 5 q2 -3 5 -3" stroke="#6E5326" stroke-width="1.1" fill="none" stroke-linecap="round"/></svg>`
+  `<svg viewBox="0 0 60 50"><defs><radialGradient id="lb" cx="34%" cy="24%" r="72%"><stop offset="0%" stop-color="#EC4422"/><stop offset="55%" stop-color="#C01E18"/><stop offset="100%" stop-color="#8C1810"/></radialGradient></defs><ellipse cx="30" cy="44" rx="17" ry="4" fill="rgba(14,14,14,.14)"/><path d="M17 24 Q10 23 6 26M17 31 Q10 30 6 33M19 37 Q13 38 10 42" stroke="#221810" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M43 24 Q50 23 54 26M43 31 Q50 30 54 33M41 37 Q47 38 50 42" stroke="#221810" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M30 12 C44 12 50 22 50 31 C50 41 42 47 30 47 C18 47 10 41 10 31 C10 22 16 12 30 12Z" fill="url(#lb)"/><line x1="30" y1="13" x2="30" y2="46" stroke="#7A1808" stroke-width="1.3" opacity=".55"/><circle cx="21" cy="23" r="3.5" fill="#1A0808" opacity=".82"/><circle cx="39" cy="23" r="3.5" fill="#1A0808" opacity=".82"/><circle cx="20" cy="33" r="3" fill="#1A0808" opacity=".80"/><circle cx="40" cy="33" r="3" fill="#1A0808" opacity=".80"/><circle cx="23" cy="41" r="2.5" fill="#1A0808" opacity=".75"/><circle cx="37" cy="41" r="2.5" fill="#1A0808" opacity=".75"/><ellipse cx="30" cy="9" rx="8.5" ry="6.5" fill="#1A1208"/><circle cx="25.5" cy="7" r="1.6" fill="#fff" opacity=".66"/><circle cx="34.5" cy="7" r="1.6" fill="#fff" opacity=".66"/></svg>`,
+  `<svg viewBox="0 0 62 54"><path d="M30 25 C21 10 5 7 4 18 C3 27 14 31 30 28Z" fill="#E07818"/><path d="M32 25 C41 10 57 7 58 18 C59 27 48 31 32 28Z" fill="#E07818"/><path d="M30 28 C17 30 9 39 12 46 C15 51 25 47 30 37Z" fill="#D06014"/><path d="M32 28 C45 30 53 39 50 46 C47 51 37 47 32 37Z" fill="#D06014"/><circle cx="13" cy="18" r="4" fill="#F8C840" opacity=".7"/><circle cx="47" cy="18" r="4" fill="#F8C840" opacity=".7"/><circle cx="15" cy="38" r="3" fill="#F8C840" opacity=".65"/><circle cx="45" cy="38" r="3" fill="#F8C840" opacity=".65"/><circle cx="7" cy="13" r="1.3" fill="#fff" opacity=".88"/><circle cx="55" cy="13" r="1.3" fill="#fff" opacity=".88"/><rect x="29.5" y="10" width="3" height="34" rx="1.5" fill="#181008"/><circle cx="31" cy="9" r="4" fill="#181008"/><path d="M29 6 Q25 1 21 1M33 6 Q37 1 41 1" stroke="#181008" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>`,
+  `<svg viewBox="0 0 62 54"><defs><linearGradient id="df" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8C020"/><stop offset="100%" stop-color="#B89010"/></linearGradient></defs><ellipse cx="14" cy="17" rx="18" ry="5.5" fill="rgba(255,240,180,.58)" stroke="#D4A818" stroke-width=".8" transform="rotate(-10 14 17)"/><ellipse cx="48" cy="17" rx="18" ry="5.5" fill="rgba(255,240,180,.58)" stroke="#D4A818" stroke-width=".8" transform="rotate(10 48 17)"/><ellipse cx="14" cy="27" rx="16" ry="5" fill="rgba(255,240,180,.48)" stroke="#D4A818" stroke-width=".7" transform="rotate(8 14 27)"/><ellipse cx="48" cy="27" rx="16" ry="5" fill="rgba(255,240,180,.48)" stroke="#D4A818" stroke-width=".7" transform="rotate(-8 48 27)"/><rect x="27.5" y="14" width="7" height="36" rx="3.5" fill="url(#df)"/><circle cx="31" cy="28" r="2" fill="#7A5808" opacity=".6"/><circle cx="31" cy="35" r="2" fill="#7A5808" opacity=".6"/><circle cx="31" cy="42" r="2" fill="#7A5808" opacity=".6"/><circle cx="31" cy="8" r="6" fill="#E8A810"/><circle cx="27.5" cy="7" r="3.4" fill="#7A5808" opacity=".9"/><circle cx="34.5" cy="7" r="3.4" fill="#7A5808" opacity=".9"/></svg>`,
+  `<svg viewBox="0 0 60 52"><defs><radialGradient id="ff" cx="35%" cy="28%" r="72%"><stop offset="0%" stop-color="#AA7C38"/><stop offset="58%" stop-color="#7A5820"/><stop offset="100%" stop-color="#583E10"/></radialGradient><radialGradient id="glo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#C8E820" stop-opacity=".9"/><stop offset="100%" stop-color="#88A800" stop-opacity="0"/></radialGradient></defs><circle cx="30" cy="44" r="14" fill="url(#glo)"/><path d="M30 12 C42 12 48 22 48 31 C48 40 40 46 30 46 C20 46 12 40 12 31 C12 22 18 12 30 12Z" fill="url(#ff)"/><circle cx="22" cy="26" r="2.5" fill="#583E10" opacity=".5"/><circle cx="38" cy="26" r="2.5" fill="#583E10" opacity=".5"/><circle cx="22" cy="35" r="2" fill="#583E10" opacity=".45"/><circle cx="38" cy="35" r="2" fill="#583E10" opacity=".45"/><ellipse cx="30" cy="41" rx="8" ry="5" fill="#C8E820" opacity=".85"/><circle cx="30" cy="9" r="4.5" fill="#6E5326"/><path d="M27 5 q-2 -3 -5 -3M33 5 q2 -3 5 -3" stroke="#6E5326" stroke-width="1.1" fill="none" stroke-linecap="round"/></svg>`
 ];
 
 const PAD_SVG=`<svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="pg" cx="40%" cy="35%" r="78%"><stop offset="0%" stop-color="#B8D898"/><stop offset="55%" stop-color="#88B468"/><stop offset="100%" stop-color="#608448"/></radialGradient></defs><ellipse cx="52" cy="95" rx="36" ry="5.5" fill="rgba(18,38,10,.17)"/><path d="M50 56 L52.51 16.08 A40 40 0 1 1 47.49 16.08 Z" fill="url(#pg)" stroke="#486830" stroke-width="2"/><path d="M50 56L50 96M50 56L84 76M50 56L90 44M50 56L73 17M50 56L27 17M50 56L10 44M50 56L16 76" stroke="#486830" stroke-width=".9" opacity=".4" fill="none"/><ellipse cx="38" cy="36" rx="12" ry="6.5" fill="rgba(255,255,255,.14)" transform="rotate(-18 38 36)"/></svg>`;
 
 const DIGIT_GLYPHS={
-  "4":'<svg viewBox="0 0 80 120" aria-hidden="true">'
-     +'<line x1="16" y1="8" x2="16" y2="72" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>'
-     +'<line x1="16" y1="72" x2="54" y2="72" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>'
-     +'<line x1="40" y1="24" x2="40" y2="108" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>'
-     +'</svg>'
+  "4":'<svg viewBox="0 0 80 120" aria-hidden="true"><line x1="16" y1="8" x2="16" y2="72" stroke="currentColor" stroke-width="11" stroke-linecap="round"/><line x1="16" y1="72" x2="54" y2="72" stroke="currentColor" stroke-width="11" stroke-linecap="round"/><line x1="40" y1="24" x2="40" y2="108" stroke="currentColor" stroke-width="11" stroke-linecap="round"/></svg>'
 };
 
 const FONTS={andika:"'Andika',sans-serif",dancing:"'Dancing Script',cursive"};
@@ -545,37 +457,43 @@ const THEMES=[
 // ══════════════════════════════════════════
 // SENTENCE ENGINE
 // ══════════════════════════════════════════
-
 function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function pickExcept(a,ex){const f=a.filter(x=>x!==ex);return f.length?pick(f):pick(a);}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
 
-function b1_nameVerb(last){
+function adjInLoc(loc){
+  if(!loc)return null;
+  const p=loc.split(" ");
+  return p.length===3?p[1]:null;
+}
+
+// 12 builders — adjectives now live in locations, not on subjects
+function b1(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(PAST_VERBS,last.verb);
   return{text:`${cap(name)} ${verb}.`,type:'past',name,animal:null,verb,location:null};
 }
-function b2_nameVerbLoc(last){
+function b2(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(PAST_VERBS,last.verb);
   const pool=(LOCS_PAST[verb]||["on land"]).filter(l=>l!==last.location);
   const location=pick(pool.length?pool:(LOCS_PAST[verb]||["on land"]));
   return{text:`${cap(name)} ${verb} ${location}.`,type:'past',name,animal:null,verb,location};
 }
-function b3_nameCanVerb(last){
+function b3(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(CAN_VERBS,last.verb);
   return{text:`${cap(name)} can ${verb}.`,type:'can',name,animal:null,verb,location:null};
 }
-function b4_nameCanVerbLoc(last){
+function b4(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(CAN_VERBS,last.verb);
   const pool=(LOCS_CAN[verb]||LOCS_CAN.run).filter(l=>l!==last.location);
   const location=pick(pool.length?pool:(LOCS_CAN[verb]||LOCS_CAN.run));
   return{text:`${cap(name)} can ${verb} ${location}.`,type:'can',name,animal:null,verb,location};
 }
-function b5_animalVerbLoc(last){
+function b5(last){
   const verb=pickExcept(PAST_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_PAST[verb]||ANIMALS).filter(a=>a!==last.animal);
   const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_PAST[verb]&&ANIMAL_COMPAT_PAST[verb].length?ANIMAL_COMPAT_PAST[verb]:ANIMALS));
@@ -583,7 +501,7 @@ function b5_animalVerbLoc(last){
   const location=pick(lPool.length?lPool:(LOCS_PAST[verb]||["on land"]));
   return{text:`${cap(animal)} ${verb} ${location}.`,type:'past',name:null,animal,verb,location};
 }
-function b6_animalCanVerbLoc(last){
+function b6(last){
   const candidates=CAN_VERBS.filter(v=>ANIMAL_COMPAT_CAN[v]&&ANIMAL_COMPAT_CAN[v].length);
   const verb=pickExcept(candidates.length?candidates:CAN_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_CAN[verb]||ANIMALS).filter(a=>a!==last.animal);
@@ -592,38 +510,36 @@ function b6_animalCanVerbLoc(last){
   const location=pick(lPool.length?lPool:(LOCS_CAN[verb]||LOCS_CAN.run));
   return{text:`${cap(animal)} can ${verb} ${location}.`,type:'can',name:null,animal,verb,location};
 }
-function b7_adjAnimalVerbLoc(last){
+function b7(last){
   const verb=pickExcept(PAST_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_PAST[verb]||ANIMALS).filter(a=>a!==last.animal);
   const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_PAST[verb]&&ANIMAL_COMPAT_PAST[verb].length?ANIMAL_COMPAT_PAST[verb]:ANIMALS));
-  const adj=pick(ADJS);
   const lPool=(LOCS_PAST[verb]||["on land"]).filter(l=>l!==last.location);
   const location=pick(lPool.length?lPool:(LOCS_PAST[verb]||["on land"]));
-  return{text:`${cap(adj)} ${animal} ${verb} ${location}.`,type:'past',name:null,animal,verb,location};
+  return{text:`${cap(animal)} ${verb} ${location}.`,type:'past',name:null,animal,verb,location};
 }
-function b8_adjAnimalCanVerbLoc(last){
+function b8(last){
   const candidates=CAN_VERBS.filter(v=>ANIMAL_COMPAT_CAN[v]&&ANIMAL_COMPAT_CAN[v].length);
   const verb=pickExcept(candidates.length?candidates:CAN_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_CAN[verb]||ANIMALS).filter(a=>a!==last.animal);
   const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_CAN[verb]&&ANIMAL_COMPAT_CAN[verb].length?ANIMAL_COMPAT_CAN[verb]:ANIMALS));
-  const adj=pick(ADJS);
   const lPool=(LOCS_CAN[verb]||LOCS_CAN.run).filter(l=>l!==last.location);
   const location=pick(lPool.length?lPool:(LOCS_CAN[verb]||LOCS_CAN.run));
-  return{text:`${cap(adj)} ${animal} can ${verb} ${location}.`,type:'can',name:null,animal,verb,location};
+  return{text:`${cap(animal)} can ${verb} ${location}.`,type:'can',name:null,animal,verb,location};
 }
-function b9_nameVerbS(last){
+function b9(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(S_VERBS,last.verb);
   return{text:`${cap(name)} ${verb}.`,type:'s',name,animal:null,verb,location:null};
 }
-function b10_nameVerbSLoc(last){
+function b10(last){
   const name=pickExcept(NAMES,last.name);
   const verb=pickExcept(S_VERBS,last.verb);
   const pool=(LOCS_S[verb]||LOCS_S.hops).filter(l=>l!==last.location);
   const location=pick(pool.length?pool:(LOCS_S[verb]||LOCS_S.hops));
   return{text:`${cap(name)} ${verb} ${location}.`,type:'s',name,animal:null,verb,location};
 }
-function b11_animalVerbSLoc(last){
+function b11(last){
   const candidates=S_VERBS.filter(v=>ANIMAL_COMPAT_S[v]&&ANIMAL_COMPAT_S[v].length);
   const verb=pickExcept(candidates.length?candidates:S_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_S[verb]||ANIMALS).filter(a=>a!==last.animal);
@@ -632,20 +548,19 @@ function b11_animalVerbSLoc(last){
   const location=pick(lPool.length?lPool:(LOCS_S[verb]||LOCS_S.hops));
   return{text:`${cap(animal)} ${verb} ${location}.`,type:'s',name:null,animal,verb,location};
 }
-function b12_adjAnimalVerbSLoc(last){
+function b12(last){
   const candidates=S_VERBS.filter(v=>ANIMAL_COMPAT_S[v]&&ANIMAL_COMPAT_S[v].length);
   const verb=pickExcept(candidates.length?candidates:S_VERBS,last.verb);
   const aPool=(ANIMAL_COMPAT_S[verb]||ANIMALS).filter(a=>a!==last.animal);
   const animal=pick(aPool.length?aPool:(ANIMAL_COMPAT_S[verb]&&ANIMAL_COMPAT_S[verb].length?ANIMAL_COMPAT_S[verb]:ANIMALS));
-  const adj=pick(ADJS);
   const lPool=(LOCS_S[verb]||LOCS_S.hops).filter(l=>l!==last.location);
   const location=pick(lPool.length?lPool:(LOCS_S[verb]||LOCS_S.hops));
-  return{text:`${cap(adj)} ${animal} ${verb} ${location}.`,type:'s',name:null,animal,verb,location};
+  return{text:`${cap(animal)} ${verb} ${location}.`,type:'s',name:null,animal,verb,location};
 }
 
-const PAST_BUILDERS=[b1_nameVerb,b2_nameVerbLoc,b5_animalVerbLoc,b7_adjAnimalVerbLoc];
-const CAN_BUILDERS=[b3_nameCanVerb,b4_nameCanVerbLoc,b6_animalCanVerbLoc,b8_adjAnimalCanVerbLoc];
-const S_BUILDERS=[b9_nameVerbS,b10_nameVerbSLoc,b11_animalVerbSLoc,b12_adjAnimalVerbSLoc];
+const PAST_BUILDERS=[b1,b2,b5,b7];
+const CAN_BUILDERS=[b3,b4,b6,b8];
+const S_BUILDERS=[b9,b10,b11,b12];
 
 let usedSentences=new Set();
 
@@ -656,39 +571,23 @@ function genRound(n){
   const usedNames=new Set();
   const usedAnimals=new Set();
   const usedLocations=new Set();
+  const usedLocAdjs=new Set();
   const pastPool=shuffle([...PAST_BUILDERS]);
   const canPool=shuffle([...CAN_BUILDERS]);
   const sPool=shuffle([...S_BUILDERS]);
   let pi=0,ci=0,si=0;
   const types=['past','can','s'];
   let typeIdx=Math.floor(Math.random()*3);
-
   let attempts=0;
   while(sentences.length<n&&attempts<n*120){
     attempts++;
     const nextType=types[typeIdx%3];
     const builders=nextType==='past'?pastPool:nextType==='can'?canPool:sPool;
     const idx=nextType==='past'?pi%pastPool.length:nextType==='can'?ci%canPool.length:si%sPool.length;
-    const builder=builders[idx];
-    const s=builder(last);
+    const s=builders[idx](last);
     const vb=verbBase(s.verb);
-    if(usedSentences.has(s.text)){
-      if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
-      typeIdx++;continue;
-    }
-    if(usedVerbBases.has(vb)){
-      if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
-      typeIdx++;continue;
-    }
-    if(s.name&&usedNames.has(s.name)){
-      if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
-      typeIdx++;continue;
-    }
-    if(s.animal&&usedAnimals.has(s.animal)){
-      if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
-      typeIdx++;continue;
-    }
-    if(s.location&&usedLocations.has(s.location)){
+    const locAdj=adjInLoc(s.location);
+    if(usedSentences.has(s.text)||usedVerbBases.has(vb)||(s.name&&usedNames.has(s.name))||(s.animal&&usedAnimals.has(s.animal))||(s.location&&usedLocations.has(s.location))||(locAdj&&usedLocAdjs.has(locAdj))){
       if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
       typeIdx++;continue;
     }
@@ -697,22 +596,19 @@ function genRound(n){
     if(s.name)usedNames.add(s.name);
     if(s.animal)usedAnimals.add(s.animal);
     if(s.location)usedLocations.add(s.location);
+    if(locAdj)usedLocAdjs.add(locAdj);
     sentences.push(s.text);
     last=s;
     if(nextType==='past')pi++;else if(nextType==='can')ci++;else si++;
     typeIdx++;
   }
-  if(sentences.length<n){
-    usedSentences.clear();
-    return genRound(n);
-  }
+  if(sentences.length<n){usedSentences.clear();return genRound(n);}
   return sentences;
 }
 
 // ══════════════════════════════════════════
 // APP STATE & UI
 // ══════════════════════════════════════════
-
 let state={roundLength:5,speechRate:.78,voiceName:null,readFont:"dancing",sentences:[],index:0,pondsCompleted:0};
 const el={};
 
@@ -728,8 +624,8 @@ function cacheEls(){
 function applyTheme(n){
   const t=THEMES[(n-1)%THEMES.length];
   document.body.style.backgroundColor=t.sky;
-  const pondPath=document.querySelector('.pond-path');
-  if(pondPath)pondPath.style.backgroundColor=t.water;
+  const pp=document.querySelector('.pond-path');
+  if(pp)pp.style.backgroundColor=t.water;
   document.documentElement.style.setProperty("--leaf",t.leaf);
   document.documentElement.style.setProperty("--leaf-deep",t.leafD);
   if(el.bugInner)el.bugInner.innerHTML=BUGS[(n-1)%BUGS.length];
@@ -791,14 +687,8 @@ function clrHL(){wordEls.forEach(({wordEl})=>wordEl.classList.remove("sentence-h
 function renderSandNumber(target,n){
   target.innerHTML="";
   String(n).split("").forEach(ch=>{
-    if(DIGIT_GLYPHS[ch]){
-      const g=document.createElement("span");
-      g.className="sand-glyph";
-      g.innerHTML=DIGIT_GLYPHS[ch];
-      target.appendChild(g);
-    } else {
-      target.appendChild(document.createTextNode(ch));
-    }
+    if(DIGIT_GLYPHS[ch]){const g=document.createElement("span");g.className="sand-glyph";g.innerHTML=DIGIT_GLYPHS[ch];target.appendChild(g);}
+    else target.appendChild(document.createTextNode(ch));
   });
 }
 
@@ -808,10 +698,7 @@ function renderPads(){
     const p=document.createElement("div");
     p.className="pad"+(i<state.index?" done":i===state.index?" active":"");
     p.innerHTML=PAD_SVG;
-    if(i<state.index){
-      p.classList.add("tappable");p.setAttribute("role","button");p.setAttribute("tabindex","0");
-      p.addEventListener("click",()=>goTo(i));
-    }
+    if(i<state.index){p.classList.add("tappable");p.setAttribute("role","button");p.setAttribute("tabindex","0");p.addEventListener("click",()=>goTo(i));}
     el.padsRow.appendChild(p);
   }
   requestAnimationFrame(posAll);
@@ -905,8 +792,7 @@ function nextStep(){
     if(pads[ni])pads[ni].classList.add('next-active');
     setTimeout(()=>{
       if(pads[ni])pads[ni].classList.remove('next-active');
-      const futureBugPct=ni>=state.roundLength-1?landCenter()
-        :(()=>{const c1=padCenter(ni),c2=padCenter(ni+1);return c1!==null&&c2!==null?(c1+c2)/2:50;})();
+      const futureBugPct=ni>=state.roundLength-1?landCenter():(()=>{const c1=padCenter(ni),c2=padCenter(ni+1);return c1!==null&&c2!==null?(c1+c2)/2:50;})();
       el.trackBug.classList.add("fluttering");setBugPos(futureBugPct,true);
       setTimeout(()=>{
         el.trackBug.classList.remove("fluttering");
@@ -943,26 +829,15 @@ function populateVoices(){
 }
 
 function markSel(c,a,v){c.querySelectorAll("button").forEach(b=>b.classList.toggle("sel",b.getAttribute(a)===String(v)));}
-function openSetting(){
-  markSel(el.speedOptions,"data-speed",state.speechRate);
-  markSel(el.roundOptions,"data-n",state.roundLength);
-  markSel(el.fontOptions,"data-font",state.readFont);
-  el.settingsModal.hidden=false;
-}
+function openSetting(){markSel(el.speedOptions,"data-speed",state.speechRate);markSel(el.roundOptions,"data-n",state.roundLength);markSel(el.fontOptions,"data-font",state.readFont);el.settingsModal.hidden=false;}
 function closeSetting(){el.settingsModal.hidden=true;}
 
 let resetArmed=false,resetTimer=null;
-function armReset(){
-  resetArmed=true;
-  el.resetProgress.textContent="tap again to confirm";
-  clearTimeout(resetTimer);
-  resetTimer=setTimeout(()=>{resetArmed=false;el.resetProgress.textContent="reset all progress";},4000);
-}
+function armReset(){resetArmed=true;el.resetProgress.textContent="tap again to confirm";clearTimeout(resetTimer);resetTimer=setTimeout(()=>{resetArmed=false;el.resetProgress.textContent="reset all progress";},4000);}
 function doReset(){
   resetArmed=false;clearTimeout(resetTimer);
   state.pondsCompleted=0;state.roundLength=5;state.speechRate=.78;state.readFont="dancing";
-  usedSentences.clear();
-  el.pondNextOverlay.hidden=true;transitioning=false;
+  usedSentences.clear();el.pondNextOverlay.hidden=true;transitioning=false;
   applyFont();applyTheme(1);updateBadge();closeSetting();newPond();
 }
 
